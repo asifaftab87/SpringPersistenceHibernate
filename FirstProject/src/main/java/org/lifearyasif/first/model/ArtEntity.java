@@ -5,11 +5,14 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -55,10 +58,16 @@ public class ArtEntity implements Serializable {
 	@Column(name="VERSION")
 	private Integer version;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn()
 	private ArtData_Gallery galleryPicture;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn()
 	private ArtData_Storage storagePicture;
 	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn()
 	private ArtData_Thumbnail thumbnailPicture;
 	
 	@ManyToMany(mappedBy = "artEntities")
