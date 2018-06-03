@@ -8,7 +8,7 @@ import javax.persistence.Version;
 
 import org.lifearyasif.first.base.DomainObject;
 
-public class Person extends DomainObject implements Serializable {
+public class Person implements DomainObject, Serializable {
 
 	private static final long serialVersionUID = 6008686143389567989L;
 
