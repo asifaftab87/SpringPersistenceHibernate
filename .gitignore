@@ -45,3 +45,8 @@ Thumbs.db
 *.settings
 *.core
 *.jdt
+
+/target/
+/bin/
+/.project
+/.classpath
