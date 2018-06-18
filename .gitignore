@@ -45,8 +45,16 @@ Thumbs.db
 *.settings
 *.core
 *.jdt
+*.fdt
+*.tii
+*.fdx
+*.frq
+*.fnm
+*.nrm
+
 
 /target/
 /bin/
 /.project
 /.classpath
+/.metadata/
