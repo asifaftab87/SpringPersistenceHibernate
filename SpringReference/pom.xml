@@ -20,7 +20,7 @@
     <dbunit.version>2.2</dbunit.version>
     <joda-time.version>2.3</joda-time.version>
     <dozer.version>5.4.0</dozer.version>
-	<jackson.version>2.2.3</jackson.version>
+	<jackson.version>2.5.2</jackson.version>
   </properties>
   
   <dependencies>
@@ -65,6 +65,19 @@
 		<version>${springframework.version}</version>
 	</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${springframework.version}</version>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+
   <!-- Servlet -->
     <dependency>
 	    <groupId>javax.servlet</groupId>
@@ -92,6 +105,17 @@
         <version>${mysql.connector.version}</version>
     </dependency>
     
+    <dependency>
+	        <groupId>com.fasterxml.jackson.core</groupId>
+	        <artifactId>jackson-core</artifactId>
+	        <version>${jackson.version}</version>
+	 </dependency>
+	 <dependency>
+	        <groupId>com.fasterxml.jackson.core</groupId>
+	        <artifactId>jackson-databind</artifactId>
+	        <version>${jackson.version}</version>
+	    </dependency>
+	     
   </dependencies>
   
   <!-- To avoid compiler and jre version -->

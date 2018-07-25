@@ -15,14 +15,14 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * with either @EnableWebSecurity, @EnableGlobalMethodSecurity, or @EnableGlobalAuthentication.
  */
 
-@EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
+//@EnableWebSecurity
+public class SecurityConfig{// extends WebSecurityConfigurerAdapter{
 
-	@Autowired
+/*	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
 		
 		auth
 			.inMemoryAuthentication()
 				.withUser("user").password("password").roles("USER");
-	}
+	}*/
 }
