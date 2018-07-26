@@ -1,17 +1,16 @@
-package org.liferayasif.spring.reference.dao.impl;
+package org.liferayasif.backend.dao.impl;
 
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
-import org.liferayasif.spring.reference.dao.AbstractDao;
-import org.liferayasif.spring.reference.dao.UserDao;
-import org.liferayasif.spring.reference.model.User;
+import org.liferayasif.backend.abstrct.dao.AbstractDao;
+import org.liferayasif.backend.dao.UserDao;
+import org.liferayasif.backend.model.User;
 import org.springframework.stereotype.Repository;
 
-
 @Repository("userDao")
-public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao{
+public class UserDaoImpl  extends AbstractDao<Integer, User> implements UserDao{
 
 	@Override
 	@SuppressWarnings("unchecked")
@@ -21,7 +20,7 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao{
 	}
 
 	@Override
-	public User getUser(Integer id) {
+	public User getUserById(Integer id) {
 		return getByKey(id);
 	}
 
@@ -41,5 +40,5 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao{
 	public User updateUser(User user) {
 		return null;
 	}
-
+	
 }
