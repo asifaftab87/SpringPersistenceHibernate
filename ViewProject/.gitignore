@@ -51,7 +51,7 @@ Thumbs.db
 *.frq
 *.fnm
 *.nrm
-
+server.xml
 
 /target/
 /bin/
