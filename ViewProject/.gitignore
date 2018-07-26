@@ -58,5 +58,6 @@ server.xml
 /.project
 /.classpath
 /.metadata/
-/Servers2/
+/Servers/
 /.recommenders/
+/.tern-project
