@@ -51,12 +51,12 @@ Thumbs.db
 *.frq
 *.fnm
 *.nrm
-
+server.xml
 
 /target/
 /bin/
 /.project
 /.classpath
 /.metadata/
-/Servers2/
+/Servers/
 /.recommenders/
