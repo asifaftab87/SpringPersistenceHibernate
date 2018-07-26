@@ -13,8 +13,10 @@ public class FirstController {
 	public String home(){
 		
 		WebRestTemplate webRestTemplate = new WebRestTemplate();
-		User user = webRestTemplate.getForObject("http://localhost:8888/SecRef/begin/getUser/1", User.class);
-		System.out.println(user);
+		//User user = webRestTemplate.getForObject("http://localhost:8888/SecRef/begin/getUser/1", User.class);
+		String s = webRestTemplate.getForObject("http://localhost:8181/model/begin/first", String.class);
+		//System.out.println(user);
+		System.out.println(s);
 		return "view";
 	}
 }
