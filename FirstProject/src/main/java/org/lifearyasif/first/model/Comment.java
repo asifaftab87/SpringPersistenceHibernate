@@ -24,7 +24,6 @@ public class Comment implements Serializable {
 	@Column(name="COMMENT")
 	private String comment;
 	
-	@ManyToOne
 	private ArtEntity commentedArt;
 	
 	@Column(name="COMMENT_DATE")
