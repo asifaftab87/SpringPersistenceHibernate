@@ -21,6 +21,13 @@ public class Comment implements Serializable {
 	@GeneratedValue
 	private Long id;
 	
+	
+	
+	
+	
+	
+	
+	
 	@Column(name="COMMENT")
 	private String comment;
 	
