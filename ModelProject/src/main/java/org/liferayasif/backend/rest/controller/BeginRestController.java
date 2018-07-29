@@ -7,6 +7,7 @@ import org.liferayasif.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +25,15 @@ public class BeginRestController {
 		return user;
 	}
 	
+	
+	@RequestMapping(value="/second")
+	public User example(@RequestParam("id") int id){
+		User user = userService.getUserById(id);
+		System.out.println(user);
+		return user;
+	}
+	
+	
 	@RequestMapping(value="/getAllUsers")
 	public List<User> getAllUsers(){
 		List<User> userList = userService.getAllUsers();
@@ -31,7 +41,7 @@ public class BeginRestController {
 	}
 	
 	
-	@RequestMapping(value="/addUser")
+	@RequestMapping(value="/addUser", method=RequestMethod.POST)
 	public int addUser(@RequestBody User user){
 		userService.addUser(user);
 		return 0;
