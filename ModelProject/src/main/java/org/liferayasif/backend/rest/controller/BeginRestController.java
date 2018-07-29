@@ -25,14 +25,12 @@ public class BeginRestController {
 		return user;
 	}
 	
-	
 	@RequestMapping(value="/second")
 	public User example(@RequestParam("id") int id){
 		User user = userService.getUserById(id);
 		System.out.println(user);
 		return user;
 	}
-	
 	
 	@RequestMapping(value="/getAllUsers")
 	public List<User> getAllUsers(){
@@ -47,5 +45,16 @@ public class BeginRestController {
 		return 0;
 	}
 	
+	@RequestMapping(value="/welcome")
+	public String greet(){
+		String greet="Hi welcome to my page";
+		return greet;
+	}
 	
+	@RequestMapping(value="/calculation")
+	public int cal(){
+		
+		int cal=65*98;
+		return cal;
+	}
 }
