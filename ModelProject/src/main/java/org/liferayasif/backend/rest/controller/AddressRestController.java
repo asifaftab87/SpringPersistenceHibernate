@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.liferayasif.backend.model.Address;
+import org.liferayasif.backend.model.User;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -32,9 +34,22 @@ public class AddressRestController {
 	}
 	
 	
+
+
+		@RequestMapping(value="/getAddList")
+		public List<Address> addList(){
+			Address address=new Address();
+			
+			address.setAdd1("Howrah");
+			address.setAdd2("Sealdah");
+			address.setAdd3("Dharamtalla");
+			
+			List<Address> addressList=new ArrayList<Address>();
+			addressList.add(address);
+			
+			return addressList;
+			
+		}
+
+ 
 }
-
-
-@RestController
-@RequestMapping(value="/begin")
-public class BeginRestController {
