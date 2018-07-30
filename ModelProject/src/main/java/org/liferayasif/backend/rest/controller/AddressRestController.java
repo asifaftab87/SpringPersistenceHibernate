@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value="/address")
 public class AddressRestController {
 
+//<<<<<<< HEAD
 	
+//=======
+//>>>>>>> branch 'security' of https://github.com/asifaftab87/SpringPersistenceHibernate.git
 	@RequestMapping(value="/listOfAddress")
 	public List<Address> AddressList(){
 		List<Address> addressList = new ArrayList<Address>();
@@ -30,3 +33,8 @@ public class AddressRestController {
 	
 	
 }
+
+
+@RestController
+@RequestMapping(value="/begin")
+public class BeginRestController {
