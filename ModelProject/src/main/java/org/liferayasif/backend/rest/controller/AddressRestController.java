@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.liferayasif.backend.model.Address;
+import org.liferayasif.backend.model.Contact;
 import org.liferayasif.backend.model.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -61,5 +62,22 @@ public class AddressRestController {
 		
 		}
  
- 
+		
+		@RequestMapping(value="/contact")
+		public Contact contactObj(){
+			Contact contact=new Contact();
+			Address address=new Address();
+			address.setAdd1("DM block");
+			address.setAdd2("PM block");
+			address.setAdd3("CM block");
+			
+			contact.setEmail("karim@ymail.com");
+			contact.setMobNumber(988744554);
+			contact.setPhoneNumber(22803214);
+			contact.setAddress(address);
+			
+			return contact;
+		
+		}
+		
 }
