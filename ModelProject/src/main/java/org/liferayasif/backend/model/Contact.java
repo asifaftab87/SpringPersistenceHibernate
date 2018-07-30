@@ -5,6 +5,7 @@ public class Contact {
 	 private int phoneNumber;
 	 private int mobNumber;
 	 private String email;
+	 private Address address;
 	 
 	 public void setPhoneNumber(int phoneNumber)
 	 {
@@ -30,6 +31,13 @@ public class Contact {
 	 {
 		 return email;
 	 }
-	 
+	 public void setAddress(Address address)
+	 {
+		 this.address=address;
+	 }
+	 public Address getAddress()
+	 {
+		 return address;
+	 }
 	 
 }
