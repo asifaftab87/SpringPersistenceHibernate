@@ -33,8 +33,6 @@ public class AddressRestController {
 		return addressList;
 	}
 	
-	
-
 
 		@RequestMapping(value="/getAddList")
 		public List<Address> addList(){
@@ -44,7 +42,7 @@ public class AddressRestController {
 			address.setAdd2("Sealdah");
 			address.setAdd3("Dharamtalla");
 			
-			List<Address> addressList=new ArrayList<Address>();
+			List<Address> addressList = new ArrayList<Address>();
 			addressList.add(address);
 			
 			return addressList;
