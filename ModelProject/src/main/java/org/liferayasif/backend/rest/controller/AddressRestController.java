@@ -53,10 +53,12 @@ public class AddressRestController {
 		public Address addObj(){
 			Address address=new Address();
 			
-			
-			
+			address.setAdd1("CIT Rd.");
+			address.setAdd2("MG Road");
+			address.setAdd3("A R Road");
+		 
 			return address;
-			
+		
 		}
 
  
