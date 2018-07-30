@@ -48,6 +48,16 @@ public class AddressRestController {
 			return addressList;
 			
 		}
+		
+		@RequestMapping(value="/addObj")
+		public Address addObj(){
+			Address address=new Address();
+			
+			
+			
+			return address;
+			
+		}
 
  
 }
