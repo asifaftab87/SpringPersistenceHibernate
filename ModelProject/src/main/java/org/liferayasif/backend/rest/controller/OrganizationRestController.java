@@ -3,7 +3,7 @@ package org.liferayasif.backend.rest.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.liferayasif.backend.model.Address;
+
 import org.liferayasif.backend.model.Organization;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
