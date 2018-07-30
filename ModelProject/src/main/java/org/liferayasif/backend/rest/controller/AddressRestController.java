@@ -5,21 +5,15 @@ import java.util.List;
 
 import org.liferayasif.backend.model.Address;
 import org.liferayasif.backend.model.Contact;
-import org.liferayasif.backend.model.User;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value="/address")
 public class AddressRestController {
 
-//<<<<<<< HEAD
-	
-//=======
-//>>>>>>> branch 'security' of https://github.com/asifaftab87/SpringPersistenceHibernate.git
 	@RequestMapping(value="/listOfAddress")
-	public List<Address> AddressList(){
+	public List<Address> addressList(){
 		List<Address> addressList = new ArrayList<Address>();
 		Address address = new Address();
 
