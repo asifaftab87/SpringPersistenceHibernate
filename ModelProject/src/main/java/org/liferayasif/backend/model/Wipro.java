@@ -15,8 +15,9 @@ public class Wipro {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idWipro;
+	private Integer id;
 	
+	 
 	@Column(name="department")
 	private String department;
 	
@@ -30,14 +31,7 @@ public class Wipro {
 	private String location;
 	
 	
-	public void setIdWipro(Integer idWipro)
-	{
-		this.idWipro=idWipro;
-	}
-	public int getIdWipro()
-	{
-		return idWipro;
-	}
+	
 	public void setDepartment(String department)
 	{
 		this.department=department;
