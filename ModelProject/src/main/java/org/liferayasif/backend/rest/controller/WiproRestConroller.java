@@ -19,8 +19,14 @@ public class WiproRestConroller {
 	
 	public List<Wipro> getAllWipro()
 	{
+		Wipro wipro=new Wipro();
+		wipro.getAvgSalary();
+		wipro.getDepartment();
+		wipro.getlocation();
+		wipro.getNoOfEmployee();
 		
 		List<Wipro> wiproList=new ArrayList<>();
+		wiproList.add(wipro);
 		
 		return wiproList;
 		
