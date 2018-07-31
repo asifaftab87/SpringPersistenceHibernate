@@ -3,7 +3,7 @@ package org.liferayasif.backend.dao.impl;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.SQLQuery;
+import org.hibernate.Query;
 import org.liferayasif.backend.abstrct.dao.AbstractDao;
 import org.liferayasif.backend.dao.WiproDao;
 import org.liferayasif.backend.model.Wipro;
@@ -34,7 +34,7 @@ public class WiproDaoImpl  extends AbstractDao<Integer, Wipro> implements WiproD
 
 	@Override
 	public void deleteWipro(Integer id) {
-		SQLQuery query = getSession().createSQLQuery("delete from WIPRO where id = :id");
+		Query query = getSession().createSQLQuery("delete from WIPRO where id = :id");
 		query.setInteger("id", id);
 		query.executeUpdate();
 	}
