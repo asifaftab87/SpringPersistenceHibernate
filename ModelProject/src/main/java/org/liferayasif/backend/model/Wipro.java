@@ -31,6 +31,7 @@ public class Wipro {
 	private String location;
 	
 	
+	public Wipro(){}
 	
 	public void setDepartment(String department)
 	{
