@@ -13,6 +13,7 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID")
 	private Integer id;
 	
 	@Column(name="NAME")
@@ -21,6 +22,8 @@ public class User {
 	@Column(name="EMAIL")
 	private String email;
 
+	public User() {}
+	
 	public Integer getId() {
 		return id;
 	}

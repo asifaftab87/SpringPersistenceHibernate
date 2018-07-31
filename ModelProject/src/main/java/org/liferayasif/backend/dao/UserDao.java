@@ -6,7 +6,7 @@ import org.liferayasif.backend.model.User;
 
 public interface UserDao {
 
-public List<User> getAllUsers();
+	public List<User> getAllUsers();
 	
 	public User getUserById(Integer id);
 	
