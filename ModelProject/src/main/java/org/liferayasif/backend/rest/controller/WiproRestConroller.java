@@ -19,15 +19,32 @@ public class WiproRestConroller {
 	
 	public List<Wipro> getAllWipro()
 	{
-		Wipro wipro=new Wipro();
+		Wipro wipro1=new Wipro();
+		Wipro wipro2=new Wipro();
+		Wipro wipro3=new Wipro();
 		
-		wipro.setAvgSalary(35000);
-		wipro.setDepartment("IT");
-		wipro.setLocation("Chennai");
-		wipro.setNoOfEmployee(2500);
+		
+		wipro1.setAvgSalary(35000);
+		wipro1.setDepartment("IT");
+		wipro1.setLocation("Chennai");
+		wipro1.setNoOfEmployee(2500);
+		
+		wipro2.setAvgSalary(25000);
+		wipro2.setDepartment("FMG");
+		wipro2.setLocation("Kolkata");
+		wipro2.setNoOfEmployee(300);
+		
+		wipro3.setAvgSalary(18000);
+		wipro3.setDepartment("HR");
+		wipro3.setLocation("Kolkata");
+		wipro3.setNoOfEmployee(250);
+		
+		
 		
 		List<Wipro> wiproList=new ArrayList<>();
-		wiproList.add(wipro);
+		wiproList.add(wipro1);
+		wiproList.add(wipro2);
+		wiproList.add(wipro3);
 		
 		return wiproList;
 		
