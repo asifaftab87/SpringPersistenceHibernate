@@ -10,7 +10,6 @@ import javax.persistence.Table;
 public class Address {
 
 	@Id
-	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="add1")
 	private String id;
 	

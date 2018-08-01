@@ -6,7 +6,9 @@ import org.liferayasif.backend.dao.WiproDao;
 import org.liferayasif.backend.model.Wipro;
 import org.liferayasif.backend.service.WiproService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service("wiproService")
 public class WiproServiceImpl implements WiproService {
 
 	@Autowired
