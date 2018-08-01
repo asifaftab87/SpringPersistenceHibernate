@@ -14,20 +14,21 @@ public class Wipro {
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+ 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID_WIPRO")
 	private Integer id;
 	
 	 
-	@Column(name="department")
+	@Column(name="DEPARTMENT")
 	private String department;
 	
-	@Column(name="noOfEmployee")
+	@Column(name="NO_OF_EMPLOYEE")
 	private int noOfEmployee;
 	
-	@Column(name="avgSalary")
+	@Column(name="AVG_SALARY")
 	private double avgSalary;
 	
-	@Column(name="location")
+	@Column(name="LOCATION")
 	private String location;
 	
 	
