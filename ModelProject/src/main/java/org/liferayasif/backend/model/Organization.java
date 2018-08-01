@@ -9,10 +9,12 @@ public class Organization {
 	private String address;
 	private String country;
 	private String city;
+	private String state;
+						
 	public int getCompanyId() {
 		return companyId;
 	}
-	public void setCompanyId(int companyId) {
+	public void setCompanyId(int companyId) {		
 		this.companyId = companyId;
 	}
 	public int getUserId() {
@@ -50,64 +52,6 @@ public class Organization {
 	}
 	public void setState(String state) {
 		this.state = state;
-	}
-	private String state;
-	
-	public void setCompanyId(int companyId)
-	{
-		this.companyId=companyId;
-	}
-	public int getCompanyId()
-	{
-		return companyId;
-	}
-	public void setUserId(int userId)
-	{
-		this.userId=userId;
-	}
-	public int getUserId()
-	{
-		return userId;
-	}
-	public void setName(String name)
-	{
-		this.name=name;
-	}
-	public String getName()
-	{
-		return name;
-	}
-	public void setAddress(String address)
-	{
-		this.address=address;
-	}
-	public String getAddess()
-	{
-		return address;
-	}
-	public void setCountry(String country)
-	{
-		this.country=country;
-	}
-	public String getCountry()
-	{
-		return country;
-	}
-	public void setCity(String city)
-	{
-		this.city=city;
-	}
-	public String getCity()
-	{
-		return city;
-	}
-	public void setState(String state)
-	{
-		this.state=state;
-	}
-	public String getState()
-	{
-		return state;
 	}
 	
 }
