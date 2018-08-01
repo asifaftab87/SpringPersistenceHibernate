@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrganizationRestController {
 	
 	@RequestMapping(value="/listOfOrg")
-	public List<Organization>listOrg(){
+	public List<Organization> getAllOrgs(){
 		
 		Organization organization1 = new Organization();
 		Organization organization2 = new Organization();

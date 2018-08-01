@@ -5,19 +5,15 @@ import java.util.List;
 
 import org.liferayasif.backend.model.Address;
 import org.liferayasif.backend.model.Contact;
-import org.liferayasif.backend.model.User;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value="/address")
 public class AddressRestController {
 
-//<<<<<<< HEAD
-	
-//=======
-//>>>>>>> branch 'security' of https://github.com/asifaftab87/SpringPersistenceHibernate.git
+
+	//single line comment
 	@RequestMapping(value="/listOfAddress")
 	public List<Address> AddressList(){
 		List<Address> addressList = new ArrayList<Address>();
@@ -37,16 +33,32 @@ public class AddressRestController {
 
 		@RequestMapping(value="/getAddList")
 		public List<Address> addList(){
-			Address address=new Address();
+			Address address1=new Address();
+			Address address2=new Address();
+			Address address3=new Address();
 			
-			address.setAdd1("Howrah");
-			address.setAdd2("Sealdah");
-			address.setAdd3("Dharamtalla");
+			address1.setAdd1("Howrah");
+			address1.setAdd2("Sealdah");
+			address1.setAdd3("Dharamtalla");
 			
-			List<Address> addressList = new ArrayList<Address>();
-			addressList.add(address);
+			address2.setAdd1("aaa");
+			address2.setAdd2("bbbb");
+			address2.setAdd3("ccccc");
 			
-			return addressList;
+			address3.setAdd1("11111");
+			address3.setAdd2("22222");
+			address3.setAdd3("333333");
+			
+			List<Address> addList=new ArrayList<Address>();
+			
+			addList.add(address1);
+			addList.add(address2);
+			addList.add(address3);
+			
+			/*List<Address> addressList = new ArrayList<Address>();
+			addressList.add(address);*/
+			
+			return addList;
 			
 		}
 		
@@ -72,9 +84,6 @@ public class AddressRestController {
 			address.setAdd3("CM block");
 			
 			contact.setEmail("karim@ymail.com");
-			contact.setMobNumber(988744554);
-			contact.setPhoneNumber(22803214);
-			contact.setAddress(address);
 			
 			return contact;
 		

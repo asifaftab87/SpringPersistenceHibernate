@@ -44,3 +44,19 @@ CREATE TABLE `CONTACT` (
    `CREATE_ID` varchar(20) CHARACTER SET latin1 DEFAULT NULL,
    PRIMARY KEY (`CONTACT_ID`)
  ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ CREATE TABLE `websystique`.`wipro` (
+  `idWipro` INT NOT NULL,
+  `department` VARCHAR(45) NOT NULL,
+  `noOfEmployee` INT NOT NULL,
+  `avgSalary` DOUBLE NOT NULL,
+  `location` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idWipro`),
+  UNIQUE INDEX `department_UNIQUE` (`department` ASC),
+  UNIQUE INDEX `location_UNIQUE` (`location` ASC));
