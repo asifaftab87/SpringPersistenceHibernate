@@ -1,1 +1,6 @@
 /target/
+<<<<<<< HEAD
+=======
+/.classpath
+/.project
+>>>>>>> branch 'security' of https://github.com/asifaftab87/SpringPersistenceHibernate.git
