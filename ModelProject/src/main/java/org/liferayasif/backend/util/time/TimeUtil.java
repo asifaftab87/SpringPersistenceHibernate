@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class TimeUtil {
 
-	protected Timestamp getSqlTimStmp() {
+	public static Timestamp getSqlTimStmp() {
 		Calendar cal = Calendar.getInstance();
 		Date curr = cal.getTime();
 		Timestamp cTimstmp = new java.sql.Timestamp(curr.getTime());
