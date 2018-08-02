@@ -1,10 +1,10 @@
-package org.liferayasif.backend.dao;
+package org.liferayasif.backend.service;
 
 import java.util.List;
 
 import org.liferayasif.backend.model.UserAddress;
 
-public interface UserAddressDao {
+public interface UserAddressService {
 
 	public List<UserAddress> getAllUserAddresses();
 	
@@ -12,10 +12,12 @@ public interface UserAddressDao {
 	
 	public void addUserAddress(UserAddress userAddress);
 	
+	public void addUserAddressList(List<UserAddress> userAddressList);
+	
 	public void deleteUserAddress(Integer id);
 	
 	public UserAddress updateUserAddress(UserAddress userAddress);
 	
 	public List<UserAddress> getUserAddressesByUserId(Integer id);
-		
+	
 }

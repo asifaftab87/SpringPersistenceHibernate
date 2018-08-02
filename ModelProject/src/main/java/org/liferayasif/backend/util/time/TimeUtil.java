@@ -6,11 +6,11 @@ import java.util.Date;
 
 public class TimeUtil {
 
-	protected Timestamp getSQLTimestamp() {
-		Calendar calendar = Calendar.getInstance();
-		Date now = calendar.getTime();
-		Timestamp currentTimestamp = new java.sql.Timestamp(now.getTime());
-		return currentTimestamp;
+	public static Timestamp getSqlTimStmp() {
+		Calendar cal = Calendar.getInstance();
+		Date curr = cal.getTime();
+		Timestamp cTimstmp = new java.sql.Timestamp(curr.getTime());
+		return cTimstmp;
 	}
 	
 }

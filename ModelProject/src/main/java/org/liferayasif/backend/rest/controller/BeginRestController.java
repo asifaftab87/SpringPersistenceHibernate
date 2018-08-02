@@ -1,8 +1,10 @@
 package org.liferayasif.backend.rest.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.liferayasif.backend.model.User;
+import org.liferayasif.backend.model.UserAddress;
 import org.liferayasif.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +23,7 @@ public class BeginRestController {
 	@RequestMapping(value="/first")
 	public User sample(@RequestParam("id") int id){
 		User user = userService.getUserById(id);
+		user.setUserAddressList(new ArrayList<UserAddress>());
 		System.out.println(user);
 		return user;
 	}
