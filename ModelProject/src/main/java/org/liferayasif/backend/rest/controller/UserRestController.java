@@ -29,15 +29,17 @@ public class UserRestController {
 		
 		User user = userService.getUserById(id);
 		
-		List<UserAddress> userAddressList = new ArrayList<UserAddress>();
+		 List<UserAddress> userAddressList = new ArrayList<UserAddress>();
+		 
 		
 		if(user != null){
 			userAddressList = userAddressService.getUserAddressesByUserId(id);
 			
+			
 			if(userAddressList != null && userAddressList.size()>0){
 				user.setUserAddressList(userAddressList);
 			}
-		}
+		} 
 		
 		System.out.println(user);
 		return user;
