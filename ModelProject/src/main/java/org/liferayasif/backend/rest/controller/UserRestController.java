@@ -56,16 +56,4 @@ public class UserRestController {
 	}
 	
 	
-	@RequestMapping(value="/first")
-	public User sample(@RequestParam("id") int id){
-		User user = userService.getUserById(id);
-		
-		List<UserAddress> userAddressList = new ArrayList<UserAddress>();
-		userAddressList = userAddressService.getUserAddressesByUserId(id);
-		user.setUserAddressList(userAddressList);
-		System.out.println(user);
-		return user;
-	}
-	
-	
 }
