@@ -47,23 +47,17 @@ CREATE TABLE `CONTACT` (
  
  
  
+ WIPRO	CREATE TABLE `wipro` (
+   `ID_WIPRO` int(11) NOT NULL AUTO_INCREMENT,
+   `DEPARTMENT` varchar(45) DEFAULT NULL,
+   `NO_OF_EMPLOYEE` int(11) DEFAULT NULL,
+   `AVG_SALARY` double DEFAULT NULL,
+   `LOCATION` varchar(45) DEFAULT NULL,
+   PRIMARY KEY (`ID_WIPRO`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1
  
  
- 
- 
- CREATE TABLE `websystique`.`wipro` (
-  `idWipro` INT NOT NULL,
-  `department` VARCHAR(45) NOT NULL,
-  `noOfEmployee` INT NOT NULL,
-  `avgSalary` DOUBLE NOT NULL,
-  `location` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`idWipro`),
-  UNIQUE INDEX `department_UNIQUE` (`department` ASC),
-  UNIQUE INDEX `location_UNIQUE` (`location` ASC));
-  
-  
-  
-  
+    
   
   SCHOOL	CREATE TABLE `school` (
    `ID` int(11) NOT NULL AUTO_INCREMENT,
