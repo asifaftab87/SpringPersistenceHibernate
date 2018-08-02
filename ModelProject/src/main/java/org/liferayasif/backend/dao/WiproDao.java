@@ -12,7 +12,7 @@ public interface WiproDao {
 	
 	public Wipro getWiproById(Integer id);
 	
-	public Wipro getWiproByAvgSalary(Integer avgSalary);
+	public List<Wipro> getWiproByAvgSalary(double avgSalary);
 	
 	public void adddWipro(Wipro wipro);
 	

@@ -43,9 +43,9 @@ public class WiproServiceImpl implements WiproService {
 	}
 
 	@Override
-	public Wipro getWiproByAvgSalary(Integer avgSalary) {
-		Wipro wipro=wiproDao.getWiproByAvgSalary(avgSalary);
-		return wipro;
+	public List<Wipro> getWiproByAvgSalary(double avgSalary) {
+		List<Wipro> wiproList =wiproDao.getWiproByAvgSalary(avgSalary);
+		return wiproList;
 	}
 	
 	

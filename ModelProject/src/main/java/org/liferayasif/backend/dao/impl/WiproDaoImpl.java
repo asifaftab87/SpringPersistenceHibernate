@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.liferayasif.backend.abstrct.dao.AbstractDao;
 import org.liferayasif.backend.dao.WiproDao;
 import org.liferayasif.backend.model.Wipro;
@@ -39,10 +40,14 @@ public class WiproDaoImpl  extends AbstractDao<Integer, Wipro> implements WiproD
 		query.executeUpdate();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public Wipro getWiproByAvgSalary(Integer avgSalary) {
+	public List<Wipro> getWiproByAvgSalary(double avgSalary) {
 		
-		return getByKey(avgSalary);
+		Criteria criteria = getSession().createCriteria(Wipro.class);
+		criteria.add(Restrictions.eq("avgSalary", avgSalary));
+		List<Wipro> wiproList = criteria.list();
+		return wiproList;
 	}
 
 	

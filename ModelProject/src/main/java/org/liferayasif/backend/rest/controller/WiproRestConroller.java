@@ -27,10 +27,10 @@ public class WiproRestConroller {
 	}
 	
 	@RequestMapping(value="/getBySalary")
-	public Wipro salary(@RequestParam("avgSalary") int id){
-		Wipro wipro=wiproService.getWiproById(id);
-		System.out.println(wipro);
-		return wipro;
+	public List<Wipro> salary(@RequestParam("avgSalary") double avgSalary){
+		List<Wipro> wiproList =wiproService.getWiproByAvgSalary(avgSalary);
+		System.out.println(wiproList);
+		return wiproList;
 	}
 	
 	@RequestMapping(value="getAllWipros")
