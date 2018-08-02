@@ -25,7 +25,7 @@ public class UserAddress implements Serializable{
 	private Integer userId;
 	
 	@Column(name="ADDRESS1")
-	private Integer address1;
+	private String address1;
 	
 	@Column(name="ADDRESS2")
 	private String address2;
@@ -82,11 +82,11 @@ public class UserAddress implements Serializable{
 		this.userId = userId;
 	}
 
-	public Integer getAddress1() {
+	public String getAddress1() {
 		return address1;
 	}
 
-	public void setAddress1(Integer address1) {
+	public void setAddress1(String address1) {
 		this.address1 = address1;
 	}
 
