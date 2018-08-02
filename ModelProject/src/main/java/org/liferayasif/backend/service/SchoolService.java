@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.liferayasif.backend.model.School;
 
+
 public interface SchoolService {
 
 		 

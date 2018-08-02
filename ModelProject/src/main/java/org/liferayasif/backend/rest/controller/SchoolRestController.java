@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value="/beginn")
+@RequestMapping(value="/school")
 public class SchoolRestController {
 	
 	@Autowired
@@ -33,13 +33,22 @@ public class SchoolRestController {
 	}
 	
 	
-	@RequestMapping(value="/addSchhol" , method=RequestMethod.POST)
+	@RequestMapping(value="/addSchool" , method=RequestMethod.POST)
 	public int addSchol(@RequestBody School school)
 	{
 		schoolService.addSchool(school);
 		return 0;
 	}
 	
+	
+	@RequestMapping(value="/addSchools" , method=RequestMethod.POST)
+	public int addScools(@RequestBody List<School> schoolList)
+	{
+		for(School school : schoolList){
+			schoolService.addSchool(school);
+		}
+		return 0;
+	}
 	
 	
 	

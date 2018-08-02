@@ -17,8 +17,4 @@ public interface WiproDao {
 	public void deleteWipro(Integer id);
 	
 	
-	
-
-	
-	
 }

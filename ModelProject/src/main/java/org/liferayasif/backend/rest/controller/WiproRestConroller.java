@@ -1,12 +1,13 @@
 package org.liferayasif.backend.rest.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.liferayasif.backend.model.Wipro;
 import org.liferayasif.backend.service.WiproService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -33,7 +34,20 @@ public class WiproRestConroller {
 		return wiproList;
 		
 	}
+	@RequestMapping(value="addWipro" , method=RequestMethod.POST)
+	public int addWipro(@RequestBody Wipro wipro)
+	{
+		wiproService.adddWipro(wipro);
+		return 0;
+	}
 	
-	
-	
+	@RequestMapping(value="addWipros" , method=RequestMethod.POST)
+	public int addWipros(@RequestBody List<Wipro> wiproList)
+	{
+		for(Wipro wiprosList : wiproList)
+		{
+			wiproService.adddWipro(wiprosList);
+		}
+		return 0;
+	}
 }

@@ -7,8 +7,10 @@ import org.liferayasif.backend.model.Wipro;
 import org.liferayasif.backend.service.WiproService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service("wiproService")
+@Transactional
 public class WiproServiceImpl implements WiproService {
 
 	@Autowired
@@ -31,6 +33,8 @@ public class WiproServiceImpl implements WiproService {
 		wiproDao.adddWipro(wipro);
 		
 	}
+	
+	
 
 	@Override
 	public void deleteWipro(Integer id) {

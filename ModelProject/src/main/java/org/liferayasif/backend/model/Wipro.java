@@ -11,14 +11,11 @@ import javax.persistence.Table;
 @Table(name="WIPRO")
 public class Wipro {
 
-	
-	
 	@Id
  	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID_WIPRO")
 	private Integer id;
 	
-	 
 	@Column(name="DEPARTMENT")
 	private String department;
 	
@@ -30,7 +27,6 @@ public class Wipro {
 	
 	@Column(name="LOCATION")
 	private String location;
-	
 	
 	public Wipro(){}
 	
