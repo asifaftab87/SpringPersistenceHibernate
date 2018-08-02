@@ -64,4 +64,11 @@ public class BeginRestController {
 		userService.updateUser(user);
 		return 0;
 	}
+	
+	//Search using column name of user table
+	@RequestMapping(value="/usersByName", method=RequestMethod.GET)
+	public List<User> findByName(@RequestParam("name") String name){
+		List<User> userList = userService.findByName(name);
+		return userList;
+	}
 }
