@@ -57,4 +57,11 @@ public class BeginRestController {
 		int cal=65*98;
 		return cal;
 	}
+	
+	//to update user
+	@RequestMapping(value="/updateUser", method=RequestMethod.POST)
+	public int updateUser(@RequestBody User user){
+		userService.updateUser(user);
+		return 0;
+	}
 }

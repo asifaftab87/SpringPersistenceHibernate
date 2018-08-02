@@ -6,7 +6,7 @@ import org.liferayasif.backend.model.Identification;
 
 public interface IdentificationService {
 
-public List<Identification> getAllIdentification();
+	public List<Identification> getAllIdentification();
 	
 	public Identification getIdentificationById(Integer id);
 	
