@@ -39,6 +39,12 @@ public class WiproDaoImpl  extends AbstractDao<Integer, Wipro> implements WiproD
 		query.executeUpdate();
 	}
 
+	@Override
+	public Wipro getWiproByAvgSalary(Integer avgSalary) {
+		
+		return getByKey(avgSalary);
+	}
+
 	
 
 	

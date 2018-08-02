@@ -60,3 +60,16 @@ CREATE TABLE `CONTACT` (
   PRIMARY KEY (`idWipro`),
   UNIQUE INDEX `department_UNIQUE` (`department` ASC),
   UNIQUE INDEX `location_UNIQUE` (`location` ASC));
+  
+  
+  
+  
+  
+  SCHOOL	CREATE TABLE `school` (
+   `ID` int(11) NOT NULL AUTO_INCREMENT,
+   `SCHOOL_NAME` varchar(45) DEFAULT NULL,
+   `NO_STUDENT` int(11) DEFAULT NULL,
+   `LOCATION` varchar(45) DEFAULT NULL,
+   `FEES` double DEFAULT NULL,
+   PRIMARY KEY (`ID`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1

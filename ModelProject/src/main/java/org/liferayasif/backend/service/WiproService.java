@@ -10,6 +10,8 @@ public interface WiproService {
 	
 	public Wipro getWiproById(Integer id);
 	
+	public Wipro getWiproByAvgSalary(Integer avgSalary);
+	
 	public void adddWipro(Wipro wipro);
 	
 	public void deleteWipro(Integer id);

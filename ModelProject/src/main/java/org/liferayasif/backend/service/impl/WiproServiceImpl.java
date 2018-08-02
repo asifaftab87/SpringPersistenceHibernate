@@ -41,6 +41,12 @@ public class WiproServiceImpl implements WiproService {
 		wiproDao.deleteWipro(id);
 		
 	}
+
+	@Override
+	public Wipro getWiproByAvgSalary(Integer avgSalary) {
+		Wipro wipro=wiproDao.getWiproByAvgSalary(avgSalary);
+		return wipro;
+	}
 	
 	
 }
