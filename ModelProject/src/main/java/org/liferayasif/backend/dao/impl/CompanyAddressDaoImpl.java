@@ -47,11 +47,13 @@ public class CompanyAddressDaoImpl extends AbstractDao<Integer , CompanyAddress>
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public List<CompanyAddress> getCompanyAddressByUserId(Integer id) {
 
 		Criteria criteria = getSession().createCriteria(CompanyAddress.class);
 		criteria.add(Restrictions.eq("userId" , id));
 		
+	
 		List<CompanyAddress> companyAddressList = criteria.list();
 		return companyAddressList;
 		

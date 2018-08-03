@@ -18,20 +18,7 @@ public interface CompanyAddressService {
 	
 	public CompanyAddress updateCompanyAddress(CompanyAddress companyAddress);
 	
-	public List<CompanyAddress> getCompanyAddressesByCompaanyId(Integer id);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public List<CompanyAddress> getCompanyAddressesByCompanyId(Integer id);
 	
 	
 	

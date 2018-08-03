@@ -35,7 +35,7 @@ public class CompanyDaoImpl extends AbstractDao<Integer ,Company> implements Com
 
 	@Override
 	public void deleteCompany(Integer id) {
-		Query query = getSession().createSQLQuery("delte from Company where id=:id");
+		Query query = getSession().createSQLQuery("delete from Company where id=:id");
 		query.setInteger("id", id);
 		query.executeUpdate();
 	}

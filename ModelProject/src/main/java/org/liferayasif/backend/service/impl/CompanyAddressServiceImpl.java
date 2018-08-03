@@ -34,8 +34,8 @@ public class CompanyAddressServiceImpl implements CompanyAddressService {
 	public void addCompanyAddress(CompanyAddress companyAddress) {
 		companyAddress.setCreateDt(TimeUtil.getSqlTimStmp());
 		companyAddress.setUpdateDt(TimeUtil.getSqlTimStmp());
-		companyAddressDao.addCompanyAddress(companyAddress);
 	}
+	
 
 	@Override
 	public void addCompanyAddressList(List<CompanyAddress> companyAddressList) {
@@ -61,10 +61,13 @@ public class CompanyAddressServiceImpl implements CompanyAddressService {
 		return companyAddressDao.updateCompanyAddress(companyAddress);
 	}
 
+
 	@Override
-	public List<CompanyAddress> getCompanyAddressesByCompaanyId(Integer id) {
+	public List<CompanyAddress> getCompanyAddressesByCompanyId(Integer id) {
 		List<CompanyAddress> companyAddressList =companyAddressDao.getCompanyAddressByUserId(id);
 		return companyAddressList;
 	}
+
+	
 
 }
