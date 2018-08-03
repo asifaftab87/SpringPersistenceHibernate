@@ -46,6 +46,7 @@ public class CompanyDaoImpl extends AbstractDao<Integer ,Company> implements Com
 		return company;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Company> findByName(String name) {
 		Criteria criteria = getSession().createCriteria(Company.class);

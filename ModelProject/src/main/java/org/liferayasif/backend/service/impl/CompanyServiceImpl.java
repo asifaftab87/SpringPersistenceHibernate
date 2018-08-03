@@ -12,9 +12,9 @@ import org.springframework.stereotype.Service;
 
 @Service("companyService")
 @Transactional
-public class CompanyServiceImpl{// implements CompanyService{
+public class CompanyServiceImpl implements CompanyService{
 
-	/*@Autowired
+	@Autowired
 	private CompanyDao companyDao;
 	
 	@Override
@@ -52,7 +52,7 @@ public class CompanyServiceImpl{// implements CompanyService{
 		
 		return companyDao.findByName(name);
 	}
-	*/
+	
 	
 	
 
