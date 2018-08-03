@@ -25,7 +25,7 @@ public class CompanyServiceImpl implements CompanyService{
 
 	@Override
 	public Company getCompanyById(Integer Id) {
-		Company company=companyDao.getCompnayById(Id);
+		Company company=companyDao.getCompanyById(Id);
 		return company;
 	}
 

@@ -8,7 +8,7 @@ public interface CompanyDao {
 	
 	public List<Company> getAllCompanys();
 	
-	public Company getCompnayById(Integer Id);
+	public Company getCompanyById(Integer Id);
 	
 	public void addCompany(Company company);
 	

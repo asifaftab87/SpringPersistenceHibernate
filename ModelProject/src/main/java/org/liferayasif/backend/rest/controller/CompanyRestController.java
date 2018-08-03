@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = PathConstants.USER)
 public class CompanyRestController {
 	
-	/*@Autowired
+	@Autowired
 	private CompanyService companyService;
 	
 	@Autowired
@@ -32,7 +32,7 @@ public class CompanyRestController {
 		List<CompanyAddress> companyAddressList=new ArrayList<CompanyAddress>();
 		if(company !=null)
 		{
-			companyAddressList = companyAddressService.getCompanyAddressesByCompaanyId(id);
+			companyAddressList = companyAddressService.getCompanyAddressesByCompanyId(id);
 			
 			if(companyAddressList != null && companyAddressList.size()>0)
 			{
@@ -57,7 +57,7 @@ public class CompanyRestController {
 		return;
 	}
 	
-*/
+
 	
 	
 	

@@ -22,7 +22,7 @@ public class CompanyDaoImpl extends AbstractDao<Integer ,Company> implements Com
 	}
 
 	@Override
-	public Company getCompnayById(Integer id) {
+	public Company getCompanyById(Integer id) {
 		 
 		return getByKey(id);
 	}

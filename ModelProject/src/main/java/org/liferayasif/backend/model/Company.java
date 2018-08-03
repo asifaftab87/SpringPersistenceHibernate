@@ -63,7 +63,7 @@ public class Company implements Serializable {
 	public List<CompanyAddress> getCompanyAddressList(){
 		return companyAddressList;
 	}
-	public void setCompanyAddressList(List<CompanyAddress> companyCompanyList){
+	public void setCompanyAddressList(List<CompanyAddress> companyAddressList){
 		
 		this.companyAddressList=companyAddressList;
 		
