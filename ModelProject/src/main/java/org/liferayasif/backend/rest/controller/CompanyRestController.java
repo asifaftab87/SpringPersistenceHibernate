@@ -25,7 +25,7 @@ public class CompanyRestController {
 	@Autowired
 	private CompanyAddressService companyAddressService;
 	
-	@RequestMapping(value = PathConstants2.FIND_BY_ID)
+	@RequestMapping(value = PathConstants.FIND_BY_ID)
 	public Company findById(@RequestParam("id") int id)
 	{
 		Company company = companyService.getCompanyById(id);
@@ -47,7 +47,7 @@ public class CompanyRestController {
 		
 	}
 	
-	@RequestMapping(value=PathConstants2.ADD_USER)
+	@RequestMapping(value=PathConstants.ADD_USER)
 	public void add(@RequestBody Company company){
 		
 		
@@ -59,7 +59,7 @@ public class CompanyRestController {
 		return;
 	}
 	
-	@RequestMapping(value=PathConstants2.USER_ADD)
+	@RequestMapping(value=PathConstants.USER_ADD)
 	public void addUser(@RequestBody Company company)
 	{
 		companyService.addCompany(company);
@@ -67,7 +67,12 @@ public class CompanyRestController {
 		 return;
 	}
 		
-
+	@RequestMapping(value=PathConstants.USER_DEL)
+	public void deleteCompany(Integer id) {
+		companyService.deleteCompany(id);
+		return;
+		
+	}
 		
 	
 	

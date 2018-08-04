@@ -6,4 +6,6 @@ public interface PathConstants {
 	String FIND_BY_ID 									= "/findById";
 	String ADD_USER 									= "/addUser";
 	String COMP 										= "/comp";
+	String USER_ADD										= "/userAdd";
+	String USER_DEL										="/delDetail";
 }
