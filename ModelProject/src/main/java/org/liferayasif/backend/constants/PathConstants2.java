@@ -1,9 +1,9 @@
 package org.liferayasif.backend.constants;
 
-public interface PathConstants {
+public interface PathConstants2 {
 
-	String USER 										= "/user";
+	String USER 										= "/Comp";
 	String FIND_BY_ID 									= "/findById";
 	String ADD_USER 									= "/addUser";
-	String COMP 										= "/comp";
+	String USER_ADD										="/userAdd";
 }

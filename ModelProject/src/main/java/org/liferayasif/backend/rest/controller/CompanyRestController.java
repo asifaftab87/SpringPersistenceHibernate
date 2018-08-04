@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.liferayasif.backend.constants.PathConstants;
+import org.liferayasif.backend.constants.PathConstants2;
 import org.liferayasif.backend.model.Company;
 import org.liferayasif.backend.model.CompanyAddress;
 import org.liferayasif.backend.service.CompanyAddressService;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = PathConstants.USER)
+@RequestMapping(value = PathConstants.COMP)
 public class CompanyRestController {
 	
 	@Autowired
@@ -24,7 +25,7 @@ public class CompanyRestController {
 	@Autowired
 	private CompanyAddressService companyAddressService;
 	
-	@RequestMapping(value = PathConstants.FIND_BY_ID)
+	@RequestMapping(value = PathConstants2.FIND_BY_ID)
 	public Company findById(@RequestParam("id") int id)
 	{
 		Company company = companyService.getCompanyById(id);
@@ -43,9 +44,10 @@ public class CompanyRestController {
 		return company;
 		
 		
+		
 	}
 	
-	@RequestMapping(value=PathConstants.ADD_USER)
+	@RequestMapping(value=PathConstants2.ADD_USER)
 	public void add(@RequestBody Company company){
 		
 		
@@ -57,15 +59,16 @@ public class CompanyRestController {
 		return;
 	}
 	
+	@RequestMapping(value=PathConstants2.USER_ADD)
+	public void addUser(@RequestBody Company company)
+	{
+		companyService.addCompany(company);
+		
+		 return;
+	}
+		
 
-	
-	
-	
-	
-	
-	
-	
-	
+		
 	
 	
 	
