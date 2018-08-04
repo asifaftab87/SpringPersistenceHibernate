@@ -33,7 +33,7 @@ public class Building {
 		return floors;
 	}
 
-	public void setFloors(int floors) {
+	public void setFloors(Integer floors) {
 		this.floors = floors;
 	}
 
@@ -49,7 +49,7 @@ public class Building {
 		return flats;
 	}
 
-	public void setFlats(int flats) {
+	public void setFlats(Integer flats) {
 		this.flats = flats;
 	}
 

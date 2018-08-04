@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = PathConstants.USER)
+@RequestMapping(value = PathConstants.COMPANY)
 public class CompanyRestController {
 	
 	@Autowired
@@ -24,7 +24,7 @@ public class CompanyRestController {
 	@Autowired
 	private CompanyAddressService companyAddressService;
 	
-	@RequestMapping(value = PathConstants.FIND_BY_ID)
+	@RequestMapping(value = PathConstants.FIND_BY_ID_COMPANY)
 	public Company findById(@RequestParam("id") int id)
 	{
 		Company company = companyService.getCompanyById(id);
@@ -45,7 +45,7 @@ public class CompanyRestController {
 		
 	}
 	
-	@RequestMapping(value=PathConstants.ADD_USER)
+	@RequestMapping(value=PathConstants.ADD_COMPANY)
 	public void add(@RequestBody Company company){
 		
 		
