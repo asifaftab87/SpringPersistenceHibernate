@@ -22,6 +22,7 @@ public class CompanyRestController {
 	@Autowired
 	private CompanyService companyService;
 	
+	
 	@Autowired
 	private CompanyAddressService companyAddressService;
 	
