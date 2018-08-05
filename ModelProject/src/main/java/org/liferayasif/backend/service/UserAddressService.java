@@ -10,9 +10,9 @@ public interface UserAddressService {
 	
 	public UserAddress getUserAddressById(Integer id);
 	
-	public void addUserAddress(UserAddress userAddress);
+	public UserAddress addUserAddress(UserAddress userAddress);
 	
-	public void addUserAddressList(List<UserAddress> userAddressList);
+	public List<UserAddress> addUserAddressList(List<UserAddress> userAddressList);
 	
 	public void deleteUserAddress(Integer id);
 	

@@ -17,7 +17,7 @@ public class UserAddress implements Serializable{
 	private static final long serialVersionUID = -4316158444887217595L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="USER_ADDRESS_ID")
 	private Integer id;
 	
@@ -51,17 +51,17 @@ public class UserAddress implements Serializable{
 	@Column(name="TEL_NUM")
 	private String telNum;
 	
-	@Column(name="CREATE_ID")
-	private String createId;
+	@Column(name="CRT_ID")
+	private String crtId;
 	
-	@Column(name="CREATE_DT")
-	private Timestamp createDt;
+	@Column(name="CRT_DT")
+	private Timestamp crtDt;
 	
-	@Column(name="UPDATE_ID")
-	private String updateId;
+	@Column(name="UPDT_ID")
+	private String updtId;
 	
-	@Column(name="UPDATE_DT")
-	private Timestamp updateDt;
+	@Column(name="UPDT_DT")
+	private Timestamp updtDt;
 	
 	@Column(name="STATUS")
 	private String status;
@@ -154,36 +154,36 @@ public class UserAddress implements Serializable{
 		this.telNum = telNum;
 	}
 
-	public String getCreateId() {
-		return createId;
+	public String getCrtId() {
+		return crtId;
 	}
 
-	public void setCreateId(String createId) {
-		this.createId = createId;
+	public void setCrtId(String crtId) {
+		this.crtId = crtId;
 	}
 
-	public Timestamp getCreateDt() {
-		return createDt;
+	public Timestamp getCrtDt() {
+		return crtDt;
 	}
 
-	public void setCreateDt(Timestamp createDt) {
-		this.createDt = createDt;
+	public void setCrtDt(Timestamp crtDt) {
+		this.crtDt = crtDt;
 	}
 
-	public String getUpdateId() {
-		return updateId;
+	public String getUpdtId() {
+		return updtId;
 	}
 
-	public void setUpdateId(String updateId) {
-		this.updateId = updateId;
+	public void setUpdtId(String updtId) {
+		this.updtId = updtId;
 	}
 
-	public Timestamp getUpdateDt() {
-		return updateDt;
+	public Timestamp getUpdtDt() {
+		return updtDt;
 	}
 
-	public void setUpdateDt(Timestamp updateDt) {
-		this.updateDt = updateDt;
+	public void setUpdtDt(Timestamp updtDt) {
+		this.updtDt = updtDt;
 	}
 
 	public String getStatus() {

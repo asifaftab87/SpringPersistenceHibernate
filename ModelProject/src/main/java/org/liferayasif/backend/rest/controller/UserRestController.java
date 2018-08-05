@@ -11,6 +11,7 @@ import org.liferayasif.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,21 +42,25 @@ public class UserRestController {
 			}
 		} 
 		
-		System.out.println(user);
 		return user;
 	}
 	
-	@RequestMapping(value=PathConstants.ADD_USER)
-	public void add(@RequestBody User user){
+	@RequestMapping(value=PathConstants.ADD_USER, method=RequestMethod.POST)
+	public User add(@RequestBody User user){
 		
-		userService.addUser(user);
+		user = userService.addUser(user);
 		
 		List<UserAddress> userAddressList = user.getUserAddressList();
 		
+		if(userAddressList != null){
+			for(UserAddress userAddress : userAddressList){
+				userAddress.setUserId(user.getId());
+			}
+		}
+		
 		userAddressService.addUserAddressList(userAddressList);
 		
-		return;
+		return user;
 	}
-	
 	
 }

@@ -27,8 +27,9 @@ public class UserDaoImpl  extends AbstractDao<Integer, User> implements UserDao{
 	}
 
 	@Override
-	public void addUser(User user) {
+	public User addUser(User user) {
 		persist(user);
+		return user;
 	}
 
 	@Override
