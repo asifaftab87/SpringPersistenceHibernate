@@ -34,12 +34,8 @@ public class UserRestController {
 		 
 		
 		if(user != null){
-			userAddressList = userAddressService.getUserAddressesByUserId(id);
-			
-			
-			if(userAddressList != null && userAddressList.size()>0){
-				user.setUserAddressList(userAddressList);
-			}
+			userAddressList = userAddressService.getUserAddressesByUserId(id);		
+			user.setUserAddressList(userAddressList);
 		} 
 		
 		return user;
