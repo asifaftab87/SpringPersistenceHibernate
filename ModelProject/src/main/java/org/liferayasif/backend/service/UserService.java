@@ -10,7 +10,7 @@ public interface UserService {
 	
 	public User getUserById(Integer id);
 	
-	public void addUser(User user);
+	public User addUser(User user);
 	
 	public void deleteUser(Integer id);
 	

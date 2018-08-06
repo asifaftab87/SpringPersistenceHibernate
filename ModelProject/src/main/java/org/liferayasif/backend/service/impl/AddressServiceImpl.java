@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.liferayasif.backend.dao.AddressDao;
 import org.liferayasif.backend.model.Address;
-import org.liferayasif.backend.model.User;
 import org.liferayasif.backend.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,7 +40,7 @@ public class AddressServiceImpl implements AddressService{
 	}
 
 	@Override
-	public User updateAddress(Address address) {
+	public Address updateAddress(Address address) {
 		return null;
 	}
 

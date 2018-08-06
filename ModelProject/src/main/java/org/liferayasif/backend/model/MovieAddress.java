@@ -4,18 +4,21 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class CompanyAddress implements Serializable {
+@Entity
+@Table(name="MOVIE_ADDRESS")
+public class MovieAddress implements Serializable {
 
-	
-	private static final long serialVersionUID = -9029820225530278557L;
+	private static final long serialVersionUID = 432394068784229286L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="USER_ADDRESS_ID")
+	@Column(name="MOVIE_ADDRESS_ID")
 	private Integer id;
 	
 	
@@ -28,10 +31,8 @@ public class CompanyAddress implements Serializable {
 	@Column(name="ADDRESS2")
 	private String address2;
 	
-	
 	@Column(name="ADDRESS3")
 	private String address3;
-	
 	
 	@Column(name="ADDRESS4")
 	private String address4;
@@ -57,7 +58,6 @@ public class CompanyAddress implements Serializable {
 	@Column(name="CREATE_DT")
 	private Timestamp createDt;
 	
-	
 	@Column(name="UPDATE_ID")
 	private String updateId;
 	
@@ -66,57 +66,55 @@ public class CompanyAddress implements Serializable {
 	
 	@Column(name="STATUS")
 	private String status;
-	
-	public Integer getId()
-	{
+
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Integer id)
-	{
-		this.id=id;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public Integer getUserId()
-	{
+
+	public Integer getUserId() {
 		return userId;
 	}
-	public void setUserId(Integer userId)
-	{
-		this.userId=userId;
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
-	
-	public String getAddress1()
-	{
+
+	public String getAddress1() {
 		return address1;
 	}
-	public void setAddress1(String address1)
-	{
-		this.address1=address1;
+
+	public void setAddress1(String address1) {
+		this.address1 = address1;
 	}
-	public String getAddress2()
-	{
+
+	public String getAddress2() {
 		return address2;
 	}
-	public void setAddress2(String address2)
-	{
-		this.address2=address2;
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
 	}
-	public String getAddress3()
-	{
+
+	public String getAddress3() {
 		return address3;
 	}
-	public void setAddress3(String address3)
-	{
-		this.address3=address3;
+
+	public void setAddress3(String address3) {
+		this.address3 = address3;
 	}
-	public String getAddress4()
-	{
+
+	public String getAddress4() {
 		return address4;
 	}
-	public void setAddress4(String address4)
-	{
-		this.address4=address4;
+
+	public void setAddress4(String address4) {
+		this.address4 = address4;
 	}
-	
+
 	public String getPostcode() {
 		return postcode;
 	}
@@ -145,7 +143,7 @@ public class CompanyAddress implements Serializable {
 		return country;
 	}
 
-	public void setCntry(String country) {
+	public void setCountry(String country) {
 		this.country = country;
 	}
 
@@ -196,10 +194,5 @@ public class CompanyAddress implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
-	
-	
-	
-	
+
 }

@@ -30,16 +30,16 @@ public class UserAddressServiceImpl implements UserAddressService{
 	}
 
 	@Override
-	public void addUserAddress(UserAddress userAddress) {
+	public UserAddress addUserAddress(UserAddress userAddress) {
 		
-		userAddress.setCreateDt(TimeUtil.getSqlTimStmp());
-		userAddress.setUpdateDt(TimeUtil.getSqlTimStmp());
+		userAddress.setCrtDt(TimeUtil.getSqlTimStmp());
+		userAddress.setUpdtDt(TimeUtil.getSqlTimStmp());
 		
-		userAddressDao.addUserAddress(userAddress);
+		return userAddressDao.addUserAddress(userAddress);
 	}
 
 	@Override
-	public void addUserAddressList(List<UserAddress> userAddressList){
+	public List<UserAddress> addUserAddressList(List<UserAddress> userAddressList){
 	
 		if(userAddressList != null && userAddressList.size()>0){
 			
@@ -47,6 +47,8 @@ public class UserAddressServiceImpl implements UserAddressService{
 				addUserAddress(userAddress);
 			}
 		}
+		
+		return userAddressList;
 	}
 
 	

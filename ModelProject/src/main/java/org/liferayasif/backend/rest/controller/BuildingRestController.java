@@ -34,7 +34,8 @@ public class BuildingRestController {
 	
 	
 	@RequestMapping(value="/addBuilding", method=RequestMethod.POST)
-	public int addBuilding(@RequestBody Building building){
+	public int addBuilding(@RequestBody Building building)
+	{
 		buildingService.addBuilding(building);
 		return 0;
 	}

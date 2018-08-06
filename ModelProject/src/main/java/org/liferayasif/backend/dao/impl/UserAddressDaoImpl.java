@@ -27,8 +27,9 @@ public class UserAddressDaoImpl  extends AbstractDao<Integer, UserAddress> imple
 	}
 
 	@Override
-	public void addUserAddress(UserAddress userAddress) {
+	public UserAddress addUserAddress(UserAddress userAddress) {
 		persist(userAddress);
+		return userAddress;
 	}
 
 	@Override

@@ -10,7 +10,7 @@ public interface UserAddressDao {
 	
 	public UserAddress getUserAddressById(Integer id);
 	
-	public void addUserAddress(UserAddress userAddress);
+	public UserAddress addUserAddress(UserAddress userAddress);
 	
 	public void deleteUserAddress(Integer id);
 	
