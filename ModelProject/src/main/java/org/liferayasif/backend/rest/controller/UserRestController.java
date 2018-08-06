@@ -52,9 +52,9 @@ public class UserRestController {
 			for(UserAddress userAddress : userAddressList){
 				userAddress.setUserId(user.getId());
 			}
+			
+			userAddressService.addUserAddressList(userAddressList);
 		}
-		
-		userAddressService.addUserAddressList(userAddressList);
 		
 		return user;
 	}
