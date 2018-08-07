@@ -6,7 +6,8 @@ import org.liferayasif.backend.model.Product;
 
 public interface ProductDao {
 	
-	public List<Product> getAllProducts();
+	
+public List<Product> getAllProducts();
 	
 	public Product getProductById(Integer id);
 	
@@ -17,5 +18,6 @@ public interface ProductDao {
 	public Product updateProduct(Product product);
 	
 	public List<Product> findByName(String name);
+	
 	
 }
