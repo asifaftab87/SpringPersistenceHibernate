@@ -23,7 +23,7 @@ public class User implements Serializable{
 	private Integer id;
 	
 	@Column(name="NAME")
-	private String name;
+	private String name; 
 	
 	@Column(name="EMAIL")
 	private String email;
