@@ -12,4 +12,7 @@ public interface PathConstants {
 	String FIND_ZOO_ID									= "/zooById";
 	String ADD_ZOO_USER									= "/addZooUser";
 	
+	
+	String ADD_SUPPLIER									= "/supplier";
+	
 }
