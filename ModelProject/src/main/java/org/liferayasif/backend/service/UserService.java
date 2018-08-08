@@ -8,7 +8,7 @@ public interface UserService {
 
 	public List<User> getAllUsers();
 	
-	public User getUserById(Integer id);
+	public User getUserById(Integer user);
 	
 	public User addUser(User user);
 	

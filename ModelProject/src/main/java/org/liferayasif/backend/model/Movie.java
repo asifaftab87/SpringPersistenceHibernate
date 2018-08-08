@@ -40,7 +40,7 @@ public class Movie implements Serializable {
 	public Integer getId(){
 		return id;
 	}
-	public void setId(Integer Id)
+	public void setId(Integer id)
 	{
 		this.id=id;
 	}
@@ -65,7 +65,7 @@ public class Movie implements Serializable {
 	public List<MovieAddress> getMovieAddressList(){
 		return movieAddressList;
 	}
-	public void setMovieAddressList(List<MovieAddress> MovieAddressList)
+	public void setMovieAddressList(List<MovieAddress> movieAddressList)
 	{
 		this.movieAddressList=movieAddressList;
 	}

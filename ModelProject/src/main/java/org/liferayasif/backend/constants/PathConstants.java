@@ -11,12 +11,14 @@ public interface PathConstants {
 	String ZOO											= "/zoo";
 	String FIND_ZOO_ID									= "/zooById";
 	String ADD_ZOO_USER									= "/addZooUser";
-	
-	
-	String SUPPLIER									= "/supplier";
-	String ADD_SUPPLIERS							="/addSupplier";
-	String FIND_SUPPLIERS_BY_ID						=	"/findSupplierById";
-	String ALL_SUPPLIERS							=	"/getAllSup";
-	String ALL_PRODUCTS								= "/getAllPro";
+	String SUPPLIER										= "/supplier";
+	String ADD_SUPPLIERS								= "/addSupplier";
+	String FIND_SUPPLIERS_BY_ID							= "/findSupplierById";
+	String ALL_SUPPLIERS								= "/getAllSup";
+	String ALL_PRODUCTS									= "/getAllPro";
+	String CUSTOMERS									= "/customers";
+	String ADDCUSTOMERS									= "/addCustomers";
+	String GETBYID										= "/getById";
+	String GETALLBUILDING								= "/getAllBuilding";
 	
 }

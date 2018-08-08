@@ -7,7 +7,6 @@ import org.hibernate.Query;
 import org.liferayasif.backend.abstrct.dao.AbstractDao;
 import org.liferayasif.backend.dao.AddressDao;
 import org.liferayasif.backend.model.Address;
-import org.liferayasif.backend.model.User;
 import org.springframework.stereotype.Repository;
 
 @Repository("addressDao")
@@ -39,7 +38,7 @@ public class AddressDaoImpl extends AbstractDao<String, Address> implements Addr
 	}
 
 	@Override
-	public User updateAddress(Address address) {
+	public Address updateAddress(Address address) {
 		return null;
 	}
 	
