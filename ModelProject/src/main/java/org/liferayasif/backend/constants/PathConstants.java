@@ -14,5 +14,5 @@ public interface PathConstants {
 	
 	
 	String SUPPLIER										= "/supplier";
-	
+	String ADD_SUPPLIERS								="/addSupplier";
 }
