@@ -3,12 +3,11 @@ package org.liferayasif.backend.dao;
 import java.util.List;
 
 import org.liferayasif.backend.model.Address;
-import org.liferayasif.backend.model.User;
 
 public interface AddressDao {
 
 
-public List<Address> getAllAddress();
+	public List<Address> getAllAddress();
 	
 	public Address getAddressById(String id);
 	
@@ -16,6 +15,6 @@ public List<Address> getAllAddress();
 	
 	public void deleteAddress(String id);
 	
-	public User updateAddress(Address address);
+	public Address updateAddress(Address address);
 	
 } 

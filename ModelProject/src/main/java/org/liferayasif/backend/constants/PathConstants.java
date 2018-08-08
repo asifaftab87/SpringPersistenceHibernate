@@ -15,4 +15,10 @@ public interface PathConstants {
 	
 	String SUPPLIER										= "/supplier";
 	String ADD_SUPPLIERS								="/addSupplier";
+	
+	
+	String CUSTOMERS									= "/customers";
+	String ADDCUSTOMERS									= "/addCustomers";
+	String GETBYID										= "/getById";
+	String GETALLBUILDING								= "/getAllBuilding";
 }

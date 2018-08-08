@@ -44,10 +44,4 @@ public class Address {
 	public String toString(){
 		return "address 1 : "+id+"   address  2 : "+add2+"    address  3 : "+add3;
 	}
-
-	public void setAdd1(String string) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }
