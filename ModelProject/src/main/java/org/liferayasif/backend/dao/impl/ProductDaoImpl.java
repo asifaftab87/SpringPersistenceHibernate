@@ -10,7 +10,7 @@ import org.liferayasif.backend.dao.ProductDao;
 import org.liferayasif.backend.model.Product;
 import org.springframework.stereotype.Repository;
 
-@Repository("ProductDao")
+@Repository("productDao")
 public class ProductDaoImpl extends AbstractDao<Integer , Product> implements ProductDao {
 
 	@SuppressWarnings("unchecked")
