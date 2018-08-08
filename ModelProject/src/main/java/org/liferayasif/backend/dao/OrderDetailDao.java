@@ -8,16 +8,15 @@ public interface OrderDetailDao {
 	
 	public List<OrderDetail> getAllOrderDetails();
 	
-	public OrderDetail getOrderDetailById();
+	public OrderDetail getOrderDetailById(Integer id);
 	
 	public OrderDetail addOrderDetail(OrderDetail orderDetail);
 	
-	public void deleteOrderDetailById(Integer id);
+	public void deleteOrderDetail(Integer id);
 	
 	public OrderDetail updateOrderDetail(OrderDetail orderDetail);
 	
 	public List<OrderDetail> findByName(String name);
 	
-	
-	
+
 }

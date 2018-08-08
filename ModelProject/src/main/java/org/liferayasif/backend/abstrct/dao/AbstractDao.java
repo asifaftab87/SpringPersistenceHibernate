@@ -6,7 +6,6 @@ import java.lang.reflect.ParameterizedType;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.liferayasif.backend.model.OrderDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class AbstractDao<PK extends Serializable, T> {
@@ -26,8 +25,8 @@ private final Class<T> persistentClass;
 	}
 
 	@SuppressWarnings("unchecked")
-	public OrderDetail getByKey(PK key) {
-		return (OrderDetail) getSession().get(persistentClass, key);
+	public T getByKey(PK key) {
+		return (T) getSession().get(persistentClass, key);
 	}
 
 	public void persist(T entity) {
