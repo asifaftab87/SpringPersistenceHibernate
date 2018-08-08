@@ -62,6 +62,8 @@ public class OrderDetail implements Serializable{
 	
 	@Column(name="BILL_DATE")
 	private Timestamp billDate  ;
+	
+	public OrderDetail (){};
 
 	public Integer getId() {
 		return Id;

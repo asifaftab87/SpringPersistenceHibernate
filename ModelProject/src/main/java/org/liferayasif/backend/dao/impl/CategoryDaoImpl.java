@@ -10,7 +10,6 @@ import org.hibernate.criterion.Restrictions;
 import org.liferayasif.backend.abstrct.dao.AbstractDao;
 import org.liferayasif.backend.dao.CategoryDao;
 import org.liferayasif.backend.model.Category;
-import org.liferayasif.backend.model.Company;
 import org.springframework.stereotype.Repository;
 
 @Repository("CategoryDao")
@@ -31,8 +30,9 @@ public class CategoryDaoImpl extends AbstractDao<Integer , Category> implements 
 	}
 
 	@Override
-	public void addCategory(Category category) {
-		persist(category);
+	public Category addCategory(Category category) {
+		 persist(category);
+		 return category;
 		
 	}
 

@@ -10,12 +10,12 @@ public interface CategoryDao {
 	
 	public Category getCategoryById(Integer id);
 	
-	public void addCategory(Category category);
+	public Category addCategory(Category category);
 	
 	public void deleteCategory(Integer id);
 	
 	public Category updateCategory(Category category);
 	
-	public List<Category> findByCategory(String name);
+	public List<Category> findByCategoryName(String name);
 
 }

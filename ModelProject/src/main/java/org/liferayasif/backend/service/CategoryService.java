@@ -12,7 +12,7 @@ public interface CategoryService {
 	
 	public Category getCategoryById(Integer id);
 	
-	public void addCategory(Category category);
+	public Category addCategory(Category category);
 	
 	public void deleteCategory(Integer id);
 	
