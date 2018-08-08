@@ -20,8 +20,7 @@ public class SuppliersRestController {
 	@Autowired
 	private SuppliersService suppliersService;
 	
-	@Autowired
-	private Product producService;
+	
 	
 	@RequestMapping(value=PathConstants.ADD_SUPPLIERS, method=RequestMethod.POST)
 	public Suppliers add(@RequestBody Suppliers suppliers){
@@ -49,11 +48,5 @@ public class SuppliersRestController {
 		
 	}	
 	
-	/*@RequestMapping(value=PathConstants.ALL_PRODUCTS, method=RequestMethod.GET)
-	public List<Product> getAllPro()
-	{
-		producService
-		
-	}	*/
 	
 }
