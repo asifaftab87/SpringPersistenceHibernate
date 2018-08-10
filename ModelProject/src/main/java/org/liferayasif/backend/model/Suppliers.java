@@ -92,6 +92,8 @@ private String customerId;
 @Column(name="SIZE_URL")
 private String sizeURL;
 
+public Suppliers(){};
+
 public Integer getId() {
 	return id;
 }
@@ -296,7 +298,7 @@ public static long getSerialversionuid() {
 	return serialVersionUID;
 }
 
-public Suppliers(){};
+
 
 	
 }
