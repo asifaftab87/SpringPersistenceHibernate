@@ -22,8 +22,8 @@ public class MovieAddress implements Serializable {
 	private Integer id;
 	
 	
-	@Column(name="USER_ID")
-	private Integer userId;
+	@Column(name="MOVIE_ID")
+	private Integer movieId;
 	
 	@Column(name="ADDRESS1")
 	private String address1;
@@ -67,6 +67,8 @@ public class MovieAddress implements Serializable {
 	@Column(name="STATUS")
 	private String status;
 
+	public MovieAddress() {}
+	
 	public Integer getId() {
 		return id;
 	}
@@ -75,12 +77,13 @@ public class MovieAddress implements Serializable {
 		this.id = id;
 	}
 
-	public Integer getUserId() {
-		return userId;
+
+	public Integer getMovieId() {
+		return movieId;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setMovieId(Integer movieId) {
+		this.movieId = movieId;
 	}
 
 	public String getAddress1() {

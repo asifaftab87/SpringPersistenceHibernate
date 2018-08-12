@@ -10,7 +10,7 @@ public interface MovieAddressDao {
 	
 	public MovieAddress getMovieAddressById(Integer id);
 	
-	public void addMovieAddress(MovieAddress movieAddress);
+	public MovieAddress addMovieAddress(MovieAddress movieAddress);
 	
 	public void deleteMovieAddress(Integer id);
 	

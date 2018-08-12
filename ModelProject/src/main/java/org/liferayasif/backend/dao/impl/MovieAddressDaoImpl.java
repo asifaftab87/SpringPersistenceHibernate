@@ -27,8 +27,9 @@ public class MovieAddressDaoImpl extends AbstractDao<Integer , MovieAddress> imp
 	}
 
 	@Override
-	public void addMovieAddress(MovieAddress movieAddress) {
+	public MovieAddress addMovieAddress(MovieAddress movieAddress) {
 		persist(movieAddress);
+		return movieAddress;
 		
 	}
 
@@ -48,9 +49,12 @@ public class MovieAddressDaoImpl extends AbstractDao<Integer , MovieAddress> imp
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<MovieAddress> getMovieAddressByMovieId(Integer id) {
+		
 		Criteria criteria = getSession().createCriteria(MovieAddress.class);
 		criteria.add(Restrictions.eq("movieId", id));
+		
 		List<MovieAddress> movieAddressList = criteria.list();
+		
 		return movieAddressList;
 	}
 

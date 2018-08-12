@@ -21,5 +21,6 @@ public interface PathConstants {
 	String ADDCUSTOMERS									= "/addCustomers";
 	String GETBYID										= "/getById";
 	String GETALLBUILDING								= "/getAllBuilding";
-	
+	String MOVIEADDRESS									= "/movieAddress";
+	String FIND_BY_MOVIE_ID								= "findByMovieId";
 }
