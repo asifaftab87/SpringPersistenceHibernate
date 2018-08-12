@@ -11,6 +11,7 @@ import org.liferayasif.backend.service.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,26 +46,46 @@ public class CompanyRestController {
 		
 	}
 	
-	@RequestMapping(value=PathConstants.ADD_COMPANY)
-	public void add(@RequestBody Company company){
+	@RequestMapping(value=PathConstants.ADD_COMPANY, method=RequestMethod.POST)
+	public Company add(@RequestBody Company company){
 		
 		
-		companyService.addCompany(company);
+		company =  companyService.addCompany(company);
+		
 		List<CompanyAddress> companyAddressList = company.getCompanyAddressList();
 		
-		companyAddressService.addCompanyAddressList(companyAddressList);
+		if(companyAddressList!=null)
+		{
+			for(CompanyAddress companyAddlist : companyAddressList)
+			{
+				companyAddlist.setCompanyId(company.getId());
 		
-		return;
+			}
+			
+			companyAddressService.addCompanyAddressList(companyAddressList);
+			
+		}
+		
+		return company;
 	}
 	
 
-	
-	
-	
-	
-	
-	
-	
+	@RequestMapping(value = PathConstants.SEARCH_COMPANY)
+	public List<Company> searchCompany(@RequestParam(value="email", required=false) String email1, @RequestParam(value="name", required=false) String name1)
+	{
+		List<Company> companyList = null; 
+		
+		if(email1==null && name1==null){
+			companyList = companyService.getAllCompanys();
+			return companyList;
+		}
+		
+		companyList = companyService.searchCompany(email1, name1);
+		
+		System.out.println("email: "+email1);
+		System.out.println("name: "+name1);
+		return companyList;
+	}
 	
 	
 	

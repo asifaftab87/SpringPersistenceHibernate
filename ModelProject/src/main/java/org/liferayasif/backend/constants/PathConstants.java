@@ -8,6 +8,7 @@ public interface PathConstants {
 	String COMPANY 										= "/company";
 	String COMPANY_ADD 									= "/companyAdd";
 	String FIND_BY_ID_COMPANY							= "/findByIdCompany";
+	String SEARCH_COMPANY								= "/searchCompany";
 	String ADD_COMPANY									= "/addCompany";
 	String ZOO											= "/zoo";
 	String FIND_ZOO_ID									= "/zooById";

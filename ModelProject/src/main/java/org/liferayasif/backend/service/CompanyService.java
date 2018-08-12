@@ -12,7 +12,7 @@ public interface CompanyService {
 		
 		public Company getCompanyById(Integer Id);
 		
-		public void addCompany(Company company);
+		public Company addCompany(Company company);
 		
 		public void deleteCompany(Integer id);
 		
@@ -20,5 +20,5 @@ public interface CompanyService {
 		
 		public List<Company> findByName(String name);
 
-
+		public List<Company> searchCompany(String email, String name);
 }

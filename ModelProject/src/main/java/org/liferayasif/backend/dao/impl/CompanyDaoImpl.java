@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 import org.liferayasif.backend.abstrct.dao.AbstractDao;
 import org.liferayasif.backend.dao.CompanyDao;
@@ -52,7 +53,19 @@ public class CompanyDaoImpl extends AbstractDao<Integer ,Company> implements Com
 		Criteria criteria = getSession().createCriteria(Company.class);
 		criteria.add(Restrictions.eq("name", name));
 		List<Company> companyList = criteria.list();
-				return companyList;
+		return companyList;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Company> searchCompany(String email, String name) {
+		Criteria criteria = getSession().createCriteria(Company.class);
+		Criterion cr1 = Restrictions.eq("name", name);
+		Criterion cr2 = Restrictions.eq("email", email);
+		criteria.add(Restrictions.or(cr1, cr2));
+
+		List<Company> companyList = criteria.list();
+		return companyList;
 	}
 
 	

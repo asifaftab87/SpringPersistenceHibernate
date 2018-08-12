@@ -30,8 +30,9 @@ public class CompanyServiceImpl implements CompanyService{
 	}
 
 	@Override
-	public void addCompany(Company company) {
+	public Company addCompany(Company company) {
 		companyDao.addCompany(company);
+		return company;
 		
 	}
 
@@ -53,7 +54,9 @@ public class CompanyServiceImpl implements CompanyService{
 		return companyDao.findByName(name);
 	}
 	
-	
+	public List<Company> searchCompany(String email, String name){
+		return companyDao.searchCompany(email, name);
+	}
 	
 
 }

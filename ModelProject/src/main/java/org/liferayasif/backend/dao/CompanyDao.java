@@ -17,5 +17,7 @@ public interface CompanyDao {
 	public Company updateCompany(Company company);
 	
 	public List<Company> findByName(String name);
+	
+	public List<Company> searchCompany(String email, String name);
 
 }
