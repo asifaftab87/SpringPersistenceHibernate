@@ -55,7 +55,8 @@ public class CompanyServiceImpl implements CompanyService{
 	}
 	
 	public List<Company> searchCompany(String email, String name){
-		return companyDao.searchCompany(email, name);
+		List<Company> companyList = companyDao.searchCompany(email, name);
+		return companyList;
 	}
 	
 
