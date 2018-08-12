@@ -10,11 +10,11 @@ public interface CompanyAddressDao {
 	
 	public CompanyAddress getCompanyAddressById(Integer id);
 	
-	public void addCompanyAddress(CompanyAddress companyAddress);
+	public CompanyAddress addCompanyAddress(CompanyAddress companyAddress);
 	
 	public CompanyAddress updateCompanyAddress(CompanyAddress companyAddress);
 	
-	public List<CompanyAddress> getCompanyAddressByUserId(Integer id);
+	public List<CompanyAddress> getCompanyAddressByCompanyId(Integer id);
 
 	void deleteCompanyAddress(Integer id);
 }

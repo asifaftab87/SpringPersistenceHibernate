@@ -31,25 +31,27 @@ public class CompanyAddressServiceImpl implements CompanyAddressService {
 	}
 
 	@Override
-	public void addCompanyAddress(CompanyAddress companyAddress) {
+	public CompanyAddress addCompanyAddress(CompanyAddress companyAddress) {
 		companyAddress.setCreateDt(TimeUtil.getSqlTimStmp());
-		companyAddress.setUpdateDt(TimeUtil.getSqlTimStmp());
+		companyAddress.setUpdtDt(TimeUtil.getSqlTimStmp());
+		return companyAddressDao.addCompanyAddress(companyAddress);
 	}
 	
-
+	
 	@Override
-	public void addCompanyAddressList(List<CompanyAddress> companyAddressList) {
+	public List<CompanyAddress> addCompanyAddressList(List<CompanyAddress> companyAddressList) {
 		if(companyAddressList !=null && companyAddressList.size()>0){
 			
 			for(CompanyAddress companyAddress : companyAddressList){
 				addCompanyAddress(companyAddress);
 				
-			}
+				}
 		}
-		
+		return companyAddressList;
 	}
 
-	@Override
+
+		@Override
 	public void deleteCompanyAddress(Integer id) {
 		companyAddressDao.deleteCompanyAddress(id);
 		
@@ -64,10 +66,11 @@ public class CompanyAddressServiceImpl implements CompanyAddressService {
 
 	@Override
 	public List<CompanyAddress> getCompanyAddressesByCompanyId(Integer id) {
-		List<CompanyAddress> companyAddressList =companyAddressDao.getCompanyAddressByUserId(id);
+		List<CompanyAddress> companyAddressList =companyAddressDao.getCompanyAddressByCompanyId(id);
 		return companyAddressList;
 	}
 
 	
+		
 
 }

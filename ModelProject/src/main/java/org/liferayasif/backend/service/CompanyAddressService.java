@@ -10,9 +10,9 @@ public interface CompanyAddressService {
 	
 	public CompanyAddress getCompanyAddressById(Integer id);
 	
-	public void addCompanyAddress(CompanyAddress companyAddress);
+	public CompanyAddress addCompanyAddress(CompanyAddress companyAddress);
 	
-	public void addCompanyAddressList(List<CompanyAddress> companyAddressList);
+	public List<CompanyAddress> addCompanyAddressList(List<CompanyAddress> companyAddressList);
 	
 	public void deleteCompanyAddress(Integer id);
 	

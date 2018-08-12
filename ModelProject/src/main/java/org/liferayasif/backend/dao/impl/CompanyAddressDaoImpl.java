@@ -28,8 +28,9 @@ public class CompanyAddressDaoImpl extends AbstractDao<Integer , CompanyAddress>
 	}
 
 	@Override
-	public void addCompanyAddress(CompanyAddress companyAddress) {
+	public CompanyAddress addCompanyAddress(CompanyAddress companyAddress) {
 		persist(companyAddress);
+		return companyAddress;
 		
 	}
 
@@ -48,11 +49,10 @@ public class CompanyAddressDaoImpl extends AbstractDao<Integer , CompanyAddress>
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<CompanyAddress> getCompanyAddressByUserId(Integer id) {
+	public List<CompanyAddress> getCompanyAddressByCompanyId(Integer companyId) {
 
 		Criteria criteria = getSession().createCriteria(CompanyAddress.class);
-		criteria.add(Restrictions.eq("userId" , id));
-		
+		criteria.add(Restrictions.eq("companyId" , companyId));
 	
 		List<CompanyAddress> companyAddressList = criteria.list();
 		return companyAddressList;
