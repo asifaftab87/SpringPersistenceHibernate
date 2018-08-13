@@ -68,5 +68,19 @@ public class CompanyDaoImpl extends AbstractDao<Integer ,Company> implements Com
 		return companyList;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Company> searchByEmailName(String email, String name) {
+		Criteria criteria = getSession().createCriteria(Company.class);
+		Criterion cr1 = Restrictions.eq("email", email);
+		Criterion cr2 = Restrictions.eq("name", name);
+		criteria.add(Restrictions.and(cr1, cr2));
+		
+		
+		List<Company> companyList = criteria.list();
+		
+		return companyList;
+	}
+
 	
 }

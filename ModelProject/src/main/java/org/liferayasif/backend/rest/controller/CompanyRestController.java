@@ -89,5 +89,20 @@ public class CompanyRestController {
 	
 	
 	
+	@RequestMapping(value = PathConstants.SEARCH_COMPANY_BY_NAME_EMAIL)
+	public List<Company> searchByNameEmail(@RequestParam ("email") String email , @RequestParam("name") String name ) throws Exception
+	{
+		
+		
+		List<Company> company = companyService.searchByEmailName(email, name);
+		
+		if(company==null || company.isEmpty())
+		{
+			throw new Exception("no such detail found with given name and email (please provide both name and email, email : "+email+" name :"+name );
+		}
+		
+		return company;
+		
+	}
 	
 }
