@@ -40,5 +40,20 @@ public class CompanyAddressRestController{
 	
 	
 	
+	@RequestMapping(value = PathConstants.SEARCH_BY_ID_CITY_COUNTRY)
+	public List<CompanyAddress> searchComp(@RequestParam(value="companyId",  required = false) int companyId , @RequestParam(value="city",  required = false) String city, @RequestParam(value="country",  required = false) String country    ) throws Exception
+	{
+		 
+					
+		List<CompanyAddress> companyAddressList = companyAddressService.searchCompany(companyId, city, country);
+		
+		if(companyAddressList==null || companyAddressList.isEmpty())
+		{
+			throw new Exception("none of the criteria match......!!! no result found"+companyId+" : "+city+"  : "+country);
+		} 
+		
+		return companyAddressList;
+	}
+	
 
 }

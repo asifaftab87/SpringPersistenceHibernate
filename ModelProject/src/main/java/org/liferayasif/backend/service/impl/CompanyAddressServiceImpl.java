@@ -70,6 +70,12 @@ public class CompanyAddressServiceImpl implements CompanyAddressService {
 		return companyAddressList;
 	}
 
+	@Override
+	public List<CompanyAddress> searchCompany(Integer companyId, String city, String Country) {
+		List<CompanyAddress> companyAddressList  = companyAddressDao.searchCompany(companyId, city, Country);
+		return companyAddressList;
+	}
+
 	
 		
 

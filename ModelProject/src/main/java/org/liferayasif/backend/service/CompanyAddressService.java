@@ -20,7 +20,8 @@ public interface CompanyAddressService {
 	
 	public List<CompanyAddress> getCompanyAddressesByCompanyId(Integer id);
 	
-	
+	public List<CompanyAddress> searchCompany(Integer companyId , String city , String Country);
+
 	
 	
 

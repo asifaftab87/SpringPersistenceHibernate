@@ -16,5 +16,9 @@ public interface CompanyAddressDao {
 	
 	public List<CompanyAddress> getCompanyAddressByCompanyId(Integer id);
 
-	void deleteCompanyAddress(Integer id);
+	public void deleteCompanyAddress(Integer id);
+	
+	public List<CompanyAddress> searchCompany(Integer companyId , String city , String Country);
+	
+	
 }
