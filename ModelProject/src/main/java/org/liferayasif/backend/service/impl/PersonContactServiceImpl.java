@@ -5,6 +5,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.liferayasif.backend.dao.PersonContactDao;
+import org.liferayasif.backend.dao.PersonDao;
+import org.liferayasif.backend.dao.PersonKinDao;
 import org.liferayasif.backend.model.PersonContact;
 import org.liferayasif.backend.model.UserAddress;
 import org.liferayasif.backend.service.PersonContactService;
@@ -19,6 +21,13 @@ public class PersonContactServiceImpl implements PersonContactService {
 	@Autowired
 	private PersonContactDao personContactDao;
 	
+	@SuppressWarnings("unused")
+	@Autowired
+	private PersonKinDao personKinDao;
+	
+	@SuppressWarnings("unused")
+	@Autowired
+	private PersonDao personDao;
 	
 	@Override
 	public List<PersonContact> getAllPersonContacts() {
