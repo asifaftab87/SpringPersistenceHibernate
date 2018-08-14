@@ -93,7 +93,14 @@ public class CompanyRestController {
 	public List<Company> searchByNameEmail(@RequestParam ("email") String email , @RequestParam("name") String name ) throws Exception
 	{
 		
+		if(email==null || email.isEmpty()){
+			
+		}
 		
+		if(name==null || name.isEmpty()){
+			
+		}
+
 		List<Company> company = companyService.searchByEmailName(email, name);
 		
 		if(company==null || company.isEmpty())

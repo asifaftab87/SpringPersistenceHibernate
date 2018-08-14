@@ -6,8 +6,6 @@ import org.liferayasif.backend.model.Company;
 
 public interface CompanyService {
 
-	
-	
 		public List<Company> getAllCompanys();
 		
 		public Company getCompanyById(Integer Id);
@@ -23,4 +21,5 @@ public interface CompanyService {
 		public List<Company> searchCompany(String email, String name);
 		
 		public List<Company> searchByEmailName(String email, String name);
+		
 }
