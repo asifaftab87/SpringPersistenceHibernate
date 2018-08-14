@@ -10,7 +10,7 @@ import org.liferayasif.backend.dao.PersonDao;
 import org.liferayasif.backend.model.Person;
 import org.springframework.stereotype.Repository;
 
-@Repository("PersonDao")
+@Repository("personDao")
 public class PersonDaoImpl extends AbstractDao<Integer , Person> implements PersonDao  {
 
  

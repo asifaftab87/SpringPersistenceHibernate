@@ -10,7 +10,7 @@ import org.liferayasif.backend.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("userService")
+@Service("personService")
 @Transactional
 public class PersonServiceImpl implements PersonService {
 
