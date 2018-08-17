@@ -24,7 +24,7 @@ public class PersonKin implements Serializable {
 	
 	
 	@Column(name="PERSON_ID")
-	private String personId ;
+	private Long personId ;
 	
 	@Column(name="NAME")
 	private String  name;
@@ -57,11 +57,11 @@ public class PersonKin implements Serializable {
 		this.id = id;
 	}
 
-	public String getPersonId() {
+	public Long getPersonId() {
 		return personId;
 	}
 
-	public void setPersonId(String personId) {
+	public void setPersonId(Long personId) {
 		this.personId = personId;
 	}
 

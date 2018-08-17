@@ -64,4 +64,14 @@ public class PersonKinServiceImpl implements PersonKinService {
 		return personKinList;
 	}
 
+	@Override
+	public List<PersonKin> addPersonKinList(List<PersonKin> perKinList) {
+		
+		for(PersonKin personKin : perKinList){
+			addPersonKin(personKin);
+		}
+		
+		return perKinList;
+	}
+
 }

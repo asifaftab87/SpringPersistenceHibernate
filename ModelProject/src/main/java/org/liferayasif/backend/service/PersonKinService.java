@@ -12,6 +12,8 @@ public interface PersonKinService {
 	
 	public PersonKin addPersonKin(PersonKin personKin);
 	
+	public List<PersonKin> addPersonKinList(List<PersonKin> perKinList);
+	
 	public void deletePersonKin(Integer id);
 	
 	public PersonKin updatePersonKin(PersonKin personKin);

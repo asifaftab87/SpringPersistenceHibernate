@@ -12,6 +12,7 @@ public interface PersonKinDao {
 	
 	public PersonKin addPersonKin(PersonKin personKin);
 	
+		
 	public void deletePersonKin(Integer id);
 	
 	public PersonKin updatePersonKin(PersonKin personKin);

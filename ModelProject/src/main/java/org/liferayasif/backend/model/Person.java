@@ -26,7 +26,7 @@ public class Person implements Serializable {
 	 private Long id ;
 	 
 	 @Column(name="PERSON_KIN_ID")
-	 private Long personKinId; 
+	 private String personKinId; 
 	 
 	 @Column(name="NAME")
 	 private String name;
@@ -44,10 +44,10 @@ public class Person implements Serializable {
 	 private String birthPlace;
 	 
 	@Transient
-	public List<PersonContact> personContact;
+	public List<PersonContact> personContactList;
 	 
 	@Transient
-	 public List<PersonKin> personKin;
+	 public List<PersonKin> personKinList;
 	 
 	 public Person(){};
 	 
@@ -60,11 +60,12 @@ public class Person implements Serializable {
 		return id;
 	}
 	
-	 public void setPersonKinId(Long personKinId)
+	 public void setPersonKinId(String personKinId)
 	 {
 		 this.personKinId=personKinId;
 	 }
-	public Long getpersonKinId()
+	 
+	public String getpersonKinId()
 	{
 		return personKinId;
 	}
@@ -105,20 +106,20 @@ public class Person implements Serializable {
 		return birthPlace;
 	}
 	
-	public void setPersonContact(List<PersonContact> personContact)
+	public void setPersonContactList(List<PersonContact> personContactList)
 	{
-		this.personContact=personContact;
+		this.personContactList=personContactList;
 	}
-	public List<PersonContact> getPersonContact()
+	public List<PersonContact> getPersonContactList()
 	{
-		return personContact;
+		return personContactList;
 	}
-	public void setPersonKin(List<PersonKin> personKin )
+	public void setPersonKin(List<PersonKin> personKinList )
 	{
-		this.personKin=personKin;
+		this.personKinList=personKinList;
 	}
-	public List<PersonKin> getPersonKin()
+	public List<PersonKin> getPersonKinList()
 	{
-		return personKin;
+		return personKinList;
 	}
 }
