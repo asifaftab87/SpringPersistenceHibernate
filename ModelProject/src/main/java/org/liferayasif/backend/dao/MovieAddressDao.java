@@ -17,4 +17,7 @@ public interface MovieAddressDao {
 	public MovieAddress updateMovieAddress(MovieAddress movieAddress);
 	
 	public List<MovieAddress> getMovieAddressByMovieId(Integer id);
+	
+	public List<MovieAddress> searchMovie(Integer movieId , String city , String Country);
+
 }

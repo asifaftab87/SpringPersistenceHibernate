@@ -8,7 +8,6 @@ import org.liferayasif.backend.dao.PersonContactDao;
 import org.liferayasif.backend.dao.PersonDao;
 import org.liferayasif.backend.dao.PersonKinDao;
 import org.liferayasif.backend.model.PersonContact;
-import org.liferayasif.backend.model.UserAddress;
 import org.liferayasif.backend.service.PersonContactService;
 import org.liferayasif.backend.util.time.TimeUtil;
 import org.springframework.beans.factory.annotation.Autowired;

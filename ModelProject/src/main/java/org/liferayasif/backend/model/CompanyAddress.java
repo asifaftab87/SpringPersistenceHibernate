@@ -22,8 +22,6 @@ public class CompanyAddress implements Serializable {
 	@Column(name="COMPANY_ADDRESS_ID")
 	private Integer id;
 	
-
-	
 	@Column(name="COMPANY_ID")
 	private Integer companyId;
 	

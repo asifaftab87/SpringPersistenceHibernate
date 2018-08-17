@@ -18,6 +18,6 @@ public interface MovieDao {
 	
 	public List<Movie> findByName(String name);
 	
-	
+	public List<Movie> searchMovie(String email, String name);
 
 }

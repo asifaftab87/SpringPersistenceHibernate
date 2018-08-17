@@ -30,8 +30,9 @@ public class MovieServiceImpl implements MovieService{
 	}
 
 	@Override
-	public void addMovie(Movie movie) {
+	public Movie addMovie(Movie movie) {
 		movieDao.addMovie(movie);
+		return movie;
 		
 	}
 
@@ -50,6 +51,12 @@ public class MovieServiceImpl implements MovieService{
 	public List<Movie> findByName(String name) {
 		return movieDao.findByName(name);
 		
+	}
+
+	@Override
+	public List<Movie> searchMovie(String email, String name) {
+		List<Movie> movieList = movieDao.searchMovie(email, name);
+		return movieList;
 	}
 
 }

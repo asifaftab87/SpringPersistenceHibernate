@@ -10,13 +10,15 @@ public interface MovieService {
 	
 	public Movie getMovieById(Integer id);
 	
-	public void addMovie(Movie movie);
+	public Movie addMovie(Movie movie);
 	
 	public void deleteMovie(Integer id);
 	
 	public Movie updateMovie(Movie movie);
 	
 	public List<Movie> findByName(String name);
+
+	public List<Movie> searchMovie(String email, String name);
 
 	
 }
