@@ -21,10 +21,10 @@ public class PersonContact implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PERSON_CONTACT_ID")
-	private Long id;
+	private Integer id;
 	
 	@Column(name="PERSON_ID")
-	private Long personId;
+	private Integer personId;
 	
 	
 	@Column(name="ADDRESS1")
@@ -71,19 +71,19 @@ public class PersonContact implements Serializable {
 
 	public PersonContact(){};
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Long getPersonId() {
+	public Integer getPersonId() {
 		return personId;
 	}
 
-	public void setPersonId(Long personId) {
+	public void setPersonId(Integer personId) {
 		this.personId = personId;
 	}
 

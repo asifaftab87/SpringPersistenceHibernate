@@ -25,8 +25,8 @@ private final Class<T> persistentClass;
 	}
 
 	@SuppressWarnings("unchecked")
-	public T getByKey(PK key) {
-		return (T) getSession().get(persistentClass, key);
+	public T getByKey(Integer id) {
+		return (T) getSession().get(persistentClass, id);
 	}
 
 	public void persist(T entity) {
@@ -40,5 +40,7 @@ private final Class<T> persistentClass;
 	protected Criteria createEntityCriteria(){
 		return getSession().createCriteria(persistentClass);
 	}
+
+	
 	
 }

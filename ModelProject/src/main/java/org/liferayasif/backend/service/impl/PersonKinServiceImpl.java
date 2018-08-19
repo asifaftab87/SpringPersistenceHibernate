@@ -74,4 +74,9 @@ public class PersonKinServiceImpl implements PersonKinService {
 		return perKinList;
 	}
 
+	
+
+	
+
+
 }

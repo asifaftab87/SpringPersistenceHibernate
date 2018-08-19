@@ -56,4 +56,5 @@ public class PersonKinDaoImpl extends AbstractDao<Integer , PersonKin> implement
 		return personKinList;
 	}
 
+	
 }

@@ -1,5 +1,6 @@
 package org.liferayasif.backend.rest.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.liferayasif.backend.constants.PathConstants;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -29,7 +31,7 @@ public class PersonRestController {
 	private PersonKinService personKinService;
 	
 	
-	@RequestMapping(value=PathConstants.ADD_PERSON, method=RequestMethod.POST)
+	@RequestMapping(value = PathConstants.ADD_PERSON, method=RequestMethod.POST)
 	public Person add(@RequestBody Person person) throws Exception
 	{
 		person = personService.addperson(person);
@@ -75,5 +77,29 @@ public class PersonRestController {
 	}
 	
 	
+	@RequestMapping(value=PathConstants.GET_PKIN_LIST, method=RequestMethod.GET)
+	public List<PersonKin> getPKinList(@RequestParam("id") Integer id) throws Exception
+	{
+		Person person = personService.getPersonByid(id);
+		String pkinid = person.getpersonKinId();
+		String [] kinIdArray = pkinid.split(",");
+		
+		List<PersonKin> personKinList= new ArrayList<PersonKin>();
+		for(int i=0;i<kinIdArray.length;i++)
+		{
+			String kinid=kinIdArray[i];
+			int kinidIn=Integer.parseInt(kinid);
+			PersonKin personKin=personKinService.getPersonKinById(kinidIn);
+			personKinList.add(personKin);
+		}
+		
+		System.out.println("first id : "+personKinList);
+		
+		return personKinList;
+	}
 	
+
+	
+	
+		
 }

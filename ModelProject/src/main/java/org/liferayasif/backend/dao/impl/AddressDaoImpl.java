@@ -21,7 +21,7 @@ public class AddressDaoImpl extends AbstractDao<String, Address> implements Addr
 	}
 
 	@Override
-	public Address getAddressById(String id) {
+	public Address getAddressById(Integer id) {
 		return getByKey(id);
 	}
 
@@ -31,9 +31,9 @@ public class AddressDaoImpl extends AbstractDao<String, Address> implements Addr
 	}
 
 	@Override
-	public void deleteAddress(String id) {
+	public void deleteAddress(Integer id) {
 		Query query = getSession().createSQLQuery("delete from Employee where id = :id");
-		query.setString("id", id);
+		query.setInteger("id", id);
 		query.executeUpdate();
 	}
 

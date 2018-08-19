@@ -8,16 +8,20 @@ public interface PersonKinService {
 	
 	public List<PersonKin> getAllPersonKins();
 	
-	public PersonKin getPersonKinById(Integer id);
+	
 	
 	public PersonKin addPersonKin(PersonKin personKin);
 	
 	public List<PersonKin> addPersonKinList(List<PersonKin> perKinList);
 	
-	public void deletePersonKin(Integer id);
+	
 	
 	public PersonKin updatePersonKin(PersonKin personKin);
 	
 	public List<PersonKin> findByName(String name);
+
+	PersonKin getPersonKinById(Integer id);
+
+	void deletePersonKin(Integer id);
 
 }

@@ -9,11 +9,11 @@ public interface AddressDao {
 
 	public List<Address> getAllAddress();
 	
-	public Address getAddressById(String id);
+	public Address getAddressById(Integer id);
 	
 	public void addAddress(Address address);
 	
-	public void deleteAddress(String id);
+	public void deleteAddress(Integer id);
 	
 	public Address updateAddress(Address address);
 	
