@@ -28,7 +28,7 @@ public class AddressRestController {
 	private AddressService addressService;
 
 	@RequestMapping(value="/first")
-	public Address sample(@RequestParam("id") String id){
+	public Address sample(@RequestParam("id") Integer id){
 		Address address = addressService.getAddressById(id);
 		System.out.println(address);
 		return address;
