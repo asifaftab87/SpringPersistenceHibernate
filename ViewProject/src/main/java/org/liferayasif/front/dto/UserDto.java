@@ -1,12 +1,13 @@
 package org.liferayasif.front.dto;
 
-public class User {
+public class UserDto {
 
-	
 	private Integer id;
 	private String name;
 	private String email;
 
+	public UserDto(){}
+	
 	public Integer getId() {
 		return id;
 	}

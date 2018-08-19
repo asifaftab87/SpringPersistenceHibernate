@@ -16,7 +16,7 @@ private final Class<T> persistentClass;
 	public AbstractDao(){
 		this.persistentClass =(Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
 	}
-	
+	 
 	@Autowired
 	private SessionFactory sessionFactory;
 
