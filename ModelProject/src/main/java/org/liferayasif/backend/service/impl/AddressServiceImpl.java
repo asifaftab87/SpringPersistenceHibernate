@@ -24,7 +24,7 @@ public class AddressServiceImpl implements AddressService{
 	}
 
 	@Override
-	public Address getAddressById(String id) {
+	public Address getAddressById(Integer id) {
 		Address address = addressDao.getAddressById(id);
 		return address;
 	}
@@ -35,7 +35,7 @@ public class AddressServiceImpl implements AddressService{
 	}
 
 	@Override
-	public void deleteAddress(String id) {
+	public void deleteAddress(Integer id) {
 		addressDao.deleteAddress(id);
 	}
 
