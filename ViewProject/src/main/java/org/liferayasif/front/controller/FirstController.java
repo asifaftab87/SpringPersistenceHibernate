@@ -1,12 +1,9 @@
 package org.liferayasif.front.controller;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.liferayasif.front.constants.URLConstants;
+import org.liferayasif.front.dto.CustomersDto;
 import org.liferayasif.front.dto.UserDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -50,6 +47,36 @@ public class FirstController {
 		return mav;
 	}
 	
+	
+	
+	//this is not understood i want to know aftr submittign id how it displying resultlt
+	  @RequestMapping(value="/cust", method=RequestMethod.GET)
+	public ModelAndView view(@ModelAttribute CustomersDto customersDto){
+	
+		ModelAndView mav = new ModelAndView("cust-search");
+		
+		mav.addObject("customers", customersDto);
+		
+		return mav;
+	}
+	 
+	@RequestMapping(value="/custSearchId", method=RequestMethod.GET)
+	public ModelAndView custSearchId(@RequestParam("id") int id, @ModelAttribute CustomersDto customersDto){
+	
+		
+		ModelAndView mav = new ModelAndView("cust-details");
+		
+		//Integer id = userDto.getId();
+		String url = URLConstants.contextPath+"/customers/getById?id="+id;
+		System.out.println("url: "+url);
+		
+		customersDto = webRestTemplate.getForObject(URLConstants.contextPath+"/customers/getById?id="+id, CustomersDto.class);
+		System.out.println("CustomersDto: "+customersDto);
+		
+		mav.addObject("customers", customersDto);
+		
+		return mav;
+	}
 	
 	/*@RequestMapping(method=RequestMethod.POST)
 	public ModelAndView addUdfasdser(@ModelAttribute UserDto user){
