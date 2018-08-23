@@ -11,7 +11,7 @@
 
 <h1>The result of customer id Search:-</h1>
 
-<form:form method="POST" action="getById" modelAttribute="customers">
+<form:form method="POST" action="getById" modelAttribute="customers" >
 <table>
 <tr>
 	<td><form:label path="id">Id</form:label></td>
@@ -19,8 +19,8 @@
 </tr>
 
 <tr>
-	<td><form:label path="firstName">First Name</form:label></td>
-	<td><form:input path="firstName"/></td>
+	<td><form:label path="firstName"  >First Name</form:label></td>
+	<td><form:input path="firstName" /></td>
 </tr>
 
 <tr>

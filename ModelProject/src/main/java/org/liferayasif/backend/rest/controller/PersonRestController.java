@@ -99,7 +99,18 @@ public class PersonRestController {
 	}
 	
 
-	
+	@RequestMapping(value=PathConstants.GET_PERSON_BY_ID, method=RequestMethod.GET)
+	public Person getPersonById(@RequestParam("id") Integer id) throws Exception
+	{
+		Person person = personService.getPersonByid(id);
+		
+		 if(person==null)
+			 throw new Exception("given id : "+id+"is not found in Person list");
+
+
+		 return person;
+			 
+	}
 	
 		
 }

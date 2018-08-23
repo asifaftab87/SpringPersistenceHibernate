@@ -6,7 +6,7 @@
 </head>
 	<body>
 	<h1>Welcome, Enter the Customer Id</h1>
-		<form:form method="GET" action="first/cust" modelAttribute="customers">
+		<form:form method="GET" action="custSearchId" modelAttribute="customers">
 			<table>
 				<tr>
 					<td><form:label path="id">Id</form:label></td>

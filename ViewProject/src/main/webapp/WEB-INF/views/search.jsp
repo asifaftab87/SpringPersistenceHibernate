@@ -5,7 +5,7 @@
     <body>
     	/search.jsp
         <h3>Welcome, Enter The Employee Id</h3>
-        <form:form method="GET" action="first/search" modelAttribute="user">
+        <form:form method="GET" action="search" modelAttribute="user">
              <table>
                 <tr>
                     <td><form:label path="id">Id</form:label></td>

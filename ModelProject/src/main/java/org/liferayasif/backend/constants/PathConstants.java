@@ -27,6 +27,7 @@ public interface PathConstants {
 	String MOVIEADDRESS									= "/movieAddress";
 	String FIND_BY_MOVIE_ID								= "findByMovieId";
 	String PERSON										= "/person";
+	String GET_PERSON_BY_ID								= "/getPersonById";
 	String ADD_PERSON									= "/addPerson";
 	String GET_PKIN_LIST								= "/getPersonKinList";
 }

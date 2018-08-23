@@ -2,6 +2,7 @@ package org.liferayasif.front.controller;
 
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.CustomersDto;
+import org.liferayasif.front.dto.PersonDto;
 import org.liferayasif.front.dto.UserDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
 import org.springframework.stereotype.Controller;
@@ -49,7 +50,7 @@ public class FirstController {
 	
 	
 	
-	//this is not understood i want to know aftr submittign id how it displying resultlt
+	 
 	  @RequestMapping(value="/cust", method=RequestMethod.GET)
 	public ModelAndView view(@ModelAttribute CustomersDto customersDto){
 	
@@ -77,6 +78,12 @@ public class FirstController {
 		
 		return mav;
 	}
+	
+	
+	
+	
+	
+	
 	
 	/*@RequestMapping(method=RequestMethod.POST)
 	public ModelAndView addUdfasdser(@ModelAttribute UserDto user){
