@@ -2,7 +2,6 @@ package org.liferayasif.front.controller;
 
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.CustomersDto;
-import org.liferayasif.front.dto.PersonDto;
 import org.liferayasif.front.dto.UserDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
 import org.springframework.stereotype.Controller;

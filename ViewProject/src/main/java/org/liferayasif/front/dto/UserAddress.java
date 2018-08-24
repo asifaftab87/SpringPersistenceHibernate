@@ -1,69 +1,27 @@
-package org.liferayasif.backend.model;
+package org.liferayasif.front.dto;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="USER_ADDRESS")
 public class UserAddress implements Serializable{
 	
 	private static final long serialVersionUID = -4316158444887217595L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="USER_ADDRESS_ID")
 	private Integer id;
-	
-	@Column(name="USER_ID")
 	private Integer userId;
-	
-	@Column(name="ADDRESS1")
 	private String address1;
-	
-	@Column(name="ADDRESS2")
 	private String address2;
-	
-	@Column(name="ADDRESS3")
 	private String address3;
-	
-	@Column(name="ADDRESS4")
 	private String address4;
-	
-	@Column(name="POSTCODE")
 	private String postcode;
-	
-	@Column(name="CITY")
 	private String city;
-	
-	@Column(name="STATE")
 	private String state;
-	
-	@Column(name="CNTRY")
 	private String cntry;
-	
-	@Column(name="TEL_NUM")
 	private String telNum;
-	
-	@Column(name="CRT_ID")
 	private String crtId;
-	
-	@Column(name="CRT_DT")
 	private Timestamp crtDt;
-	
-	@Column(name="UPDT_ID")
 	private String updtId;
-	
-	@Column(name="UPDT_DT")
 	private Timestamp updtDt;
-	
-	@Column(name="STATUS")
 	private String status;
 
 	public UserAddress(){}

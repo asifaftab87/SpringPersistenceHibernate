@@ -1,11 +1,14 @@
 package org.liferayasif.front.dto;
 
+import java.util.List;
+
 public class UserDto {
 
 	private Integer id;
 	private String name;
 	private String email;
-
+	public List<UserAddress> userAddressList;
+	
 	public UserDto(){}
 	
 	public Integer getId() {
@@ -32,6 +35,14 @@ public class UserDto {
 		this.email = email;
 	}
 	
+	public List<UserAddress> getUserAddressList() {
+		return userAddressList;
+	}
+
+	public void setUserAddressList(List<UserAddress> userAddressList) {
+		this.userAddressList = userAddressList;
+	}
+
 	@Override
 	public String toString(){
 		return "id: "+id+"   name: "+name+"    email: "+email;

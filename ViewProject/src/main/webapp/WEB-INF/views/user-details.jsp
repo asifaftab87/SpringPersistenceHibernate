@@ -1,10 +1,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
     <head>
     </head>
     <body>
-    /user-details.jsp
-        <h3>Welcome, Enter The Employee Details</h3>
+    
         <form:form method="POST" action="addUser" modelAttribute="user"><!-- as its last pg hence action can be empty -->
              <table>
              	<tr>
@@ -21,6 +21,36 @@
                 </tr>
                 
             </table>
+            
+            <c:if test="${not empty userAddressList}">
+            
+	            <table>
+	            	<thead>
+			        	<tr>
+			        	   	<th>Id</th>
+			            	<th>User Id</th>
+			            	<th>Address</th>
+			            	<th>Postcode</th>
+			            	<th>Counntry</th>
+			            	<th>City</th>
+			            </tr>
+	            	</thead>
+	            	<tbody>
+			            <c:forEach var="userAddress" items="${userAddressList}">
+			             	<tr>
+			                    <td>${userAddress.id}</td>
+			                    <td>${userAddress.userId}</td>
+			                    <td>${userAddress.address1}</td>
+			                    <td>${userAddress.postcode}</td>
+			                    <td>${userAddress.cntry}</td>
+			                    <td>${userAddress.city}</td>
+			                </tr>
+		                </c:forEach>
+		            </tbody>
+	            </table>
+	            
+            </c:if>
+            
         </form:form>
     </body>
 </html>
