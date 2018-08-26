@@ -7,7 +7,7 @@ import java.util.List;
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.PersonDto;
 import org.liferayasif.front.dto.SchoolDto;
-import org.liferayasif.front.dto.UserDto;
+import org.liferayasif.front.dto.WiproDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,33 +16,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+
 @Controller
 @RequestMapping(value="/person")
 public class ControllerPerson {
-	
 	WebRestTemplate webRestTemplate = new WebRestTemplate();
 	
-	@RequestMapping(value="search" , method=RequestMethod.GET)
-	public ModelAndView findUser(@ModelAttribute UserDto userDto)
-	{
-		ModelAndView mav = new ModelAndView("search-user");
-		mav.addObject("user", userDto);
-		return mav;
-	}
-	
-	@RequestMapping(value="findUserById" , method=RequestMethod.GET)
-	public ModelAndView findUserById(@RequestParam("id") int id, @ModelAttribute UserDto userDto)
-	{
-		userDto = webRestTemplate.getForObject(URLConstants.contextPath+"/user/findById?id="+id, UserDto.class);
-		
-		ModelAndView mav = new ModelAndView("user-details");
-		mav.addObject("user", userDto);
-		mav.addObject("userAddressList", userDto.getUserAddressList());
-		return mav;
-	}
-	
-	
-	@RequestMapping(value="personId" , method=RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView findPerson(@ModelAttribute PersonDto personDto)
 	{
 		ModelAndView mav = new ModelAndView("person-search");
@@ -90,4 +70,34 @@ public class ControllerPerson {
 		return mav;
 				
 	}
+	
+
+	@RequestMapping(value="wiproClass", method=RequestMethod.GET)
+	public ModelAndView wiproHome(@ModelAttribute WiproDto wiproDto)
+	{
+		ModelAndView mav= new ModelAndView("wipro-input");
+		mav.addObject("wipro" , wiproDto);
+		
+		return mav;
+	}
+	
+	@RequestMapping(value="/wiproResult", method=RequestMethod.GET)
+	public ModelAndView wiproResult(@RequestParam("avgSalary") double avgSalary, @ModelAttribute WiproDto wiproDto)
+	{
+		ModelAndView mav= new ModelAndView("wipro-result");
+		WiproDto[] wiproDtoArray = webRestTemplate.getForObject(URLConstants.contextPath+"/wipro/getBySalary?avgSalary="+avgSalary, WiproDto[].class);
+	
+		List<WiproDto> wiproDtoList=new ArrayList<WiproDto>();
+		
+		if(wiproDtoArray!=null && wiproDtoArray.length>0)
+		{
+			wiproDtoList=Arrays.asList(wiproDtoArray);
+		}
+		
+		mav.addObject("wipro" , wiproDto);
+		mav.addObject("wiproDtoList" , wiproDtoList);
+		
+		return mav;
+	}
+	
 }
