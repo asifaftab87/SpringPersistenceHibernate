@@ -3,9 +3,9 @@
     <head>
     </head>
     <body>
-    /user-details.jsp
         <h3>Welcome, Enter The Employee Details</h3>
-        <form:form method="POST" action="addUser" modelAttribute="user"><!-- as its last pg hence action can be empty -->
+        <form:form method="POST"
+          action="addCompany" modelAttribute="company">
              <table>
              	<tr>
                     <td><form:label path="id">Id</form:label></td>

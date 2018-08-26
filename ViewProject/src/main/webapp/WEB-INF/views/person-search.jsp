@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Please input the correct Id to search the details</h1>
-<form:form method="GET" action="getPerson" modelAttribute="person">
+<form:form method="GET" action="person/getPerson" modelAttribute="person">
 <table>
   <tr>
        <td><form:label path="id">Id</form:label></td>

@@ -30,7 +30,7 @@ public class UserRestController {
 		
 		User user = userService.getUserById(id);
 		
-		List<UserAddress> userAddressList = new ArrayList<UserAddress>();
+		 List<UserAddress> userAddressList = new ArrayList<UserAddress>();
 		 
 		
 		if(user != null){

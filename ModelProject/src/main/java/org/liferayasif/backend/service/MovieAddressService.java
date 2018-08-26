@@ -20,5 +20,6 @@ public interface MovieAddressService {
 	
 	public List<MovieAddress> getMovieAddressByMovieId(Integer id);
 	
+	public List<MovieAddress> searchCompany(Integer movieId , String city , String country);
 
 }

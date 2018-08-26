@@ -3,9 +3,8 @@
     <head>
     </head>
     <body>
-    	
-        <h3>Welcome, Enter The User Id</h3>
-        <form:form method="GET" action="findUserById" modelAttribute="user">
+        <h3>Welcome, Enter The company Id</h3>
+        <form:form method="GET" action="company/search" modelAttribute="company">
              <table>
                 <tr>
                     <td><form:label path="id">Id</form:label></td>

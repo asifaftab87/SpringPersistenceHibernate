@@ -18,6 +18,6 @@ public interface MovieAddressDao {
 	
 	public List<MovieAddress> getMovieAddressByMovieId(Integer id);
 	
-	public List<MovieAddress> searchMovie(Integer movieId , String city , String Country);
+	public List<MovieAddress> searchMovie(Integer movieId , String city , String country);
 
 }

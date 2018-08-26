@@ -1,13 +1,13 @@
 package org.liferayasif.front.dto;
 
-public class UserDto {
-
+public class CompanyDto {
+	
 	private Integer id;
 	private String name;
 	private String email;
 
-	public UserDto(){}
-	
+	public CompanyDto() {}
+
 	public Integer getId() {
 		return id;
 	}
@@ -36,5 +36,5 @@ public class UserDto {
 	public String toString(){
 		return "id: "+id+"   name: "+name+"    email: "+email;
 	}
-	
+
 }

@@ -56,4 +56,19 @@ public class MovieAddressRestController {
 		return movie;
 	}
 	
+	@RequestMapping(value = PathConstants.SEARCH_BY_ID_CITY_COUNTRY)
+	public List<MovieAddress> searchComp(@RequestParam(value="movieId",  required = false) int movieId , @RequestParam(value="city",  required = false) String city, @RequestParam(value="country",  required = false) String country    ) throws Exception
+	{
+		 
+					
+		List<MovieAddress> movieAddressList = movieAddressService.searchCompany(movieId, city, country);
+		
+		if(movieAddressList==null || movieAddressList.isEmpty())
+		{
+			throw new Exception("none of the criteria match......!!! no result found"+movieId+" : "+city+"  : "+country);
+		} 
+		
+		return movieAddressList;
+	}
+	
 }
