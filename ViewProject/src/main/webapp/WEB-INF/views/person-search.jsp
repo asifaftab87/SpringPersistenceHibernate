@@ -4,6 +4,7 @@
 		<title>input id of Person</title>
 </head>
 <body>
+
 			<h1>Please input the correct Id to search the details</h1>
 	<form:form method="GET" action="getPerson" modelAttribute="person">
 			<table>
@@ -17,6 +18,5 @@
 					</tr>
 			</table>
 		</form:form>
-
 	</body>
 </html>

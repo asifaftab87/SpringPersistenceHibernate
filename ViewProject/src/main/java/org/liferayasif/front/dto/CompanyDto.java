@@ -1,24 +1,13 @@
 package org.liferayasif.front.dto;
 
-import java.util.List;
-
-public class UserDto {
-
+public class CompanyDto {
+	
 	private Integer id;
 	private String name;
 	private String email;
-	private List<UserAddressDto> UserAddressDtoList;
-	
-	public List<UserAddressDto> getUserAddresList() {
-		return UserAddressDtoList;
-	}
 
-	public void setUserAddressList(List<UserAddressDto> userAddressDtoList) {
-		UserAddressDtoList = userAddressDtoList;
-	}
+	public CompanyDto() {}
 
-	public UserDto(){}
-	
 	public Integer getId() {
 		return id;
 	}
@@ -48,5 +37,4 @@ public class UserDto {
 		return "id: "+id+"   name: "+name+"    email: "+email;
 	}
 
-	
 }

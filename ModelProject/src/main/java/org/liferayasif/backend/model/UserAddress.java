@@ -66,8 +66,6 @@ public class UserAddress implements Serializable{
 	@Column(name="STATUS")
 	private String status;
 
-	public UserAddress(){}
-	
 	public Integer getId() {
 		return id;
 	}

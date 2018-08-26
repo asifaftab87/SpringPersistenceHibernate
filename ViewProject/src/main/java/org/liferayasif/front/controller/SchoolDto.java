@@ -1,14 +1,15 @@
-package org.liferayasif.front.dto;
+package org.liferayasif.front.controller;
 
 public class SchoolDto {
-
 	
 	private Integer id;
 	private String schoolName;
 	private int noStudent;
 	private String location;
 	private int fees;
-	public SchoolDto (){}
+	
+	public SchoolDto (){};
+	
 	
 	public Integer getId() {
 		return id;
@@ -39,5 +40,6 @@ public class SchoolDto {
 	}
 	public void setFees(int fees) {
 		this.fees = fees;
-	};
+	}
+
 }

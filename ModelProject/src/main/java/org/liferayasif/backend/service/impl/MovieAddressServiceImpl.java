@@ -67,4 +67,10 @@ public class MovieAddressServiceImpl  implements MovieAddressService{
 		return movieAddressList;
 	}
 
+	@Override
+	public List<MovieAddress> searchCompany(Integer movieId, String city, String country) {
+		List<MovieAddress> movieAddressList  = movieAddressDao.searchMovie(movieId, city, country);
+		return movieAddressList;
+	}
+
 }

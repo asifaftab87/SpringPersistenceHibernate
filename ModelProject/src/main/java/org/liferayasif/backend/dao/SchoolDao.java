@@ -13,7 +13,5 @@ public interface SchoolDao {
 	public void addSchool(School school);
 	
 	public void deleteSchool(Integer id);
-	
-	public List<School> getByFees(Integer fees);
 
 }
