@@ -1,5 +1,9 @@
 package org.liferayasif.front.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.PersonDto;
 import org.liferayasif.front.dto.SchoolDto;
@@ -72,9 +76,16 @@ public class ControllerPerson {
 	public ModelAndView schoolDisplay(@RequestParam("fees") int fees, @ModelAttribute SchoolDto schoolDto)
 	{
 		ModelAndView mav = new ModelAndView("school-display");
-		schoolDto = webRestTemplate.getForObject(URLConstants.contextPath+"/school/getByFees?fees="+fees, SchoolDto.class);
+		SchoolDto[] schoolDtoArray = webRestTemplate.getForObject(URLConstants.contextPath+"/school/getByFees?fees="+fees, SchoolDto[].class);
+		
+		List<SchoolDto> schoolDtoList = new ArrayList<SchoolDto>();
+		
+		if(schoolDtoArray !=null && schoolDtoArray.length > 0){
+			schoolDtoList = Arrays.asList(schoolDtoArray);
+		}
 		
 		mav.addObject("school", schoolDto);
+		mav.addObject("schoolDtoList", schoolDtoList);
 		
 		return mav;
 				

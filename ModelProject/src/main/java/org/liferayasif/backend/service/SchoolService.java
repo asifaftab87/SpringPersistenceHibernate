@@ -17,6 +17,7 @@ public interface SchoolService {
 		public void deleteSchool(Integer id);
 
 		School updateSchool(School school);
-
+		
+		List<School> getByFees(Integer fees);
 	 
 }

@@ -51,6 +51,15 @@ public class SchoolRestController {
 	}
 	
 	
+	@RequestMapping(value="getByFees")
+	public List<School> getSchool(@RequestParam("fees") int fees)
+	{
+		List<School> schoolList = schoolService.getByFees(fees);
+		return schoolList;
+		
+		
+	}
+	
 	
 	
 	

@@ -44,7 +44,7 @@
 			                    <td>${userAddress.postcode}</td>
 			                    <td>${userAddress.cntry}</td>
 			                    <td>${userAddress.city}</td>
-			                </tr>
+			               </tr>
 		                </c:forEach>
 		            </tbody>
 	            </table>
