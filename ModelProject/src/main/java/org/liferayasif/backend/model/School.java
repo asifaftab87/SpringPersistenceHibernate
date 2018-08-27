@@ -26,8 +26,26 @@ public class School {
 	private String location;
 	
 	@Column(name="FEES")
-	private int fees;
+	private double fees;
 	
+	public double getFees() {
+		return fees;
+	}
+
+
+
+	public void setFees(double fees) {
+		this.fees = fees;
+	}
+
+
+
+	public void setNoStudent(int noStudent) {
+		this.noStudent = noStudent;
+	}
+
+
+
 	public School (){};
 	
 		
@@ -66,13 +84,6 @@ public class School {
 	{
 		return location;
 	}
-	public void setFees(Integer fees)
-	{
-		this.fees=fees;
-	}
-	public Integer getFees()
-	{
-		return fees;
-	}
+
 	
 }

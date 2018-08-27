@@ -18,14 +18,14 @@ public class SchoolRestController {
 	@Autowired
 	private SchoolService schoolService;
 	
-	@RequestMapping(value="first")
+	@RequestMapping(value="/first")
 	public School sample(@RequestParam("id") int id)
 	{
 		School school=schoolService.getSchoolById(id);
 		return school;
 	}
 	
-	@RequestMapping(value="getSchoolByFees")
+	@RequestMapping(value="/getSchoolByFees")
 	public List<School> schoolListFees(@RequestParam("fees") double fees)
 	{
 		List<School> schoolList = schoolService.getSchoolByFees(fees);

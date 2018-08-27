@@ -81,19 +81,19 @@ public class ControllerPerson {
 		
 		List<SchoolDto> schoolDtoList = new ArrayList<SchoolDto>();
 		
-		if(schoolDtoArray !=null && schoolDtoArray.length > 0){
+		if(schoolDtoArray !=null && schoolDtoArray.length>0){
 			schoolDtoList = Arrays.asList(schoolDtoArray);
 		}
 		
-		mav.addObject("school", schoolDto);
-		mav.addObject("schoolDtoList", schoolDtoList);
+		mav.addObject("school" , schoolDto);
+		mav.addObject("schoolDtoList" , schoolDtoList);
 		
 		return mav;
 				
 	}
 	
 
-	@RequestMapping(value="wiproClass", method=RequestMethod.GET)
+	@RequestMapping(value="/wiproClass", method=RequestMethod.GET)
 	public ModelAndView wiproHome(@ModelAttribute WiproDto wiproDto)
 	{
 		ModelAndView mav= new ModelAndView("wipro-input");
