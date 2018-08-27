@@ -14,6 +14,8 @@ public interface SchoolService {
 		
 		public void addSchool(School school);
 		
+		public List<School> getSchoolByFees(Double fees);
+		
 		public void deleteSchool(Integer id);
 
 		School updateSchool(School school);

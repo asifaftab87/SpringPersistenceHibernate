@@ -48,6 +48,12 @@ public class SchoolServiceImpl implements SchoolService {
 		 
 		return null;
 	}
+
+	@Override
+	public List<School> getSchoolByFees(Double fees) {
+		return schoolDao.getSchoolByFees(fees);
+		
+	}
 	
 
 }

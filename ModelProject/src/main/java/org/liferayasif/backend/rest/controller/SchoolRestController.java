@@ -25,6 +25,13 @@ public class SchoolRestController {
 		return school;
 	}
 	
+	@RequestMapping(value="getSchoolByFees")
+	public List<School> schoolListFees(@RequestParam("fees") double fees)
+	{
+		List<School> schoolList = schoolService.getSchoolByFees(fees);
+		return schoolList;
+	}
+	
 	@RequestMapping(value="/getAllSchools")
 	public List<School>getAllSchool()
 	{

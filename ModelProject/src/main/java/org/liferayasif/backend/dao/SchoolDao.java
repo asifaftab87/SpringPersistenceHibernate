@@ -10,6 +10,8 @@ public interface SchoolDao {
 	
 	public School getSchoolById(Integer id);
 	
+	public List<School> getSchoolByFees(Double fees);
+	
 	public void addSchool(School school);
 	
 	public void deleteSchool(Integer id);

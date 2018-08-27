@@ -6,7 +6,7 @@ public class SchoolDto {
 	private String schoolName;
 	private int noStudent;
 	private String location;
-	private int fees;
+	private double fees;
 	
 	public SchoolDto (){};
 	
@@ -35,10 +35,10 @@ public class SchoolDto {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public int getFees() {
+	public double getFees() {
 		return fees;
 	}
-	public void setFees(int fees) {
+	public void setFees(double fees) {
 		this.fees = fees;
 	}
 

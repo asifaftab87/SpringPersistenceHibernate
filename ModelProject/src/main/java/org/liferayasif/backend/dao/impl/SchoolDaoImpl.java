@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.liferayasif.backend.abstrct.dao.AbstractDao;
 import org.liferayasif.backend.dao.SchoolDao;
 import org.liferayasif.backend.model.School;
@@ -37,6 +38,17 @@ public void deleteSchool(Integer id) {
 	Query query = getSession().createSQLQuery("delete from School where id = :id" );
 	query.setInteger("id", id);
 	query.executeUpdate();
+}
+
+@SuppressWarnings("unchecked")
+@Override
+public List<School> getSchoolByFees(Double fees) {
+
+	Criteria criteria = getSession().createCriteria(School.class);
+	criteria.add(Restrictions.eq("fees", fees));
+	List<School> schoolList = criteria.list();
+	return schoolList;
+	
 }
 
 }

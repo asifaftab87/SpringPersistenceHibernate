@@ -74,10 +74,10 @@ public class ControllerPerson {
 	}
 	
 	@RequestMapping(value="/schoolDisplay", method=RequestMethod.GET)
-	public ModelAndView schoolDisplay(@RequestParam("fees") int fees, @ModelAttribute SchoolDto schoolDto)
+	public ModelAndView schoolDisplay(@RequestParam("fees") double fees, @ModelAttribute SchoolDto schoolDto)
 	{
 		ModelAndView mav = new ModelAndView("school-display");
-		SchoolDto[] schoolDtoArray = webRestTemplate.getForObject(URLConstants.contextPath+"/school/getByFees?fees="+fees, SchoolDto[].class);
+		SchoolDto[] schoolDtoArray = webRestTemplate.getForObject(URLConstants.contextPath+"/school/getSchoolByFees?fees="+fees, SchoolDto[].class);
 		
 		List<SchoolDto> schoolDtoList = new ArrayList<SchoolDto>();
 		
