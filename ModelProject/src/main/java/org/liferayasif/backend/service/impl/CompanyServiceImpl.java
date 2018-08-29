@@ -64,6 +64,12 @@ public class CompanyServiceImpl implements CompanyService{
 		List<Company> companyList = companyDao.searchByEmailName(email, name);
 		return companyList;
 	}
+
+	@Override
+	public List<Company> getCompanyByNumber(Integer num) {
+		return companyDao.getCompanyByNumber(num);
+
+	}
 	
 
 }

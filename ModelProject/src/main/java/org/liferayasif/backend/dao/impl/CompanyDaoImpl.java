@@ -82,5 +82,15 @@ public class CompanyDaoImpl extends AbstractDao<Integer ,Company> implements Com
 		return companyList;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Company> getCompanyByNumber(Integer num) {
+		Criteria criteria = getSession().createCriteria(Company.class);
+		criteria.add(Restrictions.eq("num", num));
+		List<Company> companyList = criteria.list();
+		return companyList;
+		
+	}
+
 	
 }

@@ -10,6 +10,8 @@ public interface CompanyDao {
 	
 	public Company getCompanyById(Integer Id);
 	
+	public List<Company> getCompanyByNumber(Integer num);
+	
 	public void addCompany(Company company);
 	
 	public void deleteCompany(Integer id);

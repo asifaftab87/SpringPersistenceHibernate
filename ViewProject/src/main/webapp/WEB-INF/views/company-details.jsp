@@ -4,8 +4,7 @@
     </head>
     <body>
         <h3>Welcome, Enter The Employee Details</h3>
-        <form:form method="POST"
-          action="addCompany" modelAttribute="company">
+        <form:form method="POST" action="addCompany" modelAttribute="company">
              <table>
              	<tr>
                     <td><form:label path="id">Id</form:label></td>

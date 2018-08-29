@@ -5,6 +5,7 @@ public class CompanyDto {
 	private Integer id;
 	private String name;
 	private String email;
+	private Integer num;
 
 	public CompanyDto() {}
 
@@ -14,6 +15,14 @@ public class CompanyDto {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public Integer getNum() {
+		return num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
 	}
 
 	public String getName() {

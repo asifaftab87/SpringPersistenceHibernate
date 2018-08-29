@@ -24,6 +24,8 @@ public class Company implements Serializable {
 	@Column(name="ID")
 	private Integer id;
 	
+	@Column(name="NUMBER")
+	private Integer num;
 	
 	@Column(name="NAME")
 	private String name;
@@ -44,6 +46,14 @@ public class Company implements Serializable {
 	{
 		this.id=id;
 	}
+	public Integer getNum() {
+		return num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
+	}
+
 	public String getName()
 	{
 		return name;

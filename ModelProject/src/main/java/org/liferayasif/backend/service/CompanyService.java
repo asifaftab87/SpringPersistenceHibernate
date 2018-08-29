@@ -10,6 +10,8 @@ public interface CompanyService {
 		
 		public Company getCompanyById(Integer Id);
 		
+		public List<Company> getCompanyByNumber(Integer num);
+
 		public Company addCompany(Company company);
 		
 		public void deleteCompany(Integer id);

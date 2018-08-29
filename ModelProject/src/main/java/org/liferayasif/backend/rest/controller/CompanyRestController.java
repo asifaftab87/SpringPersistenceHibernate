@@ -45,6 +45,12 @@ public class CompanyRestController {
 		
 		
 	}
+	@RequestMapping(value = PathConstants.SEARCHBYNUM)
+	public List<Company> companyListNumber(@RequestParam("num") int num)
+	{
+		List<Company> companyList = companyService.getCompanyByNumber(num);
+		return companyList;
+	}
 	
 	@RequestMapping(value=PathConstants.ADD_COMPANY, method=RequestMethod.POST)
 	public Company add(@RequestBody Company company){

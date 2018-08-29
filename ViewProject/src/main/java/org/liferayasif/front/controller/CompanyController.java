@@ -1,5 +1,9 @@
 package org.liferayasif.front.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.CompanyDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
@@ -28,6 +32,7 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 		
 		return mav;
 	}
+
 	
 	@RequestMapping(value="/search", method=RequestMethod.GET)
 	public ModelAndView home(@RequestParam("id") int id, @ModelAttribute CompanyDto companyDto){
@@ -45,5 +50,37 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 		mav.addObject("company", companyDto);
 		
 		return mav;
+	}
+	
+	
+	@RequestMapping(value="/searchByNum", method=RequestMethod.GET)
+	public ModelAndView viewNum(@ModelAttribute CompanyDto companyDto){
+	
+		ModelAndView mav = new ModelAndView("company-search-number");
+		
+		mav.addObject("company", companyDto);
+		
+		return mav;
+	}
+	
+	
+	@RequestMapping(value="/companyDisplay", method=RequestMethod.GET)
+	public ModelAndView schoolDisplay(@RequestParam("num") int num, @ModelAttribute CompanyDto companyDto)
+	{
+		ModelAndView mav = new ModelAndView("company-display");
+		CompanyDto[] companyDtoArray = webRestTemplate.getForObject(URLConstants.contextPath+"/company/searchByNum?num="+num, CompanyDto[].class);
+		
+		
+		List<CompanyDto> companyDtoList = new ArrayList<CompanyDto>();
+		
+		if(companyDtoArray !=null && companyDtoArray.length>0){
+			companyDtoList = Arrays.asList(companyDtoArray);
+		}
+		
+		mav.addObject("company" , companyDto);
+		mav.addObject("companyDtoList" , companyDtoList);
+		
+		return mav;
+				
 	}
 }
