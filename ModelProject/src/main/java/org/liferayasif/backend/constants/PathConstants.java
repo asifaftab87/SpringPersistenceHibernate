@@ -31,4 +31,7 @@ public interface PathConstants {
 	String GET_PERSON_BY_ID								= "/getPersonById";
 	String ADD_PERSON									= "/addPerson";
 	String GET_PKIN_LIST								= "/getPersonKinList";
+	String PURSE										= "/purse";		
+	String ADD_OBJ										= "/addObj";		
+
 }

@@ -42,7 +42,19 @@ public class UserRestController {
 	}
 	
 	@RequestMapping(value=PathConstants.ADD_USER, method=RequestMethod.POST)
-	public User add(@RequestBody User user){
+	public User add(@RequestBody User user) throws Exception{
+		
+		String name = user.getName();
+		
+		if(name==null || name.isEmpty()){
+			throw new Exception("Name will not empty");
+		}
+		
+		String email = user.getEmail();
+		
+		if(email==null || email.isEmpty()){
+			throw new Exception("Email will not empty");
+		}
 		
 		user = userService.addUser(user);
 		
