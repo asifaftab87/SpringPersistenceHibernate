@@ -67,7 +67,7 @@
                 return false;
             }
              
-            document.myForm.submit();
+            document.theForm.submit();
             
         }
         	
