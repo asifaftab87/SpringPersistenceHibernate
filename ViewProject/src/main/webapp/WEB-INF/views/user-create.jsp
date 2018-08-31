@@ -6,7 +6,7 @@
     </head>
     <body>
         <h3><spring:message code="header.add.user" /></h3>
-        <form:form method="POST" action="user/add" modelAttribute="userDto">
+        <form:form method="POST" action="/view/user/add" modelAttribute="userDto">
              <table>
              	<tr>
                     <td><form:label path="name"><spring:message code="user.name" /></form:label></td>
