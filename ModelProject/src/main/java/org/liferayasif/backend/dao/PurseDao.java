@@ -12,7 +12,7 @@ public interface PurseDao {
 	
 	public List<Purse> getPurseByPrice(Integer price);
 	
-	public void addPurse(Purse purse);
+	public Purse addPurse(Purse purse);
 	
 	public List<Purse> findByName(String name);
 	

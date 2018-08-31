@@ -11,7 +11,7 @@
 
 <h1>Wipro Search Result based on Salary</h1>
 
-<form:form method="POST" action="wipro" modelAttribute="wipro">
+<form:form method="POST"  modelAttribute="wipro">
 <table>
 	<thead>
 	

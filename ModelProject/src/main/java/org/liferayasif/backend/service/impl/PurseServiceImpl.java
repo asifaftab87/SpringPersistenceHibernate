@@ -41,8 +41,8 @@ public class PurseServiceImpl implements PurseService{
 	}
 
 	@Override
-	public void addPurse(Purse purse) {
-		purseDao.addPurse(purse);
+	public Purse addPurse(Purse purse) {
+		return purseDao.addPurse(purse);
 		
 	}
 

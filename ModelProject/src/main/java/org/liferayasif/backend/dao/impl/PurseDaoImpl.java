@@ -35,9 +35,9 @@ public class PurseDaoImpl extends AbstractDao<Integer , Purse> implements PurseD
 	}
 
 	@Override
-	public void addPurse(Purse purse) {
-		persist(purse);
-		
+	public Purse addPurse(Purse purse) {
+		 persist(purse);
+		 return purse;
 	}
 
 	@SuppressWarnings("unchecked")
