@@ -6,9 +6,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.context.MessageSource;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
+import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import java.util.Locale;
 
 @Configuration
 @EnableWebMvc
@@ -29,5 +37,41 @@ public class WebConfig extends WebMvcConfigurerAdapter{
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer){
 		configurer.enable();
 	}
+	
+	/*
+	 * This is for reading message from locale_en.properties file
+	 * i18n   -> name of the folder inside webapp folder
+	 * locale -> name of properties file will start from 'locale' like locale_en.properties etc.
+	 */
+	@Bean
+    public MessageSource messageSource() {
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        messageSource.setBasename("/i18n/locale");
+        messageSource.setDefaultEncoding("UTF-8");
+        return messageSource;
+    }
+	
+	/*@Bean
+    public LocaleResolver localeResolver(){
+		CookieLocaleResolver resolver = new CookieLocaleResolver();
+		resolver.setDefaultLocale(new Locale("en"));
+		resolver.setCookieName("myLocaleCookie");
+		resolver.setCookieMaxAge(4800);
+		return resolver;
+    }*/
+	
+	/*@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+	    LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
+	    interceptor.setParamName("mylocale");
+	    registry.addInterceptor(interceptor);
+	} */
+	
+	/*@Bean
+	public LocaleResolver localeResolver(){
+	SessionLocaleResolver  resolver = new SessionLocaleResolver ();
+	   resolver.setDefaultLocale(new Locale("en"));
+	   return resolver;
+	} */
 	
 }
