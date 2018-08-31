@@ -40,8 +40,6 @@ public class WebConfig extends WebMvcConfigurerAdapter{
 	
 	/*
 	 * This is for reading message from locale_en.properties file
-	 * i18n   -> name of the folder inside webapp folder
-	 * locale -> name of properties file will start from 'locale' like locale_en.properties etc.
 	 */
 	@Bean
     public MessageSource messageSource() {
@@ -51,21 +49,21 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         return messageSource;
     }
 	
-	/*@Bean
+	@Bean
     public LocaleResolver localeResolver(){
 		CookieLocaleResolver resolver = new CookieLocaleResolver();
 		resolver.setDefaultLocale(new Locale("en"));
 		resolver.setCookieName("myLocaleCookie");
 		resolver.setCookieMaxAge(4800);
 		return resolver;
-    }*/
+    }
 	
-	/*@Override
+	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 	    LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
 	    interceptor.setParamName("mylocale");
 	    registry.addInterceptor(interceptor);
-	} */
+	}
 	
 	/*@Bean
 	public LocaleResolver localeResolver(){

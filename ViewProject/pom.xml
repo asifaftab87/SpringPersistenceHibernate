@@ -115,7 +115,13 @@
 	        <artifactId>jackson-databind</artifactId>
 	        <version>${jackson.version}</version>
 	    </dependency>
-	     
+	    
+	    <dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>1.0.0.GA</version>
+		</dependency>
+			    
   </dependencies>
   
   <!-- To avoid compiler and jre version -->

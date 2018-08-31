@@ -23,8 +23,8 @@ public class UserValidator implements Validator {
 		if(object instanceof UserDto) {
 			System.out.println("UserDto userValidator");
 			//errors.rejectValue("name", null, null, "name failed");
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "nerror");
-			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "error");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "this.user.name.error");
+			ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "this.user.email.error");
 		}
 	}
 	
