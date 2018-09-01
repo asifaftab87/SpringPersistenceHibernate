@@ -32,6 +32,8 @@ public interface PathConstants {
 	String ADD_PERSON									= "/addPerson";
 	String GET_PKIN_LIST								= "/getPersonKinList";
 	String PURSE										= "/purse";		
-	String ADD_OBJ										= "/addObj";		
+	String ADD_OBJ										= "/addObj";	
+	String NGO											= "/ngo";
+	String FIND_BY_PARAMETER							= "/findByPara";
 
 }
