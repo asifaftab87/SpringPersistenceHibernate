@@ -27,7 +27,7 @@ public class NgoRestController {
 	@RequestMapping(value=PathConstants.ADD_OBJ	, method=RequestMethod.POST)
 	public Ngo addNgoObj(@RequestBody Ngo ngo)
 	{
-		
+		/*if(ngo.getFullName()||ngo.getFatherName()||ngo.ge)*/
 		
 		return ngoService.addNgo(ngo);
 	}

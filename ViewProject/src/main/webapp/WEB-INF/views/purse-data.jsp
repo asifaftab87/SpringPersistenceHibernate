@@ -39,7 +39,7 @@
         
         function myFunction()
         {        	  
-        	debugger;
+        	//debugger;
         	
         	var x = document.forms["myForm"]["color"].value;
             if (x == "") {
@@ -67,7 +67,7 @@
                 return false;
             }
              
-            document.theForm.submit();
+            document.myForm.submit();
             
         }
         	

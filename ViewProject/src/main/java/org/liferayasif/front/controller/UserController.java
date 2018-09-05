@@ -48,8 +48,15 @@ public class UserController {
 	public ModelAndView add(@Validated @ModelAttribute UserDto userDto, BindingResult result, Errors errors){
 		
 		System.out.println("errors: "+result.hasErrors());
-		ModelAndView mav = new ModelAndView("user-create");
+		ModelAndView mav = new ModelAndView("user-result");
 		
+		if(!result.hasErrors()){
+			//oepration here
+			//add rest controller
+		}
+		else{
+			mav = new ModelAndView("user-create");
+		}
 		mav.addObject("userDto", userDto);
 		
 		return mav;
