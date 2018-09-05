@@ -35,5 +35,6 @@ public interface PathConstants {
 	String ADD_OBJ										= "/addObj";	
 	String NGO											= "/ngo";
 	String FIND_BY_PARAMETER							= "/findByPara";
+	String WORKER										= "/worker";
 
 }
