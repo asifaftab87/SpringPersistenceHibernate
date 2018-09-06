@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.PersonDto;
-
+import org.liferayasif.front.dto.SchoolDto;
 import org.liferayasif.front.dto.UserDto;
 import org.liferayasif.front.dto.WiproDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;

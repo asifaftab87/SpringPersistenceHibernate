@@ -1,4 +1,4 @@
-package org.liferayasif.front.controller;
+package org.liferayasif.front.dto;
 
 public class SchoolDto {
 	
