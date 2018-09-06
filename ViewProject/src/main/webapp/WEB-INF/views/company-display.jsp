@@ -1,5 +1,8 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+ 
+
      
  
 <html>
@@ -10,7 +13,10 @@
 <body>
 
 <h1>School Search Result based on Fees</h1>
-
+<c:if test="${empty companyDtoList}">
+    values not found;
+</c:if>
+<c:if test="${not empty companyDtoList}">
 <form:form method="POST" action="company" modelAttribute="company">
 <table>
 	<thead>
@@ -34,5 +40,6 @@
 </tbody>
 </table>
 </form:form>
+</c:if>
 </body>
 </html>

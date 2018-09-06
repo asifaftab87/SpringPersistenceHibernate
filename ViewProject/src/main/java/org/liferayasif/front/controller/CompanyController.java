@@ -70,7 +70,6 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 		ModelAndView mav = new ModelAndView("company-display");
 		CompanyDto[] companyDtoArray = webRestTemplate.getForObject(URLConstants.contextPath+"/company/searchByNum?num="+num, CompanyDto[].class);
 		
-		
 		List<CompanyDto> companyDtoList = new ArrayList<CompanyDto>();
 		
 		if(companyDtoArray !=null && companyDtoArray.length>0){
@@ -82,5 +81,38 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 		
 		return mav;
 				
+	}
+//	why this method is post?
+//			because i need to post the value in backend(db) from browser
+//			from this method u r only redirecting to the company-create page not posting any date 
+//			so it should be get only 
+	
+	
+	@RequestMapping(value="/add", method=RequestMethod.GET)
+	public ModelAndView add(@ModelAttribute CompanyDto companyDto){
+		
+		ModelAndView mav = new ModelAndView("company-create");
+		
+		mav.addObject("company", companyDto);
+		
+		return mav;
+	}
+	@RequestMapping(value="/adds", method=RequestMethod.POST)
+	public ModelAndView adds(@ModelAttribute CompanyDto companyDto){
+		
+		ModelAndView mav = new ModelAndView("company-result");
+		
+		try {
+		companyDto = webRestTemplate.postForObject(URLConstants.contextPath+"/company/addCompany",companyDto, CompanyDto.class);
+		mav.addObject("result","success");
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			mav.addObject("result","unsucces");
+		}
+		
+		mav.addObject("companyDto", companyDto);
+		
+		return mav;
 	}
 }

@@ -36,5 +36,6 @@ public interface PathConstants {
 	String NGO											= "/ngo";
 	String FIND_BY_PARAMETER							= "/findByPara";
 	String WORKER										= "/worker";
-
+	String FORM 										= "/form";
+	String ADD											= "/add";
 }

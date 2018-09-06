@@ -22,6 +22,7 @@ public class CompanyRestController {
 	@Autowired
 	private CompanyService companyService;
 	
+	@SuppressWarnings("unused")
 	@Autowired
 	private CompanyAddressService companyAddressService;
 	
@@ -53,14 +54,13 @@ public class CompanyRestController {
 	}
 	
 	@RequestMapping(value=PathConstants.ADD_COMPANY, method=RequestMethod.POST)
-	public Company add(@RequestBody Company company){
+	public Company add(@RequestBody Company company)throws Exception{
 		
 		
-		company =  companyService.addCompany(company);
 		
-		List<CompanyAddress> companyAddressList = company.getCompanyAddressList();
+//		List<CompanyAddress> companyAddressList = company.getCompanyAddressList();
 		
-		if(companyAddressList!=null)
+		/*if(companyAddressList!=null)
 		{
 			for(CompanyAddress companyAddlist : companyAddressList)
 			{
@@ -70,8 +70,18 @@ public class CompanyRestController {
 			
 			companyAddressService.addCompanyAddressList(companyAddressList);
 			
+		}*/
+		
+		String name = company.getName().trim();
+		int num = company.getNum();
+		String email = company.getEmail().trim();
+		
+		if(email==null || email.isEmpty() || name==null || name.isEmpty()|| num==0)
+		{
+			throw new Exception ("the field cannot be empty");
 		}
 		
+		company = companyService.addCompany(company);
 		return company;
 	}
 	
