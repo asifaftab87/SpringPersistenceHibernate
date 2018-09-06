@@ -1,5 +1,6 @@
 package org.liferayasif.front.controller;
 
+import org.liferayasif.front.constants.PathConstants;
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.FormDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value="/form")
+@RequestMapping(value = PathConstants.FORM)
 public class FormController {
 	
 	WebRestTemplate webRestTemplate = new WebRestTemplate();
@@ -24,7 +25,7 @@ public class FormController {
 			
 	}
 	
-	@RequestMapping(value="/resultForm",  method=RequestMethod.POST)
+	@RequestMapping(value= PathConstants.RESULT_FORM,  method=RequestMethod.POST)
 	public ModelAndView result(@ModelAttribute FormDto formDto)
 	{
 		ModelAndView mav = new ModelAndView("form-result");
