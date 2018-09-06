@@ -29,7 +29,7 @@
 							<tr>
 									<td><form:label path="fullName"> Name </form:label></td>
 									<td><form:input id="fullName" path="fullName" maxlength="10"/></td>
-									<td class="error"><form:errors path="name"/></td>
+									
 							</tr>
 						
 							<tr>
@@ -44,9 +44,9 @@
 								
 							<tr>
 									<td><form:label path="gender" id="gender" value="gender">Gender</form:label></td>
-									<td><input type="radio" name="gender" id="1" path="gender" value="1" />Male
-										<input type="radio" name="gender" id="2" path="gender" value="2"/>Female
-										<input type="radio" name="gender" id="3" path="gender" value="3" />Others
+									<td><input type="radio" name="gender" id="1" path="gender" value="1" />Male</>
+										<input type="radio" name="gender" id="2" path="gender" value="2"/>Female</>
+										<input type="radio" name="gender" id="3" path="gender" value="3" />Others</>
 									</td>
 							</tr>
 								
