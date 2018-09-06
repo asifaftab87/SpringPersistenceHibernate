@@ -9,4 +9,5 @@ public interface PathConstants {
 	String ADDS											= "/adds";
 	String FORM											= "/form";
 	String RESULT_FORM									= "/resultForm";
+	String HOME											= "/";
 }

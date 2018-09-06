@@ -24,10 +24,10 @@ public class ControllerPerson {
 	WebRestTemplate webRestTemplate = new WebRestTemplate();
 	
 	@RequestMapping(value="search" , method=RequestMethod.GET)
-	public ModelAndView findUser(@ModelAttribute UserDto userDto)
+	public ModelAndView findUser(@ModelAttribute PersonDto personDto)
 	{
-		ModelAndView mav = new ModelAndView("search-user");
-		mav.addObject("user", userDto);
+		ModelAndView mav = new ModelAndView("person-search");
+		mav.addObject("person", personDto);
 		return mav;
 	}
 	

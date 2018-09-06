@@ -1,16 +1,17 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
-<head>
-		<title>input id of Person</title>
-</head>
-<body>
-
-<div>
-	<jsp:include page="navigation.jsp" />  
-</div>
-
-			<h1>Please input the correct Id to search the details</h1>
-	<form:form method="GET" action="getPerson" modelAttribute="person">
+	
+	<head>
+			<title>input id of Person</title>
+			<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+	</head>
+	<body>
+	
+		<div>
+			<jsp:include page="navigation.jsp" />  
+		</div>
+	
+		<h1>Please input the correct Id to search the details</h1>
+		<form:form method="GET" action="getPerson" modelAttribute="person">
 			<table>
 				 		<tr>
 					      <td><form:label path="id">Id</form:label></td>
@@ -22,5 +23,6 @@
 					</tr>
 			</table>
 		</form:form>
+		
 	</body>
 </html>

@@ -12,8 +12,8 @@
 	<body>
 	
 		<ul>
-		  <li><a class="navTab active" href="#home" onclick="makeAtcive(this);">Home</a></li>
-		  <li><a class="navTab" href="#news" onclick="makeAtcive(this);">News</a></li>
+		  <li><a class="navTab" href="/view" onclick="makeAtcive(this);">Home</a></li>
+		  <li><a class="navTab" href="/view/person/search" onclick="makeAtcive(this);">Person</a></li>
 		  <li><a class="navTab" href="#contact" onclick="makeAtcive(this);">Contact</a></li>
 		  <li><a class="navTab" href="#about" onclick="makeAtcive(this);">About</a></li>
 		</ul>
