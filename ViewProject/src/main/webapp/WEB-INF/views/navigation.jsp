@@ -6,7 +6,7 @@
 	<head>
 		<script src="<c:url value='/static/script/jquery-3.3.1.min.js' />"></script>
 		<script src="<c:url value='/static/script/main.js' />"></script>
-		<link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
+		<link href="<c:url value='/static/css/main.css' />" rel="stylesheet"></link>
 	</head>
 	
 	<body>
