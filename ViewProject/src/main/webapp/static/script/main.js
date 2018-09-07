@@ -18,7 +18,7 @@ $(document).ready(function(){
 });
 
 function makeAtcive(obj){
-	
+	console.log("asif new changes");
 	console.log("d: "+$('#birthDate').val());
 /*	var x = document.querySelectorAll(".navTab");
 	
