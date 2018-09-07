@@ -20,13 +20,7 @@ $(document).ready(function(){
 function makeAtcive(obj){
 	console.log("asif new changes");
 	console.log("d: "+$('#birthDate').val());
-/*	var x = document.querySelectorAll(".navTab");
-			
-	for(var i=0; i<x.length; i++){
-		$(x[i]).attr("class", "navTab");
-		}
-		
-	$(obj).attr("class", "navTab active");*/
+
 }
 function atifChnaged(){
 	console.log("sdfasdf");
