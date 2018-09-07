@@ -2,8 +2,9 @@ package org.liferayasif.spring.reference.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.context.AbstractSecurityWebApplicationInitializer;
 
 /*
  * The configuration creates a Servlet Filter known as the springSecurityFilterChain
@@ -15,14 +16,37 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * with either @EnableWebSecurity, @EnableGlobalMethodSecurity, or @EnableGlobalAuthentication.
  */
 
-//@EnableWebSecurity
-public class SecurityConfig{// extends WebSecurityConfigurerAdapter{
+@EnableWebSecurity
+public class SecurityConfig extends AbstractSecurityWebApplicationInitializer{
 
-/*	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
-		
+	@Autowired
+	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth
-			.inMemoryAuthentication()
-				.withUser("user").password("password").roles("USER");
-	}*/
+		.inMemoryAuthentication()
+		.withUser("test").password("test").roles("USER");
+	}
+	
+	protected void configure(HttpSecurity http) throws Exception {
+		http
+			.authorizeRequests()
+			.anyRequest().authenticated()
+			.and()
+			.formLogin()
+			.loginPage("/login.jsp")
+			.permitAll();
+	}
 }
+
+
+/*
+ * If we are not using Spring or Spring MVC, we will need to pass in the SecurityConfig into the
+ * superclass to ensure the configuration is picked up.
+
+public class SecurityWebApplicationInitializer 	extends AbstractSecurityWebApplicationInitializer {
+	
+	public SecurityWebApplicationInitializer() {
+		super(SecurityConfig.class);
+	}
+		
+}
+*/
