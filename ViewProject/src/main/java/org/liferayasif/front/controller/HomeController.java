@@ -17,6 +17,7 @@ public class HomeController {
 	{
 		ModelAndView mav = new ModelAndView("home/home");
 		mav.addObject("form",formDto);
+		mav.addObject("curRootPage","home");
 		return mav;
 			
 	}

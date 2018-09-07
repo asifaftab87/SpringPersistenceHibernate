@@ -28,6 +28,7 @@ public class ControllerPerson {
 	{
 		ModelAndView mav = new ModelAndView("person-search");
 		mav.addObject("person", personDto);
+		mav.addObject("curRootPage","person");
 		return mav;
 	}
 	

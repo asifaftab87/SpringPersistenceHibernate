@@ -22,6 +22,7 @@
 							<td><input type="submit" value="Submit"/></td>
 					</tr>
 			</table>
+			<input type="hidden" value="${curRootPage}" id="curRootPage" /> 
 		</form:form>
 		
 	</body>

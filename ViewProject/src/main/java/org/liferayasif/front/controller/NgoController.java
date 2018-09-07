@@ -20,6 +20,7 @@ public class NgoController {
 		
 		ModelAndView mav = new ModelAndView("ngo-create");
 		mav.addObject("ngo",ngoDto);
+		mav.addObject("curRootPage","ngo");
 		return mav;
 		
 		

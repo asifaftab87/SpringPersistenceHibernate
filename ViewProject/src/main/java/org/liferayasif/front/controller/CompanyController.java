@@ -30,6 +30,7 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 		ModelAndView mav = new ModelAndView("search-company");
 		
 		mav.addObject("company", companyDto);
+		mav.addObject("curRootPage","company");
 		
 		return mav;
 	}
