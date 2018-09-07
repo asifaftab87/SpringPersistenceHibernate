@@ -12,7 +12,7 @@
 	<body>
 	
 		<ul>
-		  <li><a class="navTab" href="/view" onclick="makeAtcive(this);">Home</a></li>
+		  <li><a class="navTab" href="/view" onclick="makeAtcive(this);">Homee</a></li>
 		  <li><a class="navTab" href="/view/person/search" onclick="makeAtcive(this);">Person</a></li>
 		  <li><a class="navTab" href="/view/company" onclick="makeAtcive(this);">Company</a></li>
 		</ul>

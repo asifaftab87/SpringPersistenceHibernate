@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.liferayasif.front.constants.PathConstants;
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.CompanyDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value="/company")
+@RequestMapping(value = PathConstants.COMPANY)
 public class CompanyController {
 
 	
@@ -34,7 +35,7 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 	}
 
 	
-	@RequestMapping(value="/search", method=RequestMethod.GET)
+	@RequestMapping(value= PathConstants.SEARCH, method=RequestMethod.GET)
 	public ModelAndView home(@RequestParam("id") int id, @ModelAttribute CompanyDto companyDto){
 	
 		
@@ -53,7 +54,7 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 	}
 	
 	
-	@RequestMapping(value="/searchByNum", method=RequestMethod.GET)
+	@RequestMapping(value= PathConstants.SEARCHBYNUM, method=RequestMethod.GET)
 	public ModelAndView viewNum(@ModelAttribute CompanyDto companyDto){
 	
 		ModelAndView mav = new ModelAndView("company-search-number");
@@ -64,12 +65,11 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 	}
 	
 	
-	@RequestMapping(value="/companyDisplay", method=RequestMethod.GET)
+	@RequestMapping(value= PathConstants.COMPANY_DISPLAY, method=RequestMethod.GET)
 	public ModelAndView schoolDisplay(@RequestParam("num") int num, @ModelAttribute CompanyDto companyDto)
 	{
 		ModelAndView mav = new ModelAndView("company-display");
 		CompanyDto[] companyDtoArray = webRestTemplate.getForObject(URLConstants.contextPath+"/company/searchByNum?num="+num, CompanyDto[].class);
-		
 		
 		List<CompanyDto> companyDtoList = new ArrayList<CompanyDto>();
 		
@@ -82,5 +82,38 @@ WebRestTemplate webRestTemplate = new WebRestTemplate();
 		
 		return mav;
 				
+	}
+//	why this method is post?
+//			because i need to post the value in backend(db) from browser
+//			from this method u r only redirecting to the company-create page not posting any date 
+//			so it should be get only 
+	
+	
+	@RequestMapping(value= PathConstants.ADD, method=RequestMethod.GET)
+	public ModelAndView add(@ModelAttribute CompanyDto companyDto){
+		
+		ModelAndView mav = new ModelAndView("company-create");
+		
+		mav.addObject("company", companyDto);
+		
+		return mav;
+	}
+	@RequestMapping(value= PathConstants.ADDS, method=RequestMethod.POST)
+	public ModelAndView adds(@ModelAttribute CompanyDto companyDto){
+		
+		ModelAndView mav = new ModelAndView("company-result");
+		
+		try {
+		companyDto = webRestTemplate.postForObject(URLConstants.contextPath+"/company/addCompany",companyDto, CompanyDto.class);
+		mav.addObject("result","success");
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			mav.addObject("result","unsucces");
+		}
+		
+		mav.addObject("companyDto", companyDto);
+		
+		return mav;
 	}
 }
