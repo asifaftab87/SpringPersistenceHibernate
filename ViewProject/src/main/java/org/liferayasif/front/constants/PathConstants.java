@@ -2,6 +2,7 @@ package org.liferayasif.front.constants;
 
 public interface PathConstants {
 	String COMPANY 										= "/company";
+	String ADD_FORM										= "/addForm";
 	String SEARCH	 									= "/search";
 	String SEARCHBYNUM									= "/searchByNum";
 	String COMPANY_DISPLAY 								= "/companyDisplay";
