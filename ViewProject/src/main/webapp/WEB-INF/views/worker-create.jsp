@@ -14,7 +14,7 @@
 			
 							<tr>
 									<td><form:label path="fullName"> <spring:message code="user.name" /></form:label></td>
-									<td><form:input id="fullName" path="fullName" maxlength="10"/></td>
+									<td><form:input id="fullName" path="fullName" maxlength="25"/></td>
 									 <td class="error"><form:errors path="fullName" /></td>
 							</tr>
 						
@@ -100,14 +100,14 @@
 							</tr>
 														
 							<tr>
-									<td><form:label path="mobileNo"><spring:message code="user.email" /></form:label></td>
+									<td><form:label path="mobileNo"><spring:message code="user.mob" /></form:label></td>
 									<td><form:input id="mobileNo" path="mobileNo" maxlength="10"  /></td>
 									<td class="error"><form:errors path="mobileNo" /></td>
 							</tr>
 												
 							<tr>
 									<td><form:label path="emailAddress"><spring:message code="user.email" /></form:label></td>
-									<td><form:input id="emailAddress" path="emailAddress" maxlength="25"/></td>
+									<td><form:input id="emailAddress" path="emailAddress" maxlength="50"/></td>
 									<td class="error"><form:errors path="emailAddress" /></td>
 							</tr>
 								

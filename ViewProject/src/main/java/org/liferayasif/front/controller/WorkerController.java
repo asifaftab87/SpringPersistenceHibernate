@@ -1,6 +1,8 @@
 package org.liferayasif.front.controller;
 
 import org.liferayasif.front.constants.Constants;
+import org.liferayasif.front.constants.URLConstants;
+import org.liferayasif.front.dto.NgoDto;
 import org.liferayasif.front.dto.WorkerDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +55,9 @@ public class WorkerController {
 		ModelAndView mav = new ModelAndView("worker-display");
 		if(!result.hasErrors())
 		{
-			/*workerDto = webRestTemplate.postForObject(URLConstants.contextPath+"/worker/addObj", workerDto, WorkerDto.class);
-			//mav.addObject("" , "")
-*/		}
+			workerDto = webRestTemplate.postForObject(URLConstants.contextPath+"/worker/addObj", workerDto, WorkerDto.class);
+			mav.addObject("result" , "Form submited to database");
+	}
 		else
 		{
 			mav=new ModelAndView("worker-create");
