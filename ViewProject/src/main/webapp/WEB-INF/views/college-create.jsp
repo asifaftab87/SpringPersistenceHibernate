@@ -12,7 +12,7 @@
 				<jsp:include page="navigation.jsp" />  
 			</div>
 
-		<h1>sdfsdfEnter Detail of COLLEGE</h1>
+		<h1>Enter Detail of COLLEGE</h1>
 		
 		
 		<form:form method="POST" action="update"  modelAttribute="collegeDto">

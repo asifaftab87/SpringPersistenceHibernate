@@ -13,4 +13,7 @@ public interface PathConstants {
 	String HOME											= "/";
 	String COLLEGE										= "/college";
 	String UPDATEDB										= "/update";
+	String WORLD										= "/world";
+	String BOX											= "/box";
+	String INSERT_BOX									= "/addData";
 }

@@ -1,8 +1,8 @@
 package org.liferayasif.front.controller;
 
 import org.liferayasif.front.constants.Constants;
-import org.liferayasif.front.constants.URLConstants;
-import org.liferayasif.front.dto.WorkerDto;
+import org.liferayasif.front.constants.PathConstants;
+import org.liferayasif.front.dto.MinisterDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,69 +19,48 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value=Constants.WORKER)
-public class WorkerController {
-	
+@RequestMapping(value=Constants.MINISTER)
+public class MinisterController {
+
 	@Autowired
-	@Qualifier("workerValidator")
+	@Qualifier("ministerValidator")
 	private Validator validator;
 	
-		
 	@InitBinder
 	public void bindingPreparation(WebDataBinder binder)
 	{
 		binder.setValidator(validator);
 	}
-
 	
 	WebRestTemplate webRestTemplate = new WebRestTemplate();
 	
-	
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView getData(@ModelAttribute WorkerDto workerDto)
+	public ModelAndView getData(@ModelAttribute MinisterDto ministerDto)
 	{
-		ModelAndView mav = new ModelAndView("worker-create");
-		mav.addObject("workerDto" , workerDto);
+		ModelAndView mav  = new ModelAndView("minister-create");
+		mav.addObject("ministerDto", ministerDto);
+				
 		return mav;
-		
 	}
 	
 	
-	
-	@RequestMapping(value=Constants.ADD_OBJ , method=RequestMethod.POST)
-	public ModelAndView view(@Validated @ModelAttribute WorkerDto workerDto, BindingResult result, Errors errors)
-	{
-		ModelAndView mav = new ModelAndView("worker-display");
+	@RequestMapping(value=PathConstants.UPDATEDB	, method=RequestMethod.POST)
+	public ModelAndView inputMinister(@Validated @ModelAttribute MinisterDto ministerDto,BindingResult result, Errors errors ){
+		
+		ModelAndView mav = new ModelAndView("minister-show");
 		if(!result.hasErrors())
 		{
-			workerDto = webRestTemplate.postForObject(URLConstants.contextPath+"/worker/addObj", workerDto, WorkerDto.class);
-			mav.addObject("result" , "Form submited to database");
-	}
-		else
-		{
-			mav=new ModelAndView("worker-create");
+			mav.addObject("result" , "form submitted successfully");
 		}
+		else{
+			
+			mav= new ModelAndView("minister-create");
 		
-		mav.addObject("workerDto", workerDto);
+		}
+		mav.addObject("ministerDto", ministerDto);
+		
 		return mav;
+		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
