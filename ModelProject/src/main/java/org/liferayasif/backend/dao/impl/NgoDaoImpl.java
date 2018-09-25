@@ -42,8 +42,7 @@ public class NgoDaoImpl extends AbstractDao<Integer , Ngo>implements NgoDao{
 	
 	@Override
 	public Ngo updateNgo(Ngo ngo) {
-		getSession().update(ngo)
-		;
+		getSession().update(ngo);
 		return ngo;
 	}
 

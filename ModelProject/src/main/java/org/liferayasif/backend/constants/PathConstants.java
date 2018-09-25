@@ -38,4 +38,5 @@ public interface PathConstants {
 	String WORKER										= "/worker";
 	String FORM 										= "/form";
 	String ADD											= "/add";
+	String COLLEGE										= "/college";
 }

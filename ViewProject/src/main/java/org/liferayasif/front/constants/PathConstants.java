@@ -11,4 +11,6 @@ public interface PathConstants {
 	String FORM											= "/form";
 	String RESULT_FORM									= "/resultForm";
 	String HOME											= "/";
+	String COLLEGE										= "/college";
+	String UPDATEDB										= "/update";
 }
