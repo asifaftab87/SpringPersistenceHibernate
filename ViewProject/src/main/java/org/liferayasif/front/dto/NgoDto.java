@@ -21,7 +21,7 @@ public class NgoDto {
 	private Long mobileNo ;
 	private String emailAddress;
 	private Double yearlyIncome ;
-	private Double yearlyExpense ;
+	private Double  yearlyExpense ;
 	
 	public NgoDto (){};
 

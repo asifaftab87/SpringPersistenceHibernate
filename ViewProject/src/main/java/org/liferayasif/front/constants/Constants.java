@@ -12,6 +12,10 @@ public class Constants {
 	public static final String ACTOR				= "/actor";
 	public static final String ADD_INFO				= "/addInfo";
 	public static final String MOBILE				= "/mobile";
+	public static final String BEST					= "/best";
+	public static final String UPDATE_DB			= "/updateDB";
+	public static final String TEST					= "/test";
+	
 	
 	 
 }

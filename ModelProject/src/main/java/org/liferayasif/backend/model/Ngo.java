@@ -22,7 +22,7 @@ public class Ngo implements Serializable {
 	@Column(name="ID_NGO")
 	private Integer id;
 
-	@Column(name = "FULL_NAME", length = 20)
+	@Column(name = "FULL_NAME")
 	private String fullName;
 	
 	@Column(name = "Father_NAME")

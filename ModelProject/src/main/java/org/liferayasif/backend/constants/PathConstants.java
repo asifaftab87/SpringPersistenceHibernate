@@ -39,4 +39,12 @@ public interface PathConstants {
 	String FORM 										= "/form";
 	String ADD											= "/add";
 	String COLLEGE										= "/college";
+	String DISPLAY										= "/display";
+	String DEL_OBJ										= "/delObj";
+	String UPDATE_OBJ									= "/updateObj";
+	String DELETE_BY_EMAIL								= "/deleteByEmail";
+	String BEST											= "/best";
+	String TEST											= "/test";
+	
+	
 }

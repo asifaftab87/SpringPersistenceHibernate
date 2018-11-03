@@ -19,5 +19,9 @@ public interface NgoService {
 	public void deleteNgoById(Integer id);
 	
 	public void deleteByyearlyIncome(double yearlyIncome);
+	
+	public void deleteEmail(String emailAddress);
+	
+	public List<Ngo>  getByEmail(String emailAddress);
 
 }

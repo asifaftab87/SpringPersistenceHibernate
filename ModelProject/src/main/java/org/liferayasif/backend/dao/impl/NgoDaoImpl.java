@@ -61,6 +61,23 @@ public class NgoDaoImpl extends AbstractDao<Integer , Ngo>implements NgoDao{
 		
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Ngo> getByEmail(String emailAddress) {
+		Criteria criteria  =getSession().createCriteria(Ngo.class);
+		criteria.add(Restrictions.eqProperty(emailAddress, emailAddress));
+		List<Ngo> ngoList=criteria.list();
+		return ngoList;
+	}
+
+	@Override
+	public void deleteEmail(String emailAddress) {
+		Query query = getSession().createSQLQuery("delete from Ngo where emailAddress:emailAddress");
+		query.setString("emailAddress", emailAddress);
+		query.executeUpdate();
+		
+	}
+
 	
 
 }

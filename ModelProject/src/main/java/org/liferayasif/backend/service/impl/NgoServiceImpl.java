@@ -60,4 +60,16 @@ public class NgoServiceImpl implements NgoService {
 		
 	}
 
+	@Override
+	public List<Ngo> getByEmail(String emailAddress) {
+		List<Ngo> ngoList= ngoDao.getByEmail(emailAddress);
+		return ngoList;
+	}
+
+	@Override
+	public void deleteEmail(String emailAddress) {
+		ngoDao.deleteEmail(emailAddress);
+		
+	}
+
 }
