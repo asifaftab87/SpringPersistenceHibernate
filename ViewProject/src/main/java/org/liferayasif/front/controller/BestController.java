@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping(value=Constants.BEST , method=RequestMethod.POST)
+@RequestMapping(value=Constants.BEST)
 public class BestController {
 	
 	WebRestTemplate webRestTemplate = new WebRestTemplate();

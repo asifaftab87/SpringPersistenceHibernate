@@ -45,6 +45,10 @@ public interface PathConstants {
 	String DELETE_BY_EMAIL								= "/deleteByEmail";
 	String BEST											= "/best";
 	String TEST											= "/test";
+	String WORST										= "/worst";
+	String CREATE										= "/create";
+	String GET_ALL										= "/getAll";
+
 	
 	
 }

@@ -2,6 +2,8 @@
 
  
 
+ 
+ 
 
 <html>
 
@@ -14,7 +16,7 @@
 			<div>
 				<jsp:include page="navigation.jsp" />  
 			</div>
-			<h1> Enter Detail of NGO </h1>
+			<h1> Enter Detail of NGO</h1>
 			<form:form method="POST" action="displayNgo" name="myForm" modelAttribute="ngo">
 					<table>
 			

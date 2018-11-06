@@ -1,6 +1,18 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+ <html>
+ <head>
+ <title></title>
+ </head>
  
+ <h1>WORST PAGE CREATION FORM</h1>
+ <body>
+ 
+ </body>
+ </html>
+
+
+ <%-- 
 
 
 <html>
@@ -146,4 +158,4 @@
 			</form:form>
 	
 	</body>
-</html>
+</html> --%>

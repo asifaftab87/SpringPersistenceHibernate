@@ -7,6 +7,9 @@
 <html>
 		
 	<body>
+				<div>
+					<jsp:include page="navigation.jsp" />  
+				</div>
 			
 			<h1> <spring:message code="add.worker" /> </h1>
 			<form:form method="POST" action="worker/addObj"  modelAttribute="workerDto">

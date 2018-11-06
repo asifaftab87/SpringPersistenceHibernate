@@ -5,12 +5,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.liferayasif.front.constants.URLConstants;
-import org.liferayasif.front.dto.CompanyDto;
 import org.liferayasif.front.dto.NgoDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
