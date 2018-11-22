@@ -22,7 +22,6 @@ public class CompanyRestController {
 	@Autowired
 	private CompanyService companyService;
 	
-	@SuppressWarnings("unused")
 	@Autowired
 	private CompanyAddressService companyAddressService;
 	
@@ -55,23 +54,7 @@ public class CompanyRestController {
 	
 	@RequestMapping(value=PathConstants.ADD_COMPANY, method=RequestMethod.POST)
 	public Company add(@RequestBody Company company)throws Exception{
-		
-		
-		
-//		List<CompanyAddress> companyAddressList = company.getCompanyAddressList();
-		
-		/*if(companyAddressList!=null)
-		{
-			for(CompanyAddress companyAddlist : companyAddressList)
-			{
-				companyAddlist.setCompanyId(company.getId());
-		
-			}
-			
-			companyAddressService.addCompanyAddressList(companyAddressList);
-			
-		}*/
-		
+				
 		String name = company.getName().trim();
 		int num = company.getNum();
 		String email = company.getEmail().trim();
