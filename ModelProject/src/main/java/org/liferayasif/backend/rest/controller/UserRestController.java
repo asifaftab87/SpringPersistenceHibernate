@@ -9,6 +9,7 @@ import org.liferayasif.backend.model.UserAddress;
 import org.liferayasif.backend.service.UserAddressService;
 import org.liferayasif.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -57,6 +58,12 @@ public class UserRestController {
 		}
 		
 		return user;
+	}
+	
+	
+	@GetMapping(value=PathConstants.GET_ALL_USER)
+	public List<User> getAllUsers(){
+		return userService.getAllUsers();
 	}
 	
 }

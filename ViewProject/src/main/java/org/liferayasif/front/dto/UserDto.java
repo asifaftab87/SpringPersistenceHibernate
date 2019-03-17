@@ -7,6 +7,7 @@ public class UserDto {
 	private Integer id;
 	private String name;
 	private String email;
+	
 	private List<UserAddressDto> UserAddressDtoList;
 	
 	public List<UserAddressDto> getUserAddresList() {

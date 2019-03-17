@@ -83,7 +83,6 @@
 		color: green;
 	}
 	</style>
-	<script>
 	
 
 </body>

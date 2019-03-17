@@ -7,7 +7,7 @@
 		<div>
 			<jsp:include page="../navigation.jsp" />  
 		</div>
-		<h1>Home</h1>
+		<h1>Welcome to School website</h1>
 		<input type="hidden" value="${curRootPage}" id="curRootPage" /> 
 	</body>
 </html>
