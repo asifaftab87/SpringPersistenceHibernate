@@ -60,3 +60,4 @@ server.xml
 /.metadata/
 /Servers/
 /.recommenders/
+/.springBeans
