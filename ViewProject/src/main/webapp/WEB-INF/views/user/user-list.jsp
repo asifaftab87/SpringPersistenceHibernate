@@ -12,12 +12,12 @@
 	<table id="example" class="display" style="width:100%">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>Email</th>
+                <th>Date of Birth</th>
+                <th>Contact Id</th>
+                <th>Roll Number</th>
             </tr>
         </thead>
         <tbody>
