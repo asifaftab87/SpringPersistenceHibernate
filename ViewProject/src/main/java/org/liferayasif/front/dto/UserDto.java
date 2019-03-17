@@ -1,5 +1,6 @@
 package org.liferayasif.front.dto;
 
+import java.util.Date;
 import java.util.List;
 
 public class UserDto {
@@ -7,6 +8,9 @@ public class UserDto {
 	private Integer id;
 	private String name;
 	private String email;
+	private Date dob;
+	private Integer contactId;
+	private String rollNum;
 	
 	private List<UserAddressDto> UserAddressDtoList;
 	
@@ -47,6 +51,31 @@ public class UserDto {
 	@Override
 	public String toString(){
 		return "id: "+id+"   name: "+name+"    email: "+email;
+	}
+
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public Integer getContactId() {
+		return contactId;
+	}
+
+	public void setContactId(Integer contactId) {
+		this.contactId = contactId;
+	}
+
+	public String getRollNum() {
+		return rollNum;
+	}
+
+	public void setRollNum(String rollNum) {
+		this.rollNum = rollNum;
 	}
 
 	

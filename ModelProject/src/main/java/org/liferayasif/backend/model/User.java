@@ -1,6 +1,7 @@
 package org.liferayasif.backend.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -27,6 +28,15 @@ public class User implements Serializable{
 	
 	@Column(name="EMAIL")
 	private String email;
+	
+	@Column(name="DOB")
+	private Date dob;
+	
+	@Column(name="CONTACT_ID")
+	private Integer contactId;
+	
+	@Column(name="ROLL_NUM")
+	private String rollNum;
 
 	@Transient
 	public List<UserAddress> userAddressList;
@@ -66,8 +76,29 @@ public class User implements Serializable{
 		this.userAddressList = userAddressList;
 	}
 
-	/*@Override
-	public String toString(){
-		return "id: "+id+"   name: "+name+"    email: "+email;
-	}*/
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public Integer getContactId() {
+		return contactId;
+	}
+
+	public void setContactId(Integer contactId) {
+		this.contactId = contactId;
+	}
+
+	public String getRollNum() {
+		return rollNum;
+	}
+
+	public void setRollNum(String rollNum) {
+		this.rollNum = rollNum;
+	}
+
+	
 }
