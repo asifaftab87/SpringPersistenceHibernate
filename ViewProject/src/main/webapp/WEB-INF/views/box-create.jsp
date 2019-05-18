@@ -1,13 +1,13 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <html>
 
 
 <body>
 
-		<div>
-				<jsp:include page="navigation.jsp" />  
+			<div>
+				<jsp:include page="./common/navigation.jsp" />  
 			</div>
 			
 			<form:form method="POST" action="update" modelAttribute="boxDto">
