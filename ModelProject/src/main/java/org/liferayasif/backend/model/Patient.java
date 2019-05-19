@@ -41,104 +41,69 @@ public class Patient implements Serializable{
 	@Column(name="hospitalId")
 	private Integer hospitalId;
 	
-	
 	public Patient() {}
-
-
-	
-
 
 	public Integer getId() {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 	public String getfName() {
 		return fName;
 	}
 
-
 	public void setfName(String fName) {
 		this.fName = fName;
 	}
-
 
 	public String getlName() {
 		return lName;
 	}
 
-
 	public void setlName(String lName) {
 		this.lName = lName;
 	}
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 
 	public Integer getAge() {
 		return age;
 	}
 
-
 	public void setAge(Integer age) {
 		this.age = age;
 	}
-
 
 	public String getPhone() {
 		return phone;
 	}
 
-
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
-
-
-
 
 	public Integer getDoctorId() {
 		return doctorId;
 	}
 
-
-
-
-
 	public void setDoctorId(Integer doctorId) {
 		this.doctorId = doctorId;
 	}
-
-
-
-
 
 	public Integer getHospitalId() {
 		return hospitalId;
 	}
 
-
-
-
-
 	public void setHospitalId(Integer hospitalId) {
 		this.hospitalId = hospitalId;
 	}
-	
-
-	
 }
