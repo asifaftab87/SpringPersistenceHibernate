@@ -9,7 +9,7 @@
 <body>
 
 			<div>
-				<jsp:include page="navigation.jsp" />  
+				<jsp:include page="./common/navigation.jsp" />  
 			</div>
 			<h1>Please Input Mobile details</h1>
 			

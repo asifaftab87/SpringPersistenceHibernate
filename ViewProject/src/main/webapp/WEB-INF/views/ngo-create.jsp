@@ -14,7 +14,7 @@
 	<body>
 	
 			<div>
-				<jsp:include page="navigation.jsp" />  
+				<jsp:include page="./common/navigation.jsp" />  
 			</div>
 			<h1> Enter Detail of NGO</h1>
 			<form:form method="POST" action="displayNgo" name="myForm" modelAttribute="ngo">

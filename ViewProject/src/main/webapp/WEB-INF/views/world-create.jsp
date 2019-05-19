@@ -7,7 +7,7 @@
 
 <body>
 			<div>
-				<jsp:include page="navigation.jsp" />  
+				<jsp:include page="./common/navigation.jsp" />  
 			</div>
 			
 		<form:form method="POST" action="update"  modelAttribute="worldDto">

@@ -2,6 +2,17 @@ package org.liferayasif.backend.constants;
 
 public interface PathConstants {
 
+	String HOSPITAL										= "/hospital";
+	String FIND_BY_NAME									= "/findByName";
+	String ADD_HOSPITAL									= "/addHospital";
+	String GET_ALL_HOSPITAL								= "/getAllHospital";
+	String DOCTOR										= "/doctor";
+	String ADD_DOCTOR 									= "/addDoctor";
+	String GET_ALL_DOCTOR								= "/getAllDoctor";
+	String PATIENT 										= "/patient";
+	String ADD_PATIENT 									= "/addPatient";
+	String GET_ALL_PATIENT								= "/getAllPatient";
+	String FIND_BY_LNAME								= "/findByLastName";
 	String USER 										= "/user";
 	String FIND_BY_ID 									= "/findById";
 	String ADD_USER 									= "/addUser";

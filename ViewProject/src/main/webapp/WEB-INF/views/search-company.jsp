@@ -1,7 +1,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html>
     <head>
-    	<jsp:include page="navigation.jsp" />  
+    	<jsp:include page="./common/navigation.jsp" />  
     </head>
     <body>
         <h3>Welcome, Enter The company Id</h3>

@@ -8,7 +8,7 @@
 		
 	<body>
 				<div>
-					<jsp:include page="navigation.jsp" />  
+					<jsp:include page="./common/navigation.jsp" />   
 				</div>
 			
 			<h1> <spring:message code="add.worker" /> </h1>
