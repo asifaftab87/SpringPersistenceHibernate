@@ -1,6 +1,7 @@
 package org.liferayasif.backend.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="Hospital")
@@ -32,7 +34,19 @@ public class Hospital implements Serializable{
 	@Column(name="EMAIL")
 	private String email;
 	
+	@Transient
+	private List<Doctor> doctorList;
 	
+	public List<Doctor> getDoctorList() {
+		return doctorList;
+	}
+
+
+	public void setDoctorList(List<Doctor> doctorList) {
+		this.doctorList = doctorList;
+	}
+
+
 	public Hospital() {}
 
 

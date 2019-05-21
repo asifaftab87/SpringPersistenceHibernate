@@ -1,6 +1,7 @@
 package org.liferayasif.backend.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="patient")
@@ -41,7 +45,46 @@ public class Patient implements Serializable{
 	@Column(name="hospitalId")
 	private Integer hospitalId;
 	
+	@Column(name="DOB")
+	@Temporal(TemporalType.DATE)
+	private Date dob;
+	
+	@Column(name="DOE")
+	@Temporal(TemporalType.DATE)
+	private Date doe;
+	
+	@Column(name="DOR")
+	@Temporal(TemporalType.DATE)
+	private Date dor;
+	
+	@Transient
+	private Doctor doctor;
+	
 	public Patient() {}
+	
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public Date getDoe() {
+		return doe;
+	}
+
+	public void setDoe(Date doe) {
+		this.doe = doe;
+	}
+
+	public Date getDor() {
+		return dor;
+	}
+
+	public void setDor(Date dor) {
+		this.dor = dor;
+	}
 
 	public Integer getId() {
 		return id;
@@ -106,4 +149,13 @@ public class Patient implements Serializable{
 	public void setHospitalId(Integer hospitalId) {
 		this.hospitalId = hospitalId;
 	}
+
+	public Doctor getDoctor() {
+		return doctor;
+	}
+
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
+	}
+	
 }

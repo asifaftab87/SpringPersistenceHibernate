@@ -16,4 +16,8 @@ public interface DoctorDao {
 	
 	public List<Doctor> findByLastName(String lName);
 	
+	public List<Doctor> findDoctorByHospitalId(Integer HospitalId);
+	
+	public List<Doctor> searchDoctor(String name, String spec, String email); 
+	
 }

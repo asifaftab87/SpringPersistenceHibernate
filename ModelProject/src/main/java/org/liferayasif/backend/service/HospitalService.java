@@ -15,4 +15,6 @@ public interface HospitalService {
 	public Hospital updateHospital(Hospital hospital);
 	
 	public List<Hospital> findByName(String name);
+	
+	
 }

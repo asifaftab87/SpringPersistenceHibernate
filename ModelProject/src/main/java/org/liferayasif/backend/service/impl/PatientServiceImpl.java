@@ -1,5 +1,6 @@
 package org.liferayasif.backend.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.liferayasif.backend.dao.PatientDao;
@@ -41,6 +42,16 @@ public class PatientServiceImpl implements PatientService{
 	@Override
 	public List<Patient> findByLastName(String lName){
 		return patientDao.findByLastName(lName);
+	}
+
+	@Override
+	public List<Patient> findPatientByDoctorId(Integer drId) {
+		return patientDao.findPatientByDoctorId(drId); 
+	}
+	
+	@Override
+	public List<Patient> searchPatient(String fName, String lName, String email, Date dob, Date doe, Date dor) {
+		return patientDao.searchPatient(fName, lName, email, dob, doe, dor);
 	}
 
 }

@@ -43,4 +43,14 @@ public class DoctorServiceImpl implements DoctorService{
 		return doctorDao.findByLastName(lName);
 	}
 
+	@Override
+	public List<Doctor> findDoctorByHospitalId(Integer HospitalId) {
+		return doctorDao.findDoctorByHospitalId(HospitalId); 
+	}
+
+	@Override
+	public List<Doctor> searchDoctor(String name, String spec, String email) {
+		return doctorDao.searchDoctor(name, spec, email);
+	}
+
 }

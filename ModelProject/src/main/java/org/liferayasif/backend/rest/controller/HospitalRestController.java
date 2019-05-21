@@ -3,7 +3,9 @@ package org.liferayasif.backend.rest.controller;
 import java.util.List;
 
 import org.liferayasif.backend.constants.PathConstants;
+import org.liferayasif.backend.model.Doctor;
 import org.liferayasif.backend.model.Hospital;
+import org.liferayasif.backend.service.DoctorService;
 import org.liferayasif.backend.service.HospitalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,24 +22,27 @@ public class HospitalRestController {
 	@Autowired
 	private HospitalService hospitalService;
 	
+	@Autowired
+	private DoctorService doctorService;
+	
 	@RequestMapping(value=PathConstants.FIND_BY_ID)
 	public Hospital findById(@RequestParam("id") int id){
 		
 		Hospital hospital = hospitalService.getHospitalById(id);
 	
+		if(hospital!=null) {
+			List<Doctor> doctorList = doctorService.findDoctorByHospitalId(id);
+			hospital.setDoctorList(doctorList);
+			
+		}
 		
 		return hospital;
 	}
-	
 
-		
 		@RequestMapping(value=PathConstants.FIND_BY_NAME)
 		public List<Hospital> findByName(@RequestParam("name") String name){
 			
 			return hospitalService.findByName(name);
-		
-			
-			
 		}
 	
 	@RequestMapping(value=PathConstants.ADD_HOSPITAL, method=RequestMethod.POST)
@@ -47,7 +52,6 @@ public class HospitalRestController {
 		
 		return hospital;
 	}
-	
 	
 	@GetMapping(value=PathConstants.GET_ALL_HOSPITAL)
 	public List<Hospital> getAllHospitals(){
