@@ -16,4 +16,6 @@ public interface HospitalDao {
 	
 	public List<Hospital> findByName(String lName);
 	
+	public List<Integer> getHospitalIdList();
+	
 }

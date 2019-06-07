@@ -13,11 +13,13 @@ public interface PatientService {
 	
 	public Patient addPatient(Patient patient);
 	
-	public Patient updatePatient(Patient patient);
-	
 	public List<Patient> findByLastName(String lName);
 	
 	public List<Patient> findPatientByDoctorId(Integer drId);
 	
 	public List<Patient> searchPatient(String fName, String lName, String email, Date dob, Date doe, Date dor);
+	
+	public int releaseById(Integer id, Date dor); 
+	
+	public List<Integer> getPatientIdList();
 }

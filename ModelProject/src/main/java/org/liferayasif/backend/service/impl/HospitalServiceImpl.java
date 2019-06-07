@@ -42,5 +42,10 @@ public class HospitalServiceImpl implements HospitalService{
 	public List<Hospital> findByName(String name){
 		return hospitalDao.findByName(name);
 	}
+	
+	@Override
+	public List<Integer> getHospitalIdList(){
+		return hospitalDao.getHospitalIdList();
+	}
 
 }

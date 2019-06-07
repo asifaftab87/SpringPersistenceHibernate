@@ -4,16 +4,20 @@ package org.liferayasif.backend.rest.controller;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.liferayasif.backend.constants.PathConstants;
 import org.liferayasif.backend.model.Doctor;
 import org.liferayasif.backend.model.Patient;
 import org.liferayasif.backend.service.DoctorService;
+import org.liferayasif.backend.service.HospitalService;
 import org.liferayasif.backend.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,6 +34,9 @@ public class PatientRestController {
 	
 	@Autowired
 	private DoctorService doctorService;
+	
+	@Autowired
+	private HospitalService hospitalService;
 	
 	@RequestMapping(value=PathConstants.FIND_BY_ID)
 	public Patient findById(@RequestParam("id") int id){
@@ -91,5 +98,41 @@ public class PatientRestController {
 		
 		return patientList;
 	}
+	
+	
+	@RequestMapping(value=PathConstants.RELEASE_BY_ID , method=RequestMethod.PUT)
+	public String releaseById(@RequestParam("id") int id, @RequestParam("dor") @DateTimeFormat(pattern="yyyy-MM-dd") Date dor) throws Exception{
+		
+		int result = patientService.releaseById(id, dor);
+		if(result==-1) {
+			throw new Exception("Failed to update");
+		}
+		if(result==0) {
+			throw new Exception("No record found");
+		}
+		return "Success";
+	}
+	
+	@RequestMapping(value=PathConstants.GET_PATIENT_ID, method=RequestMethod.GET)
+	public List<Integer> getPatientIdList(){
+		return patientService.getPatientIdList();
+	}
+	
+	@RequestMapping(value=PathConstants.GET_ALL_IDS, method=RequestMethod.GET)
+	public Map<String, List<Integer>> getAllIdList(){
+		
+		Map<String, List<Integer>> idListMap = new HashMap<String, List<Integer>>();
+		
+		List<Integer> hIdList = hospitalService.getHospitalIdList();
+		List<Integer> dIdList = doctorService.getDoctorIdList();
+		List<Integer> pIdList = patientService.getPatientIdList();
+
+		idListMap.put("hIdList", hIdList);
+		idListMap.put("pIdList", pIdList);
+		idListMap.put("dIdList", dIdList);
+		
+		return idListMap;
+	}
+	
 	
 }

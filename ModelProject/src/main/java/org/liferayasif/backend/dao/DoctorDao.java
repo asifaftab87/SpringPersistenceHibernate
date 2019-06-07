@@ -20,4 +20,6 @@ public interface DoctorDao {
 	
 	public List<Doctor> searchDoctor(String name, String spec, String email); 
 	
+	public List<Integer> getDoctorIdList();
+	
 }

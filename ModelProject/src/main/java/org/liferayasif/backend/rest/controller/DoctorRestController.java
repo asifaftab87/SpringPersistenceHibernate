@@ -66,4 +66,9 @@ public class DoctorRestController {
 		
 		return doctorList;
 	}
+	
+	@RequestMapping(value=PathConstants.GET_DOCTOR_ID, method=RequestMethod.GET)
+	public List<Integer> getDoctorIdList(){
+		return doctorService.getDoctorIdList();
+	}
 }

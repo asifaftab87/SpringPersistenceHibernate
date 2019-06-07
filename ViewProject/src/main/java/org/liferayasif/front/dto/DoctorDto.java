@@ -1,29 +1,16 @@
 package org.liferayasif.front.dto;
 
-import java.util.Date;
-
-public class PatientDto {
+public class DoctorDto {
 
 	private Integer id;
 	private String fName;
 	private String lName;
 	private String email;
-	private Integer age;
 	private String phone;
-	private Integer doctorId;
 	private Integer hospitalId;
-	//date of birth
-	private Date dob;
-	//date of entry
-	private Date doe;
-	//date of release
-	private Date dor;
-	//cured
-	private String c;
-	
+	private String specialization;
 
-
-	public PatientDto(){}
+	public DoctorDto(){}
 
 
 
@@ -75,18 +62,6 @@ public class PatientDto {
 
 
 
-	public Integer getAge() {
-		return age;
-	}
-
-
-
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
-
-
 	public String getPhone() {
 		return phone;
 	}
@@ -95,18 +70,6 @@ public class PatientDto {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-
-
-
-	public Integer getDoctorId() {
-		return doctorId;
-	}
-
-
-
-	public void setDoctorId(Integer doctorId) {
-		this.doctorId = doctorId;
 	}
 
 
@@ -123,54 +86,14 @@ public class PatientDto {
 
 
 
-	public Date getDob() {
-		return dob;
+	public String getSpecialization() {
+		return specialization;
 	}
 
 
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
 	}
 
-
-
-	public Date getDoe() {
-		return doe;
-	}
-
-
-
-	public void setDoe(Date doe) {
-		this.doe = doe;
-	}
-
-
-
-	public Date getDor() {
-		return dor;
-	}
-
-
-
-	public void setDor(Date dor) {
-		this.dor = dor;
-	}
-
-
-
-	public String getC() {
-		return c;
-	}
-
-
-
-	public void setC(String c) {
-		this.c = c;
-	}
-
-
-
-
-	
 }

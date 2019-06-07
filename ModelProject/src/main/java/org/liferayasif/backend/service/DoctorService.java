@@ -19,4 +19,6 @@ public interface DoctorService {
 	public List<Doctor> findDoctorByHospitalId(Integer HospitalId);
 	
 	public List<Doctor> searchDoctor(String name, String spec, String email);
+	
+	public List<Integer> getDoctorIdList();
 }

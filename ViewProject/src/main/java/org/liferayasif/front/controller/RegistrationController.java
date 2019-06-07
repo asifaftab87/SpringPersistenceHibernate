@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.liferayasif.front.constants.URLConstants;
-import org.liferayasif.front.dto.PatientDto;
+import org.liferayasif.front.dto.RegistrationDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -22,12 +22,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value="/patient")
-public class PatientController {
+@RequestMapping(value="/registration")
+public class RegistrationController {
 
 	
 	  @Autowired
-	  @Qualifier("patientValidator") 
+	  @Qualifier("registrationValidator") 
 	  private Validator validator;
 	 
 	
@@ -41,59 +41,59 @@ public class PatientController {
 	WebRestTemplate webRestTemplate = new WebRestTemplate();
 
 	@RequestMapping(method=RequestMethod.GET)
-	public ModelAndView view(@ModelAttribute PatientDto patientDto){
+	public ModelAndView view(@ModelAttribute RegistrationDto registrationDto){
 	
-		ModelAndView mav = new ModelAndView("patient/patient-list");
+		ModelAndView mav = new ModelAndView("registration/registration-list");
 		
-		String url = URLConstants.contextPath+"/patient/getAllPatient";
+		String url = URLConstants.contextPath+"/registration/getAllRegistration";
 				
-		PatientDto[] patientArray = null;
+		RegistrationDto[] registrationArray = null;
 		
 		try{
-			patientArray = webRestTemplate.getForObject(url, PatientDto[].class);
+			registrationArray = webRestTemplate.getForObject(url, RegistrationDto[].class);
 		}
 		catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		List<PatientDto> patientList = new ArrayList<>();
+		List<RegistrationDto> registrationList = new ArrayList<>();
 		
-		if(patientArray!=null && patientArray.length>0){
-			patientList = Arrays.asList(patientArray);
+		if(registrationArray!=null && registrationArray.length>0){
+			registrationList = Arrays.asList(registrationArray);
 		}
 		
-		mav.addObject("patientList", patientList);
+		mav.addObject("registrationList", registrationList);
 		
 		return mav;
 	}
 	
 	
-	@RequestMapping(value="/addPatient", method=RequestMethod.GET)
-	public ModelAndView toAdd(@ModelAttribute PatientDto patientDto){
+	@RequestMapping(value="/addRegistration", method=RequestMethod.GET)
+	public ModelAndView toAdd(@ModelAttribute RegistrationDto registrationDto){
 		
 		
-		ModelAndView mav = new ModelAndView("patient/patient-create");
+		ModelAndView mav = new ModelAndView("registration/registration-create");
 	
-		mav.addObject("patient", patientDto);
+		mav.addObject("registration", registrationDto);
 		
 		return mav;
 	}
 	
-	@RequestMapping(value="/addPatient", method=RequestMethod.POST)
-	public ModelAndView add(@Validated @ModelAttribute PatientDto patientDto, BindingResult result, Errors errors){
+	@RequestMapping(value="/addRegistration", method=RequestMethod.POST)
+	public ModelAndView add(@Validated @ModelAttribute RegistrationDto registrationDto, BindingResult result, Errors errors){
 		
 		if(result.hasErrors()) {
-			ModelAndView mav = new ModelAndView("patient/patient-create");
+			ModelAndView mav = new ModelAndView("registration/registration-create");
 			
-			mav.addObject("patient", patientDto);
+			mav.addObject("registration", registrationDto);
 			
 			return mav;
 		}
-		String url = URLConstants.contextPath+"/patient/addPatient";
+		String url = URLConstants.contextPath+"/registration/addRegistration";
 		
-		patientDto = webRestTemplate.postForObject(url, patientDto, PatientDto.class);
-		System.out.println("patientDto: "+patientDto);
+		registrationDto = webRestTemplate.postForObject(url, registrationDto, RegistrationDto.class);
+		System.out.println("registrationDto: "+registrationDto);
 	
-		return new ModelAndView("redirect:/patient");
+		return new ModelAndView("redirect:/registration");
 	}
 	
 	/*

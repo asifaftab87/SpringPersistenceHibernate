@@ -35,11 +35,6 @@ public class PatientServiceImpl implements PatientService{
 	}
 
 	@Override
-	public Patient updatePatient(Patient patient) {
-		return patientDao.updatePatient(patient);
-	}
-	
-	@Override
 	public List<Patient> findByLastName(String lName){
 		return patientDao.findByLastName(lName);
 	}
@@ -54,4 +49,14 @@ public class PatientServiceImpl implements PatientService{
 		return patientDao.searchPatient(fName, lName, email, dob, doe, dor);
 	}
 
+	@Override
+	public int releaseById(Integer id, Date dor) {
+		int result = patientDao.releaseById(id, dor);
+		return result;
+	}
+
+	@Override
+	public List<Integer> getPatientIdList(){
+		return patientDao.getPatientIdList();
+	}
 }

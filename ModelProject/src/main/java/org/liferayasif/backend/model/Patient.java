@@ -57,6 +57,9 @@ public class Patient implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date dor;
 	
+	@Column(name="CURE")
+	private String c;
+	
 	@Transient
 	private Doctor doctor;
 	
@@ -156,6 +159,14 @@ public class Patient implements Serializable{
 
 	public void setDoctor(Doctor doctor) {
 		this.doctor = doctor;
+	}
+
+	public String getC() {
+		return c;
+	}
+
+	public void setC(String c) {
+		this.c = c;
 	}
 	
 }

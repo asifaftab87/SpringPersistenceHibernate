@@ -98,4 +98,17 @@ public class DoctorDaoImpl  extends AbstractDao<Integer, Doctor> implements Doct
 		return doctorList;
 	}
 	
+	@Override
+	public List<Integer> getDoctorIdList() {
+	
+		Session session = getSession();
+		
+		String hql = " select d.id from Doctor d ";
+		
+		Query query = session.createQuery(new String(hql));
+		
+		List<Integer> doctorIdList = query.list();
+		return doctorIdList;
+	}
+	
 }

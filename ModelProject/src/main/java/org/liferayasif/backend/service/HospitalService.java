@@ -16,5 +16,7 @@ public interface HospitalService {
 	
 	public List<Hospital> findByName(String name);
 	
+	public List<Integer> getHospitalIdList();
+	
 	
 }

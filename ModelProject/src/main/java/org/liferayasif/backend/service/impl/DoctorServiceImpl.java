@@ -52,5 +52,10 @@ public class DoctorServiceImpl implements DoctorService{
 	public List<Doctor> searchDoctor(String name, String spec, String email) {
 		return doctorDao.searchDoctor(name, spec, email);
 	}
+	
+	@Override
+	public List<Integer> getDoctorIdList() {
+		return doctorDao.getDoctorIdList();
+	}
 
 }

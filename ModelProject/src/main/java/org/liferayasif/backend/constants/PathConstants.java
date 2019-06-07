@@ -2,6 +2,16 @@ package org.liferayasif.backend.constants;
 
 public interface PathConstants {
 
+	String GET_HOSPITAL_ID								= "/getHospitalIdList";
+	String GET_DOCTOR_ID 								= "/getDoctorIdList";
+	String GET_PATIENT_ID 								= "/getPatientIdList";
+	String GET_ALL_IDS 									= "/getAllIdList";
+	String DROPDOWN 									= "/dropdown";
+	String REGISTRATION 								= "/registration";
+	String ADD_REGISTRATION 							= "/addRegistration";
+	String GET_ALL_REGISTRATION							= "/getAllRegistration";
+	String SEARCH_REGISTRATION							= "/searchRegistration";
+	String RELEASE_BY_ID								= "/releaseById";
 	String DOCTOR_ADDRESS								= "/doctorAddress";
 	String FIND_BY_CITY									= "/findByCity";
 	String ADD_DOCTOR_ADDRESS							= "/addDoctorAddress";
@@ -20,6 +30,8 @@ public interface PathConstants {
 	String FIND_BY_LNAME								= "/findByLastName";
 	String USER 										= "/user";
 	String FIND_BY_ID 									= "/findById";
+	String FIND_DOCTOR_BY_HOSPITAL_ID					= "/findDoctorsByHospitalId";
+	String FIND_PATIENT_BY_DOCTOR_ID					= "/findPatientByDoctorId";
 	String ADD_USER 									= "/addUser";
 	String GET_ALL_USER									= "/getAllUser";
 	String COMPANY 										= "/company";

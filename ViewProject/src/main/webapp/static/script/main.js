@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	$('#example').DataTable();
 	
-	console.log("main.js");
+	console.log("main.js file");
 	$( "#birthDate" ).datepicker();
 
 	try{

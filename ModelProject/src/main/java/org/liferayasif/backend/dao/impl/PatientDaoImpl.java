@@ -35,13 +35,6 @@ public class PatientDaoImpl  extends AbstractDao<Integer, Patient> implements Pa
 		return patient;
 	}
 
-
-	@Override
-	public Patient updatePatient(Patient patient) {
-		getSession().update(patient);
-		return patient;
-	}
-	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Patient> findByLastName(String lName){
@@ -56,11 +49,24 @@ public class PatientDaoImpl  extends AbstractDao<Integer, Patient> implements Pa
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Patient> findPatientByDoctorId(Integer drId) {
+	public List<Patient> findPatientByDoctorId(Integer doctorId) {
 		Criteria criteria = getSession().createCriteria(Patient.class);
-		criteria.add(Restrictions.eq("doctorId", drId));
+		criteria.add(Restrictions.eq("doctorId", doctorId));
 		List<Patient> patientList = criteria.list();
 		return patientList;	
+	}
+
+	@Override
+	public List<Integer> getPatientIdList() {
+	
+		Session session = getSession();
+		
+		String hql = " select p.id from Patient p ";
+		
+		Query query = session.createQuery(new String(hql));
+		
+		List<Integer> patientIdList = query.list();
+		return patientIdList;
 	}
 	
 	@Override
@@ -124,6 +130,32 @@ public class PatientDaoImpl  extends AbstractDao<Integer, Patient> implements Pa
 		List<Patient> patientList = query.list();
 		
 		return patientList;
+	}
+
+	@Override
+	public int releaseById(Integer id, Date dor) {
+		
+		int result;
+		try {
+			Session session = getSession();
+			
+			String hql = " UPDATE Patient p  set p.dor= :dor , p.c= 'Y' where id= :id ";
+			
+			Query query = session.createQuery(hql);
+			
+			query.setParameter("dor", dor);
+			query.setParameter("id", id);
+			
+			result = query.executeUpdate();
+			System.out.println("Rows affected: " + result);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+		
+		return result;
+
 	}
 	
 }
