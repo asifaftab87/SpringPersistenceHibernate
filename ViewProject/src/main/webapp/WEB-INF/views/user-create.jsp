@@ -25,9 +25,5 @@
         </form:form>
     </body>
     
-    <style>
-    	.error{
-    		color: red;
-    	}
-    </style>
+   
 </html>

@@ -36,4 +36,8 @@
 .bg-custom .nav-item:hover .nav-link {
     color: #ffffff;
 }
+
+.error{
+	color: red;
+}
 </style>

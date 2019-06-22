@@ -2,8 +2,36 @@ package org.liferayasif.backend.constants;
 
 public interface PathConstants {
 
+	String GET_HOSPITAL_ID								= "/getHospitalIdList";
+	String GET_DOCTOR_ID 								= "/getDoctorIdList";
+	String GET_PATIENT_ID 								= "/getPatientIdList";
+	String GET_ALL_IDS 									= "/getAllIdList";
+	String DROPDOWN 									= "/dropdown";
+	String REGISTRATION 								= "/registration";
+	String ADD_REGISTRATION 							= "/addRegistration";
+	String GET_ALL_REGISTRATION							= "/getAllRegistration";
+	String SEARCH_REGISTRATION							= "/searchRegistration";
+	String RELEASE_BY_ID								= "/releaseById";
+	String DOCTOR_ADDRESS								= "/doctorAddress";
+	String FIND_BY_CITY									= "/findByCity";
+	String ADD_DOCTOR_ADDRESS							= "/addDoctorAddress";
+	String GET_ALL_DOCTOR_ADDRESS						= "/getAllDoctorAddress";
+	String HOSPITAL										= "/hospital";
+	String FIND_BY_NAME									= "/findByName";
+	String ADD_HOSPITAL									= "/addHospital";
+	String GET_ALL_HOSPITAL								= "/getAllHospital";
+	String DOCTOR										= "/doctor";
+	String ADD_DOCTOR 									= "/addDoctor";
+	String GET_ALL_DOCTOR								= "/getAllDoctor";
+	String PATIENT 										= "/patient";
+	String ADD_PATIENT 									= "/addPatient";
+	String GET_ALL_PATIENT								= "/getAllPatient";
+	String SEARCH_PATIENT								= "/searchPatient";
+	String FIND_BY_LNAME								= "/findByLastName";
 	String USER 										= "/user";
 	String FIND_BY_ID 									= "/findById";
+	String FIND_DOCTOR_BY_HOSPITAL_ID					= "/findDoctorsByHospitalId";
+	String FIND_PATIENT_BY_DOCTOR_ID					= "/findPatientByDoctorId";
 	String ADD_USER 									= "/addUser";
 	String GET_ALL_USER									= "/getAllUser";
 	String COMPANY 										= "/company";
@@ -49,7 +77,7 @@ public interface PathConstants {
 	String WORST										= "/worst";
 	String CREATE										= "/create";
 	String GET_ALL										= "/getAll";
-
+	String SEARCH_DOCTOR								= "/searchDoctor";
 	
 	
 }
