@@ -4,12 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.liferayasif.front.client.ClientUtil;
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.CompanyDto;
 import org.liferayasif.front.dto.UserDto;
 import org.liferayasif.front.rest.template.WebRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
@@ -21,6 +26,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -38,6 +44,32 @@ public class UserController {
 	
 	WebRestTemplate webRestTemplate = new WebRestTemplate();
 
+	@RequestMapping(method=RequestMethod.GET, value="/something")
+	public ModelAndView view2(@ModelAttribute UserDto userDto){
+		ModelAndView mav = new ModelAndView("user/user-list");
+	
+		String theUrl = "http://localhost:8080/user/gg";
+		
+		RestTemplate restTemplate = new RestTemplate();
+		
+		try {
+	        HttpHeaders headers = ClientUtil.getHeaders("jawed","test");
+	        HttpEntity<String> entity = new HttpEntity<String>(headers);
+	        restTemplate.postForObject(theUrl,  entity, UserDto.class);
+	        ResponseEntity<UserDto> response = restTemplate.exchange(theUrl, HttpMethod.GET, entity, UserDto.class);
+	        
+	        System.out.println("Result - status ("+ response.getStatusCode() + ") has body: " + response.hasBody());
+	        
+	   
+	    }
+	    catch (Exception eek) {
+	        System.out.println("** Exception: "+ eek.getMessage());
+	        eek.printStackTrace();
+	    }
+		
+		return mav;
+	}
+	
 	@RequestMapping(method=RequestMethod.GET)
 	public ModelAndView view(@ModelAttribute UserDto userDto){
 	

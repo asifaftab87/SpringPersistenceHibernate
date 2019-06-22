@@ -122,6 +122,24 @@
 		    <version>1.0.0.GA</version>
 		</dependency>
 			    
+		<dependency>
+		  <groupId>com.google.guava</groupId>
+		  <artifactId>guava</artifactId>
+		  <version>11.0.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-crypto</artifactId>
+		    <version>3.1.0.RELEASE</version>
+		</dependency>
+
+				
+				<dependency>
+    <groupId>org.apache.tomcat</groupId>
+    <artifactId>tomcat-util</artifactId>
+    <version>8.0.0-RC1</version>
+</dependency>
+					    
   </dependencies>
   
   <!-- To avoid compiler and jre version -->
