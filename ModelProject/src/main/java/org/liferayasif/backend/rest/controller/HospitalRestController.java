@@ -57,6 +57,13 @@ public class HospitalRestController {
 		return patientList;
 	}
 	
+	@RequestMapping(value=PathConstants.FIND_HOSPITAL_BY_HOSPITAL_ID+"/{hospitalId}")
+	public Hospital findHospitalByHospitalId(@PathVariable("hospitalId") int hospitalId){
+		Hospital hospital = hospitalService.findHospitalByHospitalId(hospitalId);
+		return hospital;
+	}
+	
+	
 	@RequestMapping(value=PathConstants.FIND_BY_NAME)
 	public List<Hospital> findByName(@RequestParam("name") String name){
 		return hospitalService.findByName(name);

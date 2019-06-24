@@ -2,6 +2,15 @@ package org.liferayasif.backend.constants;
 
 public interface PathConstants {
 
+	String FIND_FOOTER_BY_PARENT						= "/findFooterByParent";
+	String GET_FOOTER_URL								= "/getFooterUrl";
+	String GET_ALL_FOOTER								= "/getAllFooter";
+	String FOOTER										= "/footer";
+	String FIND_PAGE_BY_PARENT							= "/findPageByParent";
+	String ADD_NAVIGATION								= "/addNavigation";
+	String GET_NAV_URL									= "/getNavigationUrl";
+	String GET_ALL_NAVIGATION							= "/getAllNavigation";
+	String NAVIGATION									= "/navigation";
 	String GET_HOSPITAL_ID								= "/getHospitalIdList";
 	String GET_DOCTOR_ID 								= "/getDoctorIdList";
 	String GET_PATIENT_ID 								= "/getPatientIdList";
@@ -32,6 +41,7 @@ public interface PathConstants {
 	String FIND_BY_ID 									= "/findById";
 	String FIND_DOCTOR_BY_HOSPITAL_ID					= "/findDoctorsByHospitalId";
 	String FIND_PATIENT_BY_DOCTOR_ID					= "/findPatientByDoctorId";
+	String FIND_HOSPITAL_BY_HOSPITAL_ID					= "/findHospitalByHospitalId";
 	String ADD_USER 									= "/addUser";
 	String GET_ALL_USER									= "/getAllUser";
 	String COMPANY 										= "/company";

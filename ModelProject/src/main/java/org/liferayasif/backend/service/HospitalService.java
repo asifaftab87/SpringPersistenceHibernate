@@ -18,5 +18,7 @@ public interface HospitalService {
 	
 	public List<Integer> getHospitalIdList();
 	
+	public Hospital findHospitalByHospitalId(Integer id);
+	
 	
 }

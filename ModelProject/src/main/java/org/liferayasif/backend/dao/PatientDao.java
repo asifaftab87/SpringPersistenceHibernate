@@ -23,4 +23,6 @@ public interface PatientDao {
 	public int releaseById(Integer id, Date dor);
 	
 	public List<Integer> getPatientIdList();
+	
+	public void sendSimpleMessage(String to, String subject, String text);
 }

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@page import="org.liferayasif.front.dto.NavigationDto"%>
+<%@page import="java.util.List"%>
+<%@ page import="org.liferayasif.front.util.ViewWebUtil" %>
 <html lang="en">
 <head>
 	<title>Bootstrap Example</title>
@@ -29,18 +32,43 @@
 </head>
 <body>
 
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">WebSiteName</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
+    <ul >
+		<% 
+			List<NavigationDto> navigationList = ViewWebUtil.getPageCodeByParent("ROOT");		
+			for(NavigationDto dto : navigationList){
+				%>
+					<li>
+						<a href="<%= dto.getUrl() %>"><%= dto.getPageName() %></a>
+						<%
+							List<NavigationDto> childNavigationList = ViewWebUtil.getPageCodeByParent(dto.getPageCode());
+							if(childNavigationList!=null && childNavigationList.size()>0){
+								%>
+									<ul >
+										<%
+											for(NavigationDto dtoc : childNavigationList){
+											%>
+												<li>
+													<a href="<%= dtoc.getUrl() %>"><%= dtoc.getPageName() %></a>
+												</li>
+											<%
+											}
+										%>
+									</ul>
+								<%
+							}
+						%>
+					</li>
+				<%	
+			}
+		%> 
     </ul>
   </div>
 </nav>
   
-
+ 

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.liferayasif.front.client.ClientUtil;
 import org.liferayasif.front.constants.URLConstants;
 import org.liferayasif.front.dto.CompanyDto;
 import org.liferayasif.front.dto.UserDto;
@@ -53,7 +52,7 @@ public class UserController {
 		RestTemplate restTemplate = new RestTemplate();
 		
 		try {
-	        HttpHeaders headers = ClientUtil.getHeaders("jawed","test");
+	        HttpHeaders headers = null;//ClientUtil.getHeaders("jawed","test");
 	        HttpEntity<String> entity = new HttpEntity<String>(headers);
 	        restTemplate.postForObject(theUrl,  entity, UserDto.class);
 	        ResponseEntity<UserDto> response = restTemplate.exchange(theUrl, HttpMethod.GET, entity, UserDto.class);

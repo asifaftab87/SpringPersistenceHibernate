@@ -18,4 +18,6 @@ public interface HospitalDao {
 	
 	public List<Integer> getHospitalIdList();
 	
+	public Hospital findHospitalByHospitalId(Integer id);
+	
 }

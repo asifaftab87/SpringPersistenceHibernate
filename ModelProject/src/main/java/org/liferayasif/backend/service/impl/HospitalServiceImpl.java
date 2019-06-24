@@ -47,5 +47,10 @@ public class HospitalServiceImpl implements HospitalService{
 	public List<Integer> getHospitalIdList(){
 		return hospitalDao.getHospitalIdList();
 	}
+	
+	@Override
+	public Hospital findHospitalByHospitalId(Integer hospitalId){
+		return hospitalDao.findHospitalByHospitalId(hospitalId);
+	}
 
 }

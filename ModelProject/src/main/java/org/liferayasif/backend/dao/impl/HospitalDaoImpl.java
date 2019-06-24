@@ -10,6 +10,7 @@ import org.hibernate.criterion.Restrictions;
 import org.liferayasif.backend.abstrct.dao.AbstractDao;
 import org.liferayasif.backend.dao.HospitalDao;
 import org.liferayasif.backend.model.Hospital;
+import org.liferayasif.backend.model.Patient;
 import org.springframework.stereotype.Repository;
 
 
@@ -64,5 +65,12 @@ public class HospitalDaoImpl  extends AbstractDao<Integer, Hospital> implements 
 		List<Integer> hospitalIdList = query.list();
 		return hospitalIdList;
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Hospital findHospitalByHospitalId(Integer hospitalId) {
+		return getByKey(hospitalId);	
+	}
+
 	
 }

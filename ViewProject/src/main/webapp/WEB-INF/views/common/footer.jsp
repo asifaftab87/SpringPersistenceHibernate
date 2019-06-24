@@ -1,8 +1,41 @@
+<%@page import="org.liferayasif.front.dto.FooterDto"%>
+<%@page import="java.util.List"%>
+<%@ page import="org.liferayasif.front.util.ViewWebUtil" %>
+
 <nav class="navbar navbar-default bg-custom">
   <div class="container-fluid">
     <div class="navbar-footer">
     	<div class="footer-copyright text-center py-3 text-white">
-      		© 2018 Copyright: <span class="custom-font-color">LiferayAsif.com</span>
+      		<ul class="footer-copyright text-center py-3 text-white">
+		<% 
+			List<FooterDto> footerList = ViewWebUtil.getFooterByParent("ROOT");		
+			for(FooterDto dto : footerList){
+				%>
+					<li class="footer-copyright text-center py-3 text-white">
+						<a  href="<%= dto.getUrl() %>" style="color:white;"> <%= dto.getPageName() %></a>
+						<%
+							List<FooterDto> childFooterList = ViewWebUtil.getFooterByParent(dto.getPageCode());
+							if(childFooterList!=null && childFooterList.size()>0){
+								%>
+									<ul class="footer-copyright text-center py-3 text-white">
+										<%
+											for(FooterDto dtoc : childFooterList){
+											%>
+												<li class="footer-copyright text-center py-3 text-white">
+													<a href="<%= dtoc.getUrl() %>"><%= dtoc.getPageName() %></a>
+												</li>
+											<%
+											}
+										%>
+									</ul>
+								<%
+							}
+						%>
+					</li>
+				<%	
+			}
+		%> 
+    </ul>
       	</div>
     </div>
   </div>

@@ -183,6 +183,22 @@ public class DropDownController {
 		return doctorList;
 	}
 	
+	@RequestMapping(value="/getAllHospital/{hospitalId}", method=RequestMethod.GET)
+	public @ResponseBody HospitalDto findHospitalByHospitalId(@PathVariable Integer hospitalId,  @ModelAttribute HospitalDto hospitalDto){
+		
+		String url = URLConstants.contextPath+"/hospital/findHospitalByHospitalId/"+hospitalId;
+				
+		HospitalDto hospital = null;
+		try{
+			hospital = webRestTemplate.getForObject(url, HospitalDto.class);
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		return hospital;
+	}
+	
 	@RequestMapping(value="/getAllHospital", method=RequestMethod.GET)
 	public ModelAndView view(@ModelAttribute HospitalDto hospitalDto){
 	

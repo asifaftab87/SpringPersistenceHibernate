@@ -59,4 +59,10 @@ public class PatientServiceImpl implements PatientService{
 	public List<Integer> getPatientIdList(){
 		return patientDao.getPatientIdList();
 	}
+	
+	@Override
+	public void sendSimpleMessage(String to, String subject, String text) {
+		patientDao.sendSimpleMessage(to, subject, text);
+	
+	}
 }

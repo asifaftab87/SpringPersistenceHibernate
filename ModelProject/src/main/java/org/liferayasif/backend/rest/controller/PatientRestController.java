@@ -16,6 +16,7 @@ import org.liferayasif.backend.service.HospitalService;
 import org.liferayasif.backend.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -69,7 +70,11 @@ public class PatientRestController {
 		
 		patient = patientService.addPatient(patient);
 		
+		patientService.sendSimpleMessage(patient.getEmail(), "Welcome Message", "I tried");
+		
 		return patient;
+		
+		
 	}
 	
 	

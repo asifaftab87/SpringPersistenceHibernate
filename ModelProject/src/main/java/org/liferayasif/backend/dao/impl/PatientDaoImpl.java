@@ -11,6 +11,9 @@ import org.hibernate.criterion.Restrictions;
 import org.liferayasif.backend.abstrct.dao.AbstractDao;
 import org.liferayasif.backend.dao.PatientDao;
 import org.liferayasif.backend.model.Patient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Repository;
 
 
@@ -156,6 +159,19 @@ public class PatientDaoImpl  extends AbstractDao<Integer, Patient> implements Pa
 		
 		return result;
 
+	}
+	
+	@Autowired
+    public JavaMailSender emailSender;
+	
+	@Override
+	public void sendSimpleMessage(String to, String subject, String text) {
+		SimpleMailMessage message = new SimpleMailMessage(); 
+		message.setTo(to); 
+		message.setSubject(subject); 
+		message.setText(text);
+		
+		emailSender.send(message);
 	}
 	
 }

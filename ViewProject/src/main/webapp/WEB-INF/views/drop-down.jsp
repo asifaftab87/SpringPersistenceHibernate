@@ -42,6 +42,7 @@
 								</select>
 				                </td>
 				            </tr>
+			        </tbody>
 			    </table>
 			</div>
 		</div>
@@ -112,5 +113,7 @@ function getPatientlist(obj){
         }
     });
 }
+
+
 </script>
 </html>

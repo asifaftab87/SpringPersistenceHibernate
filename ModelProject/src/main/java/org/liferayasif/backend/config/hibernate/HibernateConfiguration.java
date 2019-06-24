@@ -10,8 +10,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
+import org.springframework.core.env.Environment; 
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -61,5 +63,25 @@ public class HibernateConfiguration {
        txManager.setSessionFactory(s);
        return txManager;
     }
+	
+	@Bean
+	public JavaMailSender getJavaMailSender() {
+	    JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+	    mailSender.setHost("smtp.mailtrap.io");
+	    mailSender.setPort(2525);
+	     
+	    mailSender.setUsername("31efd2ccea083a");
+	    mailSender.setPassword("ec9a7cb70268f9");
+	     
+	    Properties props = mailSender.getJavaMailProperties();
+	    props.put("mail.transport.protocol", "smtp");
+	    props.put("mail.smtp.auth", "true");
+	    props.put("mail.smtp.starttls.enable", "true");
+	    props.put("mail.debug", "true");
+	     
+	    return mailSender;
+	}
+	
+	
 	
 }
