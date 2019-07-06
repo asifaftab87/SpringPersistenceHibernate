@@ -1,4 +1,4 @@
-package org.liferayasif.documents.controller;
+package org.liferayasif.documents.rest.controller;
 
 import java.util.Optional;
 
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/documents")
-public class DocumentsController {
+public class DocumentsRestController {
 
 	@Autowired
 	private DocumentsRepository documentsRepository;
