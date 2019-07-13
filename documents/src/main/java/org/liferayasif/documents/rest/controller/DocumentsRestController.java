@@ -1,5 +1,6 @@
 package org.liferayasif.documents.rest.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.liferayasif.documents.model.Documents;
@@ -28,5 +29,15 @@ public class DocumentsRestController {
     public Documents addNewApplication(@RequestBody Documents documents){
         return documentsRepository.save(documents);
     }
+	
+	@RequestMapping(value = "/findAll", method = RequestMethod.GET)
+	public List<Documents> findAll(){
+		return documentsRepository.findAll();
+	}
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+	public void delete(@RequestBody Documents documents) {
+		documentsRepository.delete(documents);
+	}
 	
 }

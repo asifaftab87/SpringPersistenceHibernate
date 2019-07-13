@@ -1,13 +1,16 @@
 package org.liferayasif.documents.model;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class Documents {
+public class Documents implements Serializable{
 
+	private static final long serialVersionUID = 6020897735077570135L;
+	
 	@Id
 	private String id;
 	private String name;
