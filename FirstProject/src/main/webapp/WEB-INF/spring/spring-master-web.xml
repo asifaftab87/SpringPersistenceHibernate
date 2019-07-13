@@ -18,5 +18,6 @@
 		
 <!-- selects a static view for rendering without the need for an explicit controller -->
 		<mvc:view-controller path="/index.jsp"/>
+		<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />	
 		
 </beans>

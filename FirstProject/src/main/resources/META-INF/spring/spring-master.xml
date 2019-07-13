@@ -13,5 +13,10 @@
 	<context:component-scan base-package="org.lifearyasif.first">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
+	
+	<context:component-scan base-package="org.lifearyasif.first.dao.jpa">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	</context:component-scan>
+	
 	<import resource="spring-datasource.xml"/>
 </beans>
