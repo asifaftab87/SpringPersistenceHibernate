@@ -1,9 +1,12 @@
 package org.liferayasif.commons.client;
 
+import org.liferayasif.commons.template.WebRestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 
 public abstract class RestClient {
 
+	private WebRestTemplate webRestTemplate = new WebRestTemplate();
+	
 	@Value("${service.url.documents}")
 	private String documentsURL;
 
@@ -18,4 +21,7 @@ public abstract class RestClient {
 		return reportsURL;
 	}
 	
+	public WebRestTemplate getWebRestTemplate() {
+		return webRestTemplate;
+	}
 }

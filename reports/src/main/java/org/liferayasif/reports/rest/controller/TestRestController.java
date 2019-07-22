@@ -1,5 +1,6 @@
 package org.liferayasif.reports.rest.controller;
 
+import org.liferayasif.reports.client.RestClient;
 import org.liferayasif.reports.model.Report;
 import org.liferayasif.reports.repository.UserDao;
 import org.liferayasif.reports.service.UserService;
@@ -12,10 +13,11 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperPrint;
 
 @RestController
-public class TestRestController {
+public class TestRestController extends RestClient{
 
 	@Autowired
 	private UserService userService;
+	
 	
 	public JasperPrint test() {
 		UserDao obj = new UserDao();
