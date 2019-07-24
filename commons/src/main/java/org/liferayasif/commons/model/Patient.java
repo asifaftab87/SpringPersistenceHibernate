@@ -26,6 +26,9 @@ public class Patient implements Serializable {
 	@Column(name = "email")
 	private String email;
 
+	@Column(name = "docId")
+	private String docId;
+	
 	public Patient() {}
 	
 	public Integer getId() {
@@ -50,6 +53,14 @@ public class Patient implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getDocId() {
+		return docId;
+	}
+
+	public void setDocId(String docId) {
+		this.docId = docId;
 	}
 
 }

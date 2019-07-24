@@ -1,27 +1,28 @@
 package org.liferayasif.commons.client;
 
-import org.liferayasif.commons.template.WebRestTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
 public abstract class RestClient {
-
-	private WebRestTemplate webRestTemplate = new WebRestTemplate();
+	
+	@Value("${service.url.reports}")
+	protected String reportsURL;
 	
 	@Value("${service.url.documents}")
-	private String documentsURL;
-
-	@Value("${service.url.reports}")
-	private String reportsURL;
+	protected String documentsURL;
 	
-	public String getDocumentsURL() {
-		return documentsURL;
+	@Autowired
+	private ReportsClient reportsClient;
+	
+	@Autowired
+	private DocumentsClient documentsClient;
+	
+	protected ReportsClient getReportsClient() {
+		return reportsClient;
 	}
-
-	public String getReportsURL() {
-		return reportsURL;
+		
+	protected DocumentsClient getDocumentsClient() {
+		return documentsClient;
 	}
 	
-	public WebRestTemplate getWebRestTemplate() {
-		return webRestTemplate;
-	}
 }
