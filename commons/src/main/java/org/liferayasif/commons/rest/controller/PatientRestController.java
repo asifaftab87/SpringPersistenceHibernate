@@ -3,6 +3,8 @@ package org.liferayasif.commons.rest.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.liferayasif.commons.client.RestClient;
+import org.liferayasif.commons.dto.Mail;
+import org.liferayasif.commons.dto.MailAttachment;
 import org.liferayasif.commons.model.Documents;
 import org.liferayasif.commons.model.Patient;
 import org.liferayasif.commons.model.Report;
@@ -23,6 +25,7 @@ public class PatientRestController extends RestClient {
 	
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public void add(@RequestBody Patient patient, HttpServletRequest request) {
+		
 		Report report = getReportsClient().getForObject(reportsURL + "/test", Report.class);
 		
 		Documents documents = new Documents();
@@ -36,6 +39,10 @@ public class PatientRestController extends RestClient {
 			documents = getDocumentsClient().postForObject(documentsURL + "/upload", documents, Documents.class);
 			if(documents!=null) {
 				patient.setDocId(documents.getId());
+				MailAttachment mailAttachment = new MailAttachment(documents.getName(), documents.getContents(), documents.getType());
+				Mail mail = new Mail("atifaftab001@gmai.com", patient.getEmail(), "Added", mailAttachment, "Patient added successfully");
+				Boolean b = getNotificationsClient().postForObject(notificationsURL + "/registrationDetails", mail, Boolean.class);
+				System.out.println("send mail result from common project :::::::::: "+b);
 			}
 		}
 		

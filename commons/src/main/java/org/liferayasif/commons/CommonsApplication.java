@@ -1,6 +1,7 @@
 package org.liferayasif.commons;
 
 import org.liferayasif.commons.client.DocumentsClient;
+import org.liferayasif.commons.client.NotificationsClient;
 import org.liferayasif.commons.client.ReportsClient;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,5 +22,10 @@ public class CommonsApplication {
 	@Bean
 	protected DocumentsClient documentsClient() {
 		return new DocumentsClient();
+	}
+	
+	@Bean
+	protected NotificationsClient notificationsClient() {
+		return new NotificationsClient();
 	}
 }

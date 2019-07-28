@@ -23,7 +23,7 @@ public class PatientService {
 		return optional.isPresent() ? optional.get() : null;
 	}
 	
-	public void add(Patient patient) {
-		patientRepository.save(patient);
+	public Patient add(Patient patient) {
+		return patientRepository.save(patient);
 	}
 }
