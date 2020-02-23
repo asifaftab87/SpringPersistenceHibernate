@@ -1,6 +1,6 @@
 In this project I created 4 micro services which are interconnected with each other by rest call.
 Haven't secured my services.
-This I want to secure in future.
+These services I want to secure in future.
 These 4 services are 
 1. common
 2. report
