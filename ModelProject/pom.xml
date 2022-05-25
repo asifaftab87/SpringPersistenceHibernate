@@ -8,7 +8,7 @@
    <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jdk.version>1.8</jdk.version> 
-		<springframework.version>4.3.10.RELEASE</springframework.version>
+		<springframework.version>5.2.22.RELEASE</springframework.version>
 		<springframework.security.version>4.2.3.RELEASE</springframework.security.version>
 		<hibernate.version>4.3.6.Final</hibernate.version>
 		<maven.compiler.version>3.1</maven.compiler.version>
