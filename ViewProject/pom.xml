@@ -20,7 +20,7 @@
     <dbunit.version>2.2</dbunit.version>
     <joda-time.version>2.3</joda-time.version>
     <dozer.version>5.4.0</dozer.version>
-	<jackson.version>2.5.2</jackson.version>
+	<jackson.version>2.13.4.1</jackson.version>
   </properties>
   
   <dependencies>
